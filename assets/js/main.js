@@ -95,12 +95,14 @@ const currentPage = window.location.pathname.split("/").pop() || "index.html";
           });
         });
 
+        // Mouse megamenü dışına çıktığında varsayılan fabrika görseline geri döndürme motoru
         const megaMenuContainer = document.querySelector('.megamenu');
         if (megaMenuContainer) {
           megaMenuContainer.addEventListener('mouseleave', function() {
-            megaImg.style.display = 'none';
-            megaImg.src = '';
-            megaIcon.style.display = 'block';
+            // İkonu gizli tutuyoruz, resim alanına default görselimizi basıyoruz
+            megaIcon.style.display = 'none';
+            megaImg.src = prefix + 'assets/img/hero/nartgaz-1.png'; // Alt klasör korumalı yol yapısı
+            megaImg.style.display = 'block';
 
             const currentLang = localStorage.getItem('nart_secilen_dil') || 'tr';
             if (currentLang === 'en') {
