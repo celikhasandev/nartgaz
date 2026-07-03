@@ -398,7 +398,7 @@ function loadScript(src) {
 }
 
 // ====================================================================================
-// 4. BÖLÜM: DİL MOTORU VE ANA BAŞLATICI SENKRONİZASYONU (TR/EN LOCALIZATION SYSTEM)
+// 4. BÖLÜM: DİL MOTORU VE ANA BAŞLATICI SENKRONİZASYONU (7-LANGUAGE MASTER LOCALIZATION)
 // ====================================================================================
 const NART_LANG_KEY = 'nart_secilen_dil';
 
@@ -408,26 +408,63 @@ window.nartDilDegistir = function(dil) {
 };
 
 function nartDiliUygula(dil) {
-  document.querySelectorAll('[data-en]').forEach(el => {
-    if (!el.getAttribute('data-tr')) { el.setAttribute('data-tr', el.innerHTML); }
-    if (dil === 'en') { el.innerHTML = el.getAttribute('data-en'); } else { el.innerHTML = el.getAttribute('data-tr'); }
-  });
-
-  document.querySelectorAll('[data-en-placeholder]').forEach(input => {
-    if (!input.getAttribute('data-tr-placeholder')) { input.setAttribute('data-tr-placeholder', input.getAttribute('placeholder') || ''); }
-    if (dil === 'en') { input.setAttribute('placeholder', input.getAttribute('data-en-placeholder')); } else { input.setAttribute('placeholder', input.getAttribute('data-tr-placeholder')); }
-  });
-
-  const btnTr = document.getElementById('nart-lang-tr');
-  const btnEn = document.getElementById('nart-lang-en');
-  if (btnTr && btnEn) {
-    if (dil === 'en') {
-      btnTr.classList.remove('active'); btnTr.style.color = 'rgba(255,255,255,0.6)';
-      btnEn.classList.add('active'); btnEn.style.color = '#fdd446';
-    } else {
-      btnEn.classList.remove('active'); btnEn.style.color = 'rgba(255,255,255,0.6)';
-      btnTr.classList.add('active'); btnTr.style.color = '#fdd446';
+  // 1. Metin ve Megamenu İçerik Çevirileri (TR, EN, RU, AR, ZH, ES, IT)
+  const elements = document.querySelectorAll('[data-en], [data-ru], [data-ar], [data-zh], [data-es], [data-it]');
+  elements.forEach(el => {
+    if (!el.getAttribute('data-tr')) {
+      el.setAttribute('data-tr', el.innerHTML);
     }
+
+    let targetContent = (dil === 'tr') ? el.getAttribute('data-tr') : el.getAttribute('data-' + dil);
+
+    if (!targetContent && dil !== 'tr') {
+      targetContent = el.getAttribute('data-en') || el.getAttribute('data-tr');
+    }
+
+    if (targetContent) {
+      if (targetContent.includes('<')) {
+        el.innerHTML = targetContent;
+      } else {
+        el.textContent = targetContent;
+      }
+    }
+  });
+
+  // 2. İletişim Formu Giriş Alanları (Placeholder) Çevirileri
+  const inputs = document.querySelectorAll('[data-en-placeholder], [data-ru-placeholder], [data-ar-placeholder], [data-zh-placeholder], [data-es-placeholder], [data-it-placeholder]');
+  inputs.forEach(input => {
+    if (!input.getAttribute('data-tr-placeholder')) {
+      input.setAttribute('data-tr-placeholder', input.getAttribute('placeholder') || '');
+    }
+
+    let targetPlaceholder = (dil === 'tr') ? input.getAttribute('data-tr-placeholder') : input.getAttribute('data-' + dil + '-placeholder');
+
+    if (!targetPlaceholder && dil !== 'tr') {
+      targetPlaceholder = input.getAttribute('data-en-placeholder') || input.getAttribute('data-tr-placeholder');
+    }
+
+    if (targetPlaceholder) {
+      input.setAttribute('placeholder', targetPlaceholder);
+    }
+  });
+
+  // 3. Üst Menüdeki Bayrak ve Yazı Motoru (Sözdizimi Tamamen Güvenli)
+  var textEl = document.getElementById('nart-active-lang-text');
+  if (textEl) {
+    var flags = {
+      tr: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="1200" height="800" fill="#e30a17"/><circle cx="400" cy="400" r="200" fill="#fff"/><circle cx="450" cy="400" r="160" fill="#e30a17"/><polygon points="575,400 516.2,419.1 552.5,369.1 552.5,430.9 516.2,380.9" fill="#fff"/></svg>',
+      en: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>',
+      ru: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="900" height="600" fill="#fff"/><rect width="900" height="400" y="200" fill="#0039a6"/><rect width="900" height="200" y="400" fill="#d52b1e"/></svg>',
+      ar: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#fff"/><rect width="3" height="0.66" fill="#731412"/><rect width="3" height="0.66" y="1.33" fill="#000"/><path d="M 0,0 L 0.75,1 L 0,2 Z" fill="#114a2b"/></svg>',
+      zh: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="30" height="20" fill="#de2110"/><path d="M5 5L3.4 6.2l.6-1.9-1.6-1.2h2l.6-1.9.6 1.9h2l-1.6 1.2.6 1.9zm5-2.5l-.2 1 .4-.9.7.5-.9.1.2 1-.5-.8-.8.6.6-.7-.5-.8h1zm2 2.5l-.6.8.1-1 .9.2-.8-.6.6-.8-.3.9-.9-.5.9-.2zm1 3l-.9.4.5-.8.6.7-.9-.1-.2 1-.1-.9-.9.4.8-.5zm-3 2l-.9-.4.9-.1-.1-.9.6.8.9-.5-.5.9.6.7-1-.1z" fill="#ffde00"/></svg>',
+      es: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>',
+      it: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>'
+    };
+
+    var displayTexts = { tr: 'TR', en: 'EN', ru: 'RU', ar: 'AR', zh: 'ZH', es: 'ES', it: 'IT' };
+    var currentLang = dil.toLowerCase();
+
+    textEl.innerHTML = (flags[currentLang] || '') + (displayTexts[currentLang] || dil.toUpperCase());
   }
 }
 
@@ -437,10 +474,11 @@ document.addEventListener("DOMContentLoaded", function() {
       initOrijinalTemaMekanizmasi();
       window.checkCookieConsent();
 
-      const defaultLang = localStorage.getItem(NART_LANG_KEY) || 'tr';
+      // ⚙️ Kapsam (Scope) hatası yaşanmaması için doğrudan string key ile dili çekiyoruz
+      const defaultLang = localStorage.getItem('nart_secilen_dil') || 'tr';
       nartDiliUygula(defaultLang);
 
-      console.log("Nart Gaz: Alt klasör ve yönlendirme kalkanı başarıyla devreye alındı.");
+      console.log("Nart Gaz: 6 Dilli lokalizasyon ve bileşen kalkanı başarıyla devreye alındı.");
     })
     .catch(err => { console.error("Sistem başlatma hatası:", err); });
 });
