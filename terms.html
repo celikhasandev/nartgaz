@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kullanım Şartları | NART GAZ</title>
+        <style>
+            /* Sitenin Ana Sayfasına Uygun Koyu Tema (Privacy.html ile tam senkronize) */
+            :root {
+                --nart-dark-bg: #11172b;
+                --nart-card-bg: #1a223a;
+                --nart-text-main: #f8f9fa;
+                --nart-text-muted: #a0aec0;
+                --nart-accent-blue: #42adf0;
+                --nart-yellow: #f1c40f;
+            }
+
+            body {
+                font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                line-height: 1.7;
+                color: var(--nart-text-main);
+                background-color: var(--nart-dark-bg);
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 40px auto 60px auto;
+                padding: 40px;
+                background-color: var(--nart-card-bg);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                border-radius: 12px;
+                border: 1px solid rgba(255,255,255,0.05);
+            }
+
+            /* Dil Değiştirme Butonları */
+            .lang-switcher {
+                text-align: center;
+                margin-bottom: 40px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .lang-btn {
+                background: transparent;
+                color: var(--nart-text-main);
+                border: 1px solid var(--nart-text-main);
+                padding: 8px 18px;
+                cursor: pointer;
+                margin: 5px;
+                border-radius: 30px;
+                font-weight: 700;
+                font-size: 13px;
+                transition: all 0.3s ease;
+            }
+
+            .lang-btn:hover, .lang-btn.active {
+                background-color: var(--nart-accent-blue);
+                border-color: var(--nart-accent-blue);
+                color: #ffffff;
+            }
+
+            /* Tipografi */
+            h1 {
+                font-size: 2.5rem;
+                color: #ffffff;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+                color: #ffffff;
+                margin-top: 40px;
+                border-left: 4px solid var(--nart-accent-blue);
+                padding-left: 15px;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                color: var(--nart-text-main);
+                margin-top: 30px;
+            }
+
+            p, ul, ol {
+                margin-bottom: 18px;
+                color: var(--nart-text-muted);
+            }
+
+            strong, b {
+                color: #ffffff;
+            }
+
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            ul li {
+                position: relative;
+                padding-left: 20px;
+                margin-bottom: 8px;
+            }
+
+            ul li::before {
+                content: "•";
+                color: var(--nart-accent-blue);
+                position: absolute;
+                left: 0;
+                font-size: 1.2rem;
+                line-height: 1;
+            }
+
+            .last-updated {
+                font-style: italic;
+                color: var(--nart-accent-blue);
+                margin-bottom: 30px;
+                font-size: 0.9rem;
+            }
+
+            .placeholder {
+                background-color: rgba(66, 173, 240, 0.15);
+                color: var(--nart-accent-blue);
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-weight: bold;
+                font-family: monospace;
+            }
+
+            .lang-content {
+                display: none;
+                animation: fadeIn 0.5s ease;
+            }
+
+            .lang-content.active {
+                display: block;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @media (max-width: 768px) {
+                .container { margin: 20px; padding: 25px; }
+                h1 { font-size: 2rem; }
+            }
+        </style>
+    </head>
+<body>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('tr', this)">TR</button>
+        <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+        <button class="lang-btn" onclick="switchLang('ru', this)">RU</button>
+        <button class="lang-btn" onclick="switchLang('ar', this)">AR</button>
+        <button class="lang-btn" onclick="switchLang('zh', this)">ZH</button>
+        <button class="lang-btn" onclick="switchLang('es', this)">ES</button>
+        <button class="lang-btn" onclick="switchLang('it', this)">IT</button>
+    </div>
+
+    <div id="content-tr" class="lang-content active">
+        <h1>Kullanım Şartları</h1>
+        <p class="last-updated">Son Güncelleme Tarihi: <span class="placeholder">04.07.2026</span></p>
+
+        <p>Bu web sitesine (<span class="placeholder">www.nartgaz.com</span>) erişerek ve bu siteyi kullanarak, aşağıda belirtilen kullanım şartlarını, yasal kuralları ve ilgili tüm mevzuatı kayıtsız şartsız kabul etmiş sayılırsınız. Eğer bu şartların herhangi birini kabul etmiyorsanız, lütfen siteye erişimi durdurun ve siteyi kullanmayın.</p>
+
+        <h2>1. Fikri ve Sınai Mülkiyet Hakları</h2>
+        <p>Bu web sitesinde yer alan tüm ticari markalar, logolar, endüstriyel tasarımlar, mühendislik çizimleri, teknik dökümanlar, yazılımlar, görseller, videolar ve metinler (kısaca "İçerik"), <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong>'ye aittir ve uluslararası telif hakkı ve sınai mülkiyet kanunları ile korunmaktadır.</p>
+        <ul>
+            <li>Şirketin yazılı izni olmaksızın İçeriğin kısmen veya tamamen kopyalanması, çoğaltılması, dağıtılması veya ihalelerde/projelerde haksız kullanımı kesinlikle yasaktır.</li>
+            <li>Sitedeki teknik dökümanların indirilmesi, sadece bilgilendirme amaçlı şahsi kullanım içindir ve mülkiyet devri anlamına gelmez.</li>
+        </ul>
+
+        <h2>2. Kullanım Kısıtlamaları</h2>
+        <p>Web sitesini kullanırken aşağıdaki eylemlerde bulunmayacağınızı taahhüt edersiniz:</p>
+        <ul>
+            <li>Sitenin güvenliğini ihlal etmek veya sunuculara zarar verecek yazılımlar (virüs, truva atı vb.) yüklemek,</li>
+            <li>Otomatik sistemler (bot, örümcek, veri madenciliği araçları) kullanarak siteden toplu veri çekmek,</li>
+            <li>Şirketimizi veya ürünlerimizi karalayacak, haksız rekabet yaratacak yanıltıcı beyanlarda bulunmak.</li>
+        </ul>
+
+        <h2>3. Sorumluluk Sınırlandırması</h2>
+        <p>Şirketimiz, web sitesindeki teknik verilerin, ürün kapasitelerinin ve dökümanların güncel ve doğru olması için azami gayret göstermektedir. Ancak, sitedeki bilgiler "olduğu gibi" sunulmakta olup, bu bilgilerin ticari uygunluğu veya belirli bir projeye tam adaptasyonu konusunda açık veya zımni hiçbir garanti verilmemektedir. İçerikteki olası tipografik hatalardan veya teknik gecikmelerden dolayı Şirket sorumlu tutulamaz.</p>
+
+        <h2>4. Yetkili Mahkeme ve Uygulanacak Hukuk</h2>
+        <p>Bu web sitesinin kullanımından veya işbu kullanım şartlarından doğabilecek her türlü uyuşmazlığın çözümünde münhasıran <strong>Türk Hukuku</strong> uygulanacak olup; uyuşmazlıkların çözümünde <strong>Ankara (Merkez) Mahkemeleri ve İcra Daireleri</strong> yetkilidir.</p>
+    </div>
+
+    <div id="content-en" class="lang-content">
+        <h1>Terms of Use</h1>
+        <p class="last-updated">Last Updated: <span class="placeholder">04.07.2026</span></p>
+
+        <p>By accessing and using this website (<span class="placeholder">www.nartgaz.com</span>), you agree to be bound by these Terms of Use, all applicable laws, and regulations without any limitation. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+
+        <h2>1. Intellectual and Industrial Property Rights</h2>
+        <p>All trademarks, logos, industrial designs, engineering blueprints, technical data sheets, software, images, videos, and texts contained in this website (collectively, the "Content") belong to <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> and are protected by international copyright and industrial property laws.</p>
+        <ul>
+            <li>Any partial or full copying, modification, distribution, or unauthorized commercial use of the Content in tenders or projects without the express written consent of the Company is strictly prohibited.</li>
+            <li>Downloading technical specifications is permitted solely for informational and personal non-commercial use, and does not transfer any title or ownership.</li>
+        </ul>
+
+        <h2>2. Use Restrictions</h2>
+        <p>You agree not to engage in any of the following restricted activities while using the website:</p>
+        <ul>
+            <li>Violating the security of the website or uploading malicious software (viruses, trojans, etc.) that may disrupt the servers.</li>
+            <li>Using automated data harvesting systems (bots, spiders, data mining tools) to scrape mass data from the site.</li>
+            <li>Making misleading statements that create unfair competition or defame the Company or its industrial modules.</li>
+        </ul>
+
+        <h2>3. Limitation of Liability</h2>
+        <p>The Company makes every effort to ensure that technical data and product dimensions on the website are accurate. However, the information on this site is provided on an "as is" basis, without warranties of any kind, either express or implied, regarding commercial merchantability or fitness for a particular engineering project. The Company shall not be liable for any typographical errors or technical delays.</p>
+
+        <h2>4. Governing Law and Jurisdiction</h2>
+        <p>Any dispute arising out of or in connection with the use of this website or these Terms of Use shall be governed exclusively by <strong>Turkish Law</strong>, and the <strong>Courts and Execution Offices of Ankara (Central), Turkey</strong> shall have exclusive jurisdiction.</p>
+    </div>
+
+    <div id="content-ru" class="lang-content">
+        <h1>Условия использования</h1>
+        <p class="last-updated">Последнее обновление: <span class="placeholder">04.07.2026</span></p>
+
+        <p>Получая доступ к этому веб-сайту (<span class="placeholder">www.nartgaz.com</span>) и используя его, вы безоговорочно принимаете изложенные ниже условия использования и все применимые законы. Если вы не согласны с каким-либо из этих условий, пожалуйста, прекратите использование данного сайта.</p>
+
+        <h2>1. Права на интеллектуальную и промышленную собственность</h2>
+        <p>Все товарные знаки, логотипы, промышленные образцы, инженерные чертежи, технические описания, программное обеспечение, изображения, видео и тексты (далее «Контент»), размещенные на этом сайте, принадлежат компании <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> и защищены международными законами об авторском праве.</p>
+        <ul>
+            <li>Категорически запрещается копирование, воспроизведение, распространение или несанкционированное коммерческое использование Контента в тендерах или проектах без письменного согласия Компании.</li>
+            <li>Загрузка технических паспортов разрешена исключительно для личного некоммерческого использования и не означает передачу прав собственности.</li>
+        </ul>
+
+        <h2>2. Ограничения использования</h2>
+        <p>Вы соглашаетесь не совершать действия, нарушающие безопасность сайта, не использовать автоматизированные системы (боты, парсеры) для сбора данных и не делать ложных заявлений, создающих недобросовестную конкуренцию.</p>
+
+        <h2>3. Ограничение ответственности</h2>
+        <p>Информация на данном сайте предоставляется на условиях «как есть». Компания не несет ответственности за технические задержки, опечатки или пригодность модулей для конкретных инженерных проектов потребителя.</p>
+
+        <h2>4. Применимое право и юрисдикция</h2>
+        <p>Любые споры, связанные с использованием этого веб-сайта, регулируются исключительно <strong>законодательством Турции</strong>. Эксклюзивной юрисдикцией обладают <strong>Суды и органы исполнительного производства города Анкара, Турция</strong>.</p>
+    </div>
+
+    <div id="content-ar" class="lang-content" style="direction: rtl; text-align: right;">
+        <h1>شروط الاستخدام</h1>
+        <p class="last-updated">آخر تحديث: <span class="placeholder">04.07.2026</span></p>
+
+        <p>بدخولك إلى هذا الموقع الإلكتروني (<span class="placeholder">www.nartgaz.com</span>) واستخدامه، فإنك توافق دون قيد أو شرط على الالتزام بشروط الاستخدام والقوانين المعمول بها. إذا كنت لا توافق على أي من هذه الشروط، يرجى التوقف عن استخدام الموقع فوراً.</p>
+
+        <h2>1. حقوق الملكية الفكرية والصناعية</h2>
+        <p>جميع العلامات التجارية، والشعارات، والتصاميم الصناعية، والمخططات الهندسية، والبيانات الفنية، والصور، ومقاطع الفيديو، والنصوص (المشار إليها إجمالاً بـ "المحتوى") الموجودة في هذا الموقع هي ملك لشركة <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> ومحمية بموجب قوانين الملكية الفكرية الدولية.</p>
+        <ul>
+            <li>يُمنع منعاً باتاً نسخ المحتوى أو تعديله أو توزيعه أو استخدامه تجارياً في المناقصات أو المشاريع دون موافقة خطية صريحة من الشركة.</li>
+            <li>تنزيل المواصفات الفنية متاح فقط للاستخدام الشخصي وغير التجاري، ولا ينقل أي حق من حقوق الملكية.</li>
+        </ul>
+
+        <h2>2. قيود الاستخدام</h2>
+        <p>أنت توافق على عدم انتهاك أمن الموقع، وعدم استخدام أنظمة التجميع الآلي (البوتات، العناكب) لكشط البياناتMass Data، وعدم تقديم بيانات مضللة تضر بسمعة الشركة أو تخلق منافسة غير عادلة.</p>
+
+        <h2>3. تحديد المسؤولية</h2>
+        <p>يتم تقديم المعلومات على هذا الموقع "كما هي"، دون أي ضمانات صريحة أو ضمنية بشأن ملاءمتها لمشروع هندسي معين. الشركة غير مسؤولة عن الأخطاء المطبعية أو التأخيرات الفنية.</p>
+
+        <h2>4. القانون الواجب التطبيق والاختصاص القضائي</h2>
+        <p>تخضع جميع النزاعات الناشئة عن استخدام هذا الموقع حصرياً **للقانون التركي**، وتكون **محاكم ودوائر التنفيذ في أنقرة، تركيا** هي الجهة الحصرية المختصة بالفصل في النزاعات.</p>
+    </div>
+
+    <div id="content-zh" class="lang-content">
+        <h1>使用条款</h1>
+        <p class="last-updated">最后更新日期: <span class="placeholder">04.07.2026</span></p>
+
+        <p>访问和使用本网站（<span class="placeholder">www.nartgaz.com</span>）即表示您无条件同意接受本使用条款以及所有适用法律和法规 spiral 的约束。如果您不同意这些条款 environmental 的任何内容，请立即停止访问和使用本网站。</p>
+
+        <h2>1. 知识产权和工业产权</h2>
+        <p>本网站包含的所有商标、徽标、工业设计、工程蓝图、技术参数表、软件、图像、视频和文本（统称为“内容”）均属于 <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> 所有，并受到国际版权法和工业产权法的保护。</p>
+        <ul>
+            <li>未经公司明确书面许可，严禁在投标或工程项目中部分或全部复制、传播、分发或擅自商业化使用上述内容。</li>
+            <li>下载技术规范文件仅限用于个人非商业性信息参考，不构成任何物权或所有权的转移。</li>
+        </ul>
+
+        <h2>2. 使用限制</h2>
+        <p>您承诺在合理使用本网站时，绝不从事以下行为：破坏网站安全系统、上传恶意病毒、利用自动化工具（网络机器人、爬虫、数据挖掘工具）批量抓取数据，或发布任何涉嫌不正当竞争的虚假抹黑言论。</p>
+
+        <h2>3. 责任限制</h2>
+        <p>本网站上的所有信息均按“原样”提供。公司对内容的商业适销性或其是否完全适配于用户的某项特定工程项目不作任何明示或暗示的保证。公司对排版印刷错误或技术网络延迟不承担责任。</p>
+
+        <h2>4. 准据法与管辖权</h2>
+        <p>因使用本网站或本使用条款引起的任何争议，均应专属适用 <strong>土耳其法律</strong>；并由 <strong>土耳其安卡拉（中央）法院及执行局</strong> 拥有专属管辖权。</p>
+    </div>
+
+    <div id="content-es" class="lang-content">
+        <h1>Términos de Uso</h1>
+        <p class="last-updated">Última actualización: <span class="placeholder">04.07.2026</span></p>
+
+        <p>Al acceder y utilizar este sitio web (<span class="placeholder">www.nartgaz.com</span>), usted acepta cumplir, sin limitación alguna, estos Términos de Uso y todas las leyes aplicables. Si no está de acuerdo con alguno de estos términos, se le prohíbe utilizar este sitio.</p>
+
+        <h2>1. Derechos de Propiedad Intelectual e Industrial</h2>
+        <p>Todas las marcas, logotipos, diseños industriales, planos de ingeniería, hojas de datos técnicos, imágenes, videos y textos contenidos en este sitio (el "Contenido") pertenecen a <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> y están protegidos por las leyes internacionales de propiedad intelectual.</p>
+        <ul>
+            <li>Queda estrictamente prohibida la copia parcial o total, distribución o uso comercial no autorizado del Contenido en licitaciones o proyectos sin el consentimiento expreso por escrito de la Compañía.</li>
+            <li>La descarga de especificaciones técnicas se permite únicamente para uso informativo y personal, sin transferir ningún título de propiedad.</li>
+        </ul>
+
+        <h2>2. Restricciones de Uso</h2>
+        <p>Usted acepta no comprometer la seguridad del sitio web, no cargar software malicioso (virus, troyanos) y no utilizar herramientas automatizadas (bots, scrapers) para la extracción masiva de datos de la plataforma.</p>
+
+        <h2>3. Limitación de Responsabilidad</h2>
+        <p>La información de este sitio se proporciona "tal cual", sin garantías de ningún tipo respecto a su comerciabilidad o idoneidad para un proyecto de ingeniería específico del usuario. La Compañía no será responsable de errores tipográficos o retrasos técnicos.</p>
+
+        <h2>4. Ley Aplicable y Jurisdicción</h2>
+        <p>Cualquier disputa relacionada con el uso de este sitio web se regirá exclusivamente por la <strong>Ley Turca</strong>, y los <strong>Tribunales y Oficinas de Ejecución de Ankara (Central), Turquía</strong> tendrán la jurisdicción exclusiva.</p>
+    </div>
+
+    <div id="content-it" class="lang-content">
+        <h1>Termini di Utilizzo</h1>
+        <p class="last-updated">Ultimo aggiornamento: <span class="placeholder">04.07.2026</span></p>
+
+        <p>Accedendo e utilizzando questo sito web (<span class="placeholder">www.nartgaz.com</span>), l'utente accetta di essere vincolato dai presenti Termini di Utilizzo e da tutte le leggi applicabili senza limitazioni. Se non si accettano tali termini, si prega di interrompere l'accesso al sito.</p>
+
+        <h2>1. Diritti di Proprietà Intellettuale e Industriale</h2>
+        <p>Tutti i marchi, loghi, disegni industriali, progetti ingegneristici, schede tecniche, immagini, video e testi contenuti in questo sito (il "Contenuto") appartengono a <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> e sono protetti dalle leggi internazionali sulla proprietà intellettuale.</p>
+        <ul>
+            <li>È severamente vietata la copia parziale o totale, la distribuzione o l'uso commerciale non autorizzato del Contenuto in gare d'appalto o progetti senza il preventivo consenso scritto della Società.</li>
+            <li>Il download delle specifiche tecniche è consentito esclusivamente per uso informativo e personale non commerciale, e non trasferisce alcun titolo di proprietà.</li>
+        </ul>
+
+        <h2>2. Restrizioni d'Uso</h2>
+        <p>L'utente si impegna a non violare la sicurezza del sito web, a non caricare software dannoso (virus, trojan) e a non utilizzare sistemi automatizzati (bot, spider) per l'estrazione massiva di dati dal sito.</p>
+
+        <h2>3. Limitazione di Responsabilità</h2>
+        <p>Le informazioni su questo sito sono fornite "nelle condizioni in cui si trovano". La Società non è responsabile per eventuali errori tipografici, ritardi di rete o per l'idoneità dei moduli industriali rispetto a uno specifico progetto ingegneristico dell'utente.</p>
+
+        <h2>4. Legge Applicabile e Foro Competente</h2>
+        <p>Qualsiasi controversia derivante dall'uso di questo sito web sarà regolata esclusivamente dalla <strong>Legge Turca</strong>, e i <strong>Tribunali e gli Uffici di Esecuzione di Ankara (Centrale), Turchia</strong> avranno competenza esclusiva.</p>
+    </div>
+
+</div>
+
+<script>
+    function switchLang(lang, btnElement) {
+        const contents = document.querySelectorAll('.lang-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById('content-' + lang).classList.add('active');
+        btnElement.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

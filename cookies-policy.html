@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Çerez Politikası | NART GAZ</title>
+        <style>
+            /* Sitenin Ana Sayfasına Uygun Koyu Tema (Diğer yasal sayfalarla tam senkronize) */
+            :root {
+                --nart-dark-bg: #11172b;
+                --nart-card-bg: #1a223a;
+                --nart-text-main: #f8f9fa;
+                --nart-text-muted: #a0aec0;
+                --nart-accent-blue: #42adf0;
+                --nart-yellow: #f1c40f;
+            }
+
+            body {
+                font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                line-height: 1.7;
+                color: var(--nart-text-main);
+                background-color: var(--nart-dark-bg);
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 40px auto 60px auto;
+                padding: 40px;
+                background-color: var(--nart-card-bg);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                border-radius: 12px;
+                border: 1px solid rgba(255,255,255,0.05);
+            }
+
+            /* Dil Değiştirme Butonları */
+            .lang-switcher {
+                text-align: center;
+                margin-bottom: 40px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .lang-btn {
+                background: transparent;
+                color: var(--nart-text-main);
+                border: 1px solid var(--nart-text-main);
+                padding: 8px 18px;
+                cursor: pointer;
+                margin: 5px;
+                border-radius: 30px;
+                font-weight: 700;
+                font-size: 13px;
+                transition: all 0.3s ease;
+            }
+
+            .lang-btn:hover, .lang-btn.active {
+                background-color: var(--nart-accent-blue);
+                border-color: var(--nart-accent-blue);
+                color: #ffffff;
+            }
+
+            /* Tipografi */
+            h1 {
+                font-size: 2.5rem;
+                color: #ffffff;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+                color: #ffffff;
+                margin-top: 40px;
+                border-left: 4px solid var(--nart-accent-blue);
+                padding-left: 15px;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                color: var(--nart-text-main);
+                margin-top: 30px;
+            }
+
+            p, ul, ol {
+                margin-bottom: 18px;
+                color: var(--nart-text-muted);
+            }
+
+            strong, b {
+                color: #ffffff;
+            }
+
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            ul li {
+                position: relative;
+                padding-left: 20px;
+                margin-bottom: 8px;
+            }
+
+            ul li::before {
+                content: "•";
+                color: var(--nart-accent-blue);
+                position: absolute;
+                left: 0;
+                font-size: 1.2rem;
+                line-height: 1;
+            }
+
+            .last-updated {
+                font-style: italic;
+                color: var(--nart-accent-blue);
+                margin-bottom: 30px;
+                font-size: 0.9rem;
+            }
+
+            .placeholder {
+                background-color: rgba(66, 173, 240, 0.15);
+                color: var(--nart-accent-blue);
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-weight: bold;
+                font-family: monospace;
+            }
+
+            .lang-content {
+                display: none;
+                animation: fadeIn 0.5s ease;
+            }
+
+            .lang-content.active {
+                display: block;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @media (max-width: 768px) {
+                .container { margin: 20px; padding: 25px; }
+                h1 { font-size: 2rem; }
+            }
+        </style>
+    </head>
+<body>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('tr', this)">TR</button>
+        <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+        <button class="lang-btn" onclick="switchLang('ru', this)">RU</button>
+        <button class="lang-btn" onclick="switchLang('ar', this)">AR</button>
+        <button class="lang-btn" onclick="switchLang('zh', this)">ZH</button>
+        <button class="lang-btn" onclick="switchLang('es', this)">ES</button>
+        <button class="lang-btn" onclick="switchLang('it', this)">IT</button>
+    </div>
+
+    <div id="content-tr" class="lang-content active">
+        <h1>Çerez Politikası</h1>
+        <p class="last-updated">Son Güncelleme Tarihi: <span class="placeholder">04.07.2026</span></p>
+
+        <p><strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> olarak, web sitemizi (<span class="placeholder">www.nartgaz.com</span>) ziyaret eden kullanıcılarımızın deneyimlerini optimize etmek ve dijital altyapımızın güvenliğini sağlamak amacıyla çerezler (cookies) kullanmaktayız. Bu Çerez Politikası, hangi çerez türlerinin hangi amaçlarla kullanıldığını ve bunları nasıl kontrol edebileceğinizi açıklamaktadır.</p>
+
+        <h2>1. Çerez (Cookie) Nedir?</h2>
+        <p>Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınız aracılığıyla cihazınıza (bilgisayar, akıllı telefon veya tablet) kaydedilen küçük metin dosyalarıdır. Bu dosyalar, sitenin sizi hatırlamasını, dil tercihlerinizi unutmamasını ve site performansının analiz edilmesini sağlar.</p>
+
+        <h2>2. Web Sitemizde Kullanılan Çerez Türleri</h2>
+        <p>Sitemizde, kullanıcı onay paneline paralel olarak aşağıdaki 4 ana grupta çerezler kullanılmaktadır:</p>
+        <ul>
+            <li><strong>Gerekli (Zorunlu) Çerezler:</strong> Web sitesinin temel işlevlerini yerine getirebilmesi, güvenli giriş yapılabilmesi ve dil seçim motorunun stabil çalışması için zorunludur. Devre dışı bırakılamazlar.</li>
+            <li><strong>Analitik Çerezler:</strong> Ziyaretçilerin siteyi nasıl kullandığını (en çok hangi ürün sayfalarının incelendiğini, geçirilen süreyi vb.) anonim olarak analiz etmemizi sağlar (Örn: Google Analytics).</li>
+            <li><strong>Reklam Çerezleri:</strong> İlgi alanlarınıza göre özelleştirilmiş, alakalı endüstriyel reklamlar ve ürün kampanyaları sunmak amacıyla kullanılır.</li>
+            <li><strong>Pazarlama Çerezleri:</strong> Dijital pazarlama kampanyalarımızın ve sosyal medya entegrasyonlarımızın etkinliğini ölçmek amacıyla kullanılan çerezlerdir.</li>
+        </ul>
+
+        <h2>3. Çerez Tercihlerini Nasıl Yönetebilirsiniz?</h2>
+        <p>Sitemizin alt kısmında yer alan "Çerez Ayarları" butonuna tıklayarak tercihlerinizi dilediğiniz zaman değiştirebilirsiniz. Ayrıca, kullandığınız internet tarayıcısının (Google Chrome, Safari, Mozilla Firefox vb.) ayarlar menüsünden tüm çerezleri tamamen engelleme veya silme hakkına sahipsiniz.</p>
+    </div>
+
+    <div id="content-en" class="lang-content">
+        <h1>Cookie Policy</h1>
+        <p class="last-updated">Last Updated: <span class="placeholder">04.07.2026</span></p>
+
+        <p>At <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong>, we use cookies to optimize the user experience and ensure the digital security of our website (<span class="placeholder">www.nartgaz.com</span>). This Cookie Policy explains which types of cookies we utilize, their purposes, and how you can manage them.</p>
+
+        <h2>1. What is a Cookie?</h2>
+        <p>Cookies are small text files stored on your device (computer, smartphone, or tablet) through your browser when you visit a website. They allow the website to remember your actions, retain your language preferences, and analyze site performance metrics.</p>
+
+        <h2>2. Types of Cookies Used on Our Website</h2>
+        <p>In full alignment with our user consent banner, our platform utilizes the following 4 categories of cookies:</p>
+        <ul>
+            <li><strong>Necessary Cookies:</strong> Required for the essential functionality, secure login, and stability of the language selection engine. These cannot be disabled.</li>
+            <li><strong>Analytics Cookies:</strong> Help us anonymously analyze how visitors interact with our platform, such as tracking page views and duration (e.g., Google Analytics).</li>
+            <li><strong>Advertising Cookies:</strong> Utilized to deliver relevant industrial advertisements and targeted product campaigns based on your preferences.</li>
+            <li><strong>Marketing Cookies:</strong> Deployed to measure the efficacy of our digital marketing operations and social media integrations.</li>
+        </ul>
+
+        <h2>3. How to Manage Cookie Preferences?</h2>
+        <p>You can customize or alter your choices at any time by clicking the "Cookie Settings" button on our website. Additionally, you retain the right to block or delete all cookies entirely through your internet browser's settings menu (Google Chrome, Safari, Firefox, etc.).</p>
+    </div>
+
+    <div id="content-ru" class="lang-content">
+        <h1>Политика в отношении файлов cookie</h1>
+        <p class="last-updated">Последнее обновление: <span class="placeholder">04.07.2026</span></p>
+
+        <p>Компания <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> использует файлы cookie для оптимизации работы пользователей и обеспечения безопасности нашего веб-сайта (<span class="placeholder">www.nartgaz.com</span>).</p>
+
+        <h2>1. Что такое файлы cookie?</h2>
+        <p>Файлы cookie — это небольшие текстовые файлы, сохраняемые на вашем устройстве через браузер при посещении сайта. Они позволяют сайту запоминать ваши языковые настройки и анализировать общую производительность.</p>
+
+        <h2>2. Типы файлов cookie, используемых на нашем сайте</h2>
+        <ul>
+            <li><strong>Необходимые файлы cookie:</strong> Обязательны для базовой работы сайта и стабильного переключения языков. Не могут быть отключены.</li>
+            <li><strong>Аналитические файлы cookie:</strong> Позволяют нам анонимно анализировать действия посетителей на страницах товаров (например, Google Analytics).</li>
+            <li><strong>Рекламные файлы cookie:</strong> Используются для показа релевантной промышленной рекламы и продуктовых кампаний.</li>
+            <li><strong>Маркетинговые файлы cookie:</strong> Применяются для оценки эффективности наших цифровых маркетинговых кампаний.</li>
+        </ul>
+
+        <h2>3. Как управлять файлами cookie?</h2>
+        <p>Вы можете изменить свои настройки в любое время, нажав кнопку «Настройки файлов cookie» внизу сайта, или полностью заблокировать их через настройки вашего интернет-браузера.</p>
+    </div>
+
+    <div id="content-ar" class="lang-content" style="direction: rtl; text-align: right;">
+        <h1>سياسة ملفات تعريف الارتباط</h1>
+        <p class="last-updated">آخر تحديث: <span class="placeholder">04.07.2026</span></p>
+
+        <p>نحن شركة <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong>، نستخدم ملفات تعريف الارتباط (Cookies) لتحسين تجربة المستخدم وضمان الأمن الرقمي لموقعنا الإلكتروني (<span class="placeholder">www.nartgaz.com</span>).</p>
+
+        <h2>1. ما هي ملفات تعريف الارتباط؟</h2>
+        <p>ملفات تعريف الارتباط هي ملفات نصية صغيرة تُخزن على جهازك عبر المتصفح عند زيارة موقع ويب. تتيح للموقع تذكر خياراتك مثل تفضيلات اللغة وتحليل مقاييس الأداء.</p>
+
+        <h2>2. أنواع ملفات تعريف الارتباط المستخدمة على موقعنا</h2>
+        <ul>
+            <li><strong>ملفات تعريف الارتباط الضرورية:</strong> مطلوبة للوظائف الأساسية، وتأمين تسجيل الدخول، واستقرار محرك اختيار اللغة. لا يمكن تعطيلها.</li>
+            <li><strong>ملفات تعريف الارتباط التحليلية:</strong> تساعدنا على تحليل كيفية تفاعل الزوار مع منصتنا بشكل مجهول الهوية (مثل Google Analytics).</li>
+            <li><strong>ملفات تعريف الارتباط الإعلانية:</strong> تُستخدم لتقديم إعلانات صناعية وحملات منتجات ذات صلة بناءً على اهتماماتك.</li>
+            <li><strong>ملفات تعريف الارتباط التسويقية:</strong> تُستخدم لقياس مدى فعالية عمليات التسويق الرقمي وتكامل وسائل التواصل الاجتماعي.</li>
+        </ul>
+
+        <h2>3. كيف تتحكم في تفضيلات ملفات تعريف الارتباط؟</h2>
+        <p>يمكنك تخصيص خياراتك في أي وقت بالنقر فوق زر "إعدادات ملفات تعريف الارتباط" بالموقع. كما يحق لك حظر أو حذف جميع ملفات تعريف الارتباط تماماً من خلال قائمة إعدادات متصفح الإنترنت الخاص بك.</p>
+    </div>
+
+    <div id="content-zh" class="lang-content">
+        <h1>Cookie 政策</h1>
+        <p class="last-updated">最后更新日期: <span class="placeholder">04.07.2026</span></p>
+
+        <p><strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong> 在本网站（<span class="placeholder">www.nartgaz.com</span>）上使用 Cookie，以优化用户体验并确保我们数字基础设施的安全。本政策阐述了我们使用的 Cookie 类型、目的以及您如何控制它们。</p>
+
+        <h2>1. 什么是 Cookie？</h2>
+        <p>Cookie 是您访问网站时通过浏览器保存在您的设备（电脑、智能手机或平板电脑）上的小型文本文件。它们使网站能够记住您的操作、保留语言偏好并分析网站的性能数据。</p>
+
+        <h2>2. 我们网站上使用的 Cookie 类型</h2>
+        <p>与用户知情同意横幅完全同步，我们的平台主要使用以下 4 类 Cookie：</p>
+        <ul>
+            <li><strong>必要 Cookie:</strong> 网站基本功能运行、安全登录以及语言选择引擎稳定所必需的，无法禁用。</li>
+            <li><strong>分析 Cookie:</strong> 帮助我们匿名分析访问者如何使用本网站（如跟踪产品页面浏览量和停留时间，例如 Google Analytics）。</li>
+            <li><strong>广告 Cookie:</strong> 用于根据您的偏好，向您投递相关的工业广告和针对性的产品宣传活动。</li>
+            <li><strong>营销 Cookie:</strong> 用于衡量我们数字营销活动及社交媒体集成的有效性。</li>
+        </ul>
+
+        <h2>3. 如何管理 Cookie 设置？</h2>
+        <p>您随时可以通过点击网站底部的“Cookie 设置”按钮来自定义或更改您的选择。此外，您有权通过互联网浏览器（如 Google Chrome、Safari、Firefox 等）的设置菜单完全阻止或删除所有 Cookie。</p>
+    </div>
+
+    <div id="content-es" class="lang-content">
+        <h1>Política de Cookies</h1>
+        <p class="last-updated">Última actualización: <span class="placeholder">04.07.2026</span></p>
+
+        <p>En <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong>, utilizamos cookies для optimizar la experiencia del usuario y garantizar la seguridad digital de nuestro sitio web (<span class="placeholder">www.nartgaz.com</span>).</p>
+
+        <h2>1. ¿Qué es una Cookie?</h2>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo a través del navegador al visitar un sitio web. Permiten que la plataforma recuerde sus acciones, retenga sus preferencias de idioma y analice el rendimiento del sitio.</p>
+
+        <h2>2. Tipos de Cookies Utilizadas en Nuestro Sitio Web</h2>
+        <ul>
+            <li><strong>Cookies necesarias:</strong> Obligatorias para el funcionamiento básico, inicio de sesión seguro y estabilidad del motor de idiomas. No se pueden desactivar.</li>
+            <li><strong>Cookies analíticas:</strong> Nos permiten analizar de forma anónima cómo interactúan los visitantes con las páginas de productos (por ejemplo, Google Analytics).</li>
+            <li><strong>Cookies publicitarias:</strong> Se utilizan para ofrecer anuncios industriales relevantes y campañas de productos personalizadas.</li>
+            <li><strong>Cookies de marketing:</strong> Desplegadas para medir la efectividad de nuestras operaciones de marketing digital.</li>
+        </ul>
+
+        <h2>3. ¿Cómo Gestionar las Preferencias de Cookies?</h2>
+        <p>Puede cambiar sus preferencias en cualquier momento haciendo clic en el botón "Configuración de cookies" en la parte inferior del sitio, o bloquearlas por completo a través del menú de configuración de su navegador de Internet.</p>
+    </div>
+
+    <div id="content-it" class="lang-content">
+        <h1>Informativa sui Cookie</h1>
+        <p class="last-updated">Ultimo aggiornamento: <span class="placeholder">04.07.2026</span></p>
+
+        <p>Presso <strong>NART ENDÜSTRİYEL KAYNAK TEKNOLOJİLERİ DOĞAL GAZ ISI SİSTEMLERİ SANAYİ VE DIŞ TİCARET LTD. ŞTİ.</strong>, utilizziamo i cookie per ottimizzare l'esperienza utente e garantire la sicurezza digitale del nostro sito web (<span class="placeholder">www.nartgaz.com</span>).</p>
+
+        <h2>1. Che cos'è un Cookie?</h2>
+        <p>I cookie sono piccoli file di testo memorizzati sul vostro dispositivo tramite il browser quando visitate un sito. Consentono al sito di ricordare le vostre azioni, mantenere le preferenze di lingua e analizzare le metriche delle prestazioni del sito.</p>
+
+        <h2>2. Tipi di Cookie Utilizzati sul Nostro Sito Web</h2>
+        <ul>
+            <li><strong>Cookie Necessari:</strong> Richiesti per le funzionalità essenziali, il login sicuro e la stabilità del motore di selezione della lingua. Non possono essere disabilitati.</li>
+            <li><strong>Cookie Analitici:</strong> Ci aiutano ad analizzare in modo anonimo come i visitatori interagiscono con le pagine dei prodotti (ad es. Google Analytics).</li>
+            <li><strong>Cookie Pubblicitari:</strong> Utilizzati per fornire annunci industriali pertinenti e campagne di prodotto mirate in base alle vostre preferenze.</li>
+            <li><strong>Cookie di Marketing:</strong> Implementati per misurare l'efficacia delle nostre operazioni di marketing digitale.</li>
+        </ul>
+
+        <h2>3. Come Gestire le Preferenze sui Cookie?</h2>
+        <p>È possibile personalizzare le scelte in qualsiasi momento facendo clic sul pulsante "Impostazioni Cookie" in fondo al sito, oppure bloccare o eliminare completamente tutti i cookie tramite il menu delle impostazioni del browser Internet.</p>
+    </div>
+
+</div>
+
+<script>
+    function switchLang(lang, btnElement) {
+        const contents = document.querySelectorAll('.lang-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById('content-' + lang).classList.add('active');
+        btnElement.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
