@@ -2956,3 +2956,151 @@ p {
     .product-main-header h1 { font-size: 28px; }
 }
 
+
+/* ==========================================================================
+   NART GAZ - PREMİUM & TEMA UYUMLU ÖZELLİK KARTLARI (CSS)
+   --------------------------------------------------------------------------
+   Açıklama: Temanın kendi yerel yazı tiplerinin (font-family) doğal olarak
+                 devreye girmesi için harici font zorlamaları tamamen kaldırıldı.
+   ========================================================================== */
+
+/* ==========================================================================
+   NART GAZ - TEMA UYUMLU PREMİUM ÖZELLİK KARTLARI (CSS)
+   --------------------------------------------------------------------------
+   Not: Tema yazı tipinin (font) bozulmaması için font-family ve font-weight
+        zorlamaları tamamen kaldırılmıştır. Sadece tasarım ve hover yönetilir.
+   ========================================================================== */
+
+.nart-features-section {
+    background-color: #ffffff !important;
+    padding: 90px 0;
+}
+
+/* Ana Kart Mimarisi */
+.nart-feature-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    padding: 45px 35px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.nart-feature-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(66, 173, 240, 0.15);
+    box-shadow: 0 25px 50px rgba(17, 23, 43, 0.06);
+}
+
+/* ⚡ Akıllı Lazer Çizgi */
+.nart-feature-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #42adf0, #2575fc);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nart-feature-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* 📐 Teknik Numara Filigranları (Silik Arka Plan Numaraları) */
+.nart-feature-card::before {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(66, 173, 240, 0.03);
+    transition: all 0.5s ease;
+    line-height: 1;
+}
+
+.card-01::before { content: "01"; }
+.card-02::before { content: "02"; }
+.card-03::before { content: "03"; }
+
+.nart-feature-card:hover::before {
+    transform: translateY(10px);
+    color: rgba(66, 173, 240, 0.07);
+}
+
+/* İkon Havuzu */
+.nart-icon-wrapper {
+    width: 85px;
+    height: 85px;
+    background-color: #f4f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px auto;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.nart-icon-wrapper i {
+    font-size: 34px;
+    color: #11172b;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+.nart-feature-card:hover .nart-icon-wrapper {
+    background-color: #11172b;
+}
+
+.nart-feature-card:hover .nart-icon-wrapper i {
+    color: #ffffff !important;
+}
+
+/* İkon Animasyonları */
+.nart-feature-card:hover .tilt-on-hover {
+    transform: rotate(-15deg) scale(1.05);
+}
+
+@keyframes spinGear {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.nart-feature-card:hover .spin-on-hover {
+    animation: spinGear 3.5s linear infinite;
+}
+
+@keyframes pulseCheck {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+.nart-feature-card:hover .pulse-on-hover {
+    animation: pulseCheck 1.2s ease-in-out infinite;
+}
+
+/* 📋 TEMA FONTUNA ASLA DOKUNMAYAN RENK YÖNETİMİ */
+/* Başlığın kendi orijinal font ailesi ve kalınlığı korunur, sadece hover rengi yönetilir */
+.nart-feature-card h3 {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.nart-feature-card:hover h3 {
+    color: #42adf0 !important;
+}
+
+.nart-feature-card p {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
