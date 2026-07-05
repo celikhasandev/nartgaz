@@ -3108,3 +3108,64 @@ p {
     position: relative;
     z-index: 2;
 }
+
+/* ==========================================================================
+   NART GAZ - FORM İÇİ MİNİMALİST KURUMSAL BİLGİ ROZETLERİ
+   ========================================================================== */
+.nart-contact-mini-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.mini-info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Koyu zeminde şık duran hafif beyazlık */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.mini-info-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #42adf0; /* Sitedeki açık mavi tonu */
+}
+
+/* İkonların şablondaki LineIcons renkleriyle uyumu */
+.mini-info-item i {
+    font-size: 22px;
+    color: #42adf0;
+}
+
+/* Üst bilgilendirme başlığı (Tesis / E-Posta yazısı) */
+.mini-info-item span {
+    display: block;
+    font-size: 10px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin-bottom: 2px !important;
+}
+
+/* Bilgilerin düzgünce listelenmesi */
+.mini-info-item p {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+}
+
+.mini-info-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mini-info-item a:hover {
+    color: #42adf0;
+}

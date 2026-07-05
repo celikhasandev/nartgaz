@@ -373,6 +373,7 @@
 
         <div class="subscribe-wrapper img-bg mb-50">
           <div class="row align-items-center">
+
             <div class="col-xl-6 col-lg-7">
               <div class="section-title mb-15">
                 <h2 class="text-white mb-25"
@@ -383,15 +384,40 @@
                     data-es="Contacto Rápido y Cotización"
                     data-it="Contatto Rapido e Preventivo">Hızlı İletişim ve Teklif</h2>
 
-                <p class="text-white pr-5"
+                <p class="text-white pr-5 mb-30"
                    data-en="Simply fill out the form to request technical support or a price quote for your projects. Our expert team will get back to you as soon as possible."
                    data-ru="Просто заполните форму, чтобы запросить техническую поддержку или коммерческое предложение для ваших проектов. Наша экспертная команда свяжется с вами в кратчайшие сроки."
-                   data-ar="ما عليكم سوى ملء النموذج لطلب الدعم الفني أو عرض أسعار لمشاريعكم. سيتواصل معكم فريق الخبراء لدينا في أقرب وقت ممكن."
+                   data-ar="ما عليكم سوى ملء النموذج لطلب الدعم الفني أو عرض أسعار لمشاريعكم. سيتواصل معكم فريق الخبراء لدينا في أقرب وقت возможно."
                    data-zh="只需填写表单即可为您项目申请技术支持或价格报价。我们的专家团队将尽快与您联系。"
-                   data-es="Simplemente complete el formulario para solicitar soporte técnico o una cotización de precios para sus proyectos. Nuestro equipo de expertos se pondrá en contacto con usted lo antes posible."
+                   data-es="Simplemente complete el formulario para solicitar soporte técnico o una cotización de precios para sus proyectos. Nuestro equipo de expertos se pondrá en contacto con usted lo antes possibile."
                    data-it="Basta compilare il modulo per richiedere supporto tecnico o un preventivo di spesa per i vostri progetti. Il nostro team di esperti vi ricontatterà al più presto.">Projeleriniz için teknik destek almak veya fiyat teklifi istemek için formu doldurmanız yeterli. Uzman ekibimiz en kısa sürede size dönüş yapacaktır.</p>
-              </div>
+
+                <!-- 🔑 GÜNCEL: Tam Adres Eklenmiş Minimalist İletişim Bilgileri Bölümü -->
+                <div class="nart-contact-mini-details">
+
+                  <!-- 📍 Adres Rozeti (Tam Adres İşlendi) -->
+                  <div class="mini-info-item">
+                    <i class="lni lni-map-marker"></i>
+                    <div>
+                      <span data-en="Facility Address" data-ru="Адрес объекта" data-ar="عنوان المنشأة" data-zh="设施地址" data-es="Dirección de la Instalación" data-it="Indirizzo dell'Impianto">Tesis Adresi</span>
+                      <!-- Adres uzun olduğu için font boyutu 13px ile dengelendi -->
+                      <p class="text-white" style="font-size: 13.5px !important; font-weight: 600;">Saray Mahallesi Saraykent Cad. No: 9D Kahramankazan / ANKARA</p>
+                    </div>
+                  </div>
+
+                  <!-- ✉️ E-Posta Rozeti -->
+                  <div class="mini-info-item">
+                    <i class="lni lni-envelope"></i>
+                    <div>
+                      <span data-en="E-Mail" data-ru="Эл. почта" data-ar="البريد الإلكتروني" data-zh="电子邮件" data-es="Correo" data-it="E-mail">E-Posta</span>
+                      <p class="text-white"><a href="mailto:info@nartgaz.com">info@nartgaz.com</a></p>
+                    </div>
+                  </div>
+
+                </div>
+                </div>
             </div>
+
             <div class="col-xl-6 col-lg-5">
               <form id="nartForm" action="https://formspree.io/f/xlgwkvaz" method="POST" class="subscribe-form">
                 <input type="text" name="name" placeholder="Adınız Soyadınız" data-en-placeholder="Your Name and Surname" data-ru-placeholder="Ваше имя и фамилия" data-ar-placeholder="الاسم واللقب" data-zh-placeholder="您的姓名" data-es-placeholder="Su Nombre y Apellido" data-it-placeholder="Il Tuo Nome e Cognome" required style="margin-bottom: 10px; border-radius: 10px;" />
@@ -400,10 +426,10 @@
                 <button type="button" onclick="document.getElementById('nartForm').submit();" class="main-btn btn-hover" data-en="Send Message" data-ru="Отправить сообщение" data-ar="إرسال الرسالة" data-zh="发送留言" data-es="Enviar Mensaje" data-it="Invia Messaggio" style="width: 100%; border: none; display: block; position: relative; z-index: 1;">Mesajı Gönder</button>
               </form>
             </div>
+
           </div>
         </div>
 
-        <!-- Canlı Uydu Haritası HUD Viewport -->
         <div class="row wow fadeInUp" data-wow-delay=".4s">
           <div class="col-lg-12">
             <div class="nart-map-viewport">
