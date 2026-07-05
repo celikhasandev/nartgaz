@@ -2424,16 +2424,17 @@ p {
     /* =========================================================================
    NART GAZ - ULTRA-PREMIUM SİBER ENDÜSTRİYEL HUD VIEWPORT STİLLERİ
    ========================================================================= */
-.nart-tech-viewport {
-  position: relative;
-  background: #090d16;
-  border-radius: 16px;
-  padding: 12px; /* İçerideki teknik çerçeve için boşluk */
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5),
-              0 0 40px rgba(66, 173, 240, 0.05); /* Dışarıya hafif mavi neon parlaması */
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+    .nart-tech-viewport {
+      position: relative;
+      background: #090d16;
+      border-radius: 16px;
+      padding: 12px;
+      margin-top: 25px; /* 🔑 Üst sınıra çarpmaması için 25px esneme payı bırakıldı */
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5),
+                  0 0 40px rgba(66, 173, 240, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
 /* İç Kısımdaki Kesikli Teknik Çizgi */
 .nart-tech-viewport::before {
@@ -2533,13 +2534,16 @@ p {
 .nart-tech-viewport:hover::before {
   border-color: rgba(66, 173, 240, 0.6);
 }
-/* Köşelerdeki braketler dışarı doğru esneyerek derinlik hissi yaratır */
-.nart-tech-viewport:hover .nart-viewport-bracket.tl { transform: translate(-4px, -4px); border-color: #fff; }
-.nart-tech-viewport:hover .nart-viewport-bracket.br { transform: translate(4px, 4px); border-color: #fff; }
+/* Köşelerdeki braketler içeri doğru kapanarak odaklanma hissi yaratır ve üstten taşmayı önler */
+.nart-tech-viewport:hover .nart-viewport-bracket.tl { transform: translate(6px, 6px); border-color: #fff; }
+.nart-tech-viewport:hover .nart-viewport-bracket.br { transform: translate(-6px, -6px); border-color: #fff; }
+
 /* Resmin üzerindeki karanlık filtre kalkar ve fotoğraf tüm gerçekliğiyle netleşir */
 .nart-tech-viewport:hover .nart-viewport-screen::after {
-  background: linear-gradient(135deg, rgba(22, 36, 71, 0.15) 0%, rgba(66, 173, 240, 0.02) 100%);
+  opacity: 0; /* ⚡ Mavi filtre katmanını hover anında %100 tamamen görünmez yapar */
 }
+
+
 /* Fotoğraf hafifçe geri çekilerek sinematik bir alan derinliği sunar */
 .nart-tech-viewport:hover .nart-viewport-screen img {
   transform: scale(1);
