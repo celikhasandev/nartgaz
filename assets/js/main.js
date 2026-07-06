@@ -35,8 +35,8 @@ function nartBilesenleriYukle() {
         }
       }
 
-// 🌟 FIX: Nokta Atışı Kök Link Aktiflik Kontrolü (Çoklu Çizgi Hatası Çözüldü)
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+      // 🌟 FIX: Nokta Atışı Kök Link Aktiflik Kontrolü (Çoklu Çizgi Hatası Çözüldü)
+      const currentPage = window.location.pathname.split("/").pop() || "index.html";
       const currentHash = window.location.hash;
 
       document.querySelectorAll("#nav > li > a").forEach(link => {
@@ -408,11 +408,15 @@ window.nartDilDegistir = function(dil) {
 };
 
 function nartDiliUygula(dil) {
-  // 1. Metin ve Megamenu İçerik Çevirileri (TR, EN, RU, AR, ZH, ES, IT)
+  // 1. Metin, Megamenu ve SVG Grafik İçerik Çevirileri (TR, EN, RU, AR, ZH, ES, IT)
   const elements = document.querySelectorAll('[data-en], [data-ru], [data-ar], [data-zh], [data-es], [data-it]');
   elements.forEach(el => {
+    // 🔑 AKILLI SVG KALKANI: Elemanın bir SVG <text> düğümü olup olmadığını kontrol ediyoruz
+    const isSvgText = el.tagName.toLowerCase() === 'text';
+
     if (!el.getAttribute('data-tr')) {
-      el.setAttribute('data-tr', el.innerHTML);
+      // SVG düğümleri innerHTML kabul etmediği için textContent ile ilk dil kaydını yedekliyoruz
+      el.setAttribute('data-tr', isSvgText ? el.textContent : el.innerHTML);
     }
 
     let targetContent = (dil === 'tr') ? el.getAttribute('data-tr') : el.getAttribute('data-' + dil);
@@ -422,7 +426,10 @@ function nartDiliUygula(dil) {
     }
 
     if (targetContent) {
-      if (targetContent.includes('<')) {
+      // 🔑 AKILLI YAZMA MOTORU: SVG elemanlarına textContent ile güvenli atama yapıyoruz
+      if (isSvgText) {
+        el.textContent = targetContent;
+      } else if (targetContent.includes('<')) {
         el.innerHTML = targetContent;
       } else {
         el.textContent = targetContent;
@@ -465,6 +472,13 @@ function nartDiliUygula(dil) {
     var currentLang = dil.toLowerCase();
 
     textEl.innerHTML = (flags[currentLang] || '') + (displayTexts[currentLang] || dil.toUpperCase());
+  }
+  // 4. Harici Dinamik SVG Görsel Değiştirici Motoru (7 Dil - Alt Klasör Korumalı)
+  const rmsGorsel = document.getElementById('nart-rms-gorsel');
+  if (rmsGorsel) {
+    const prefix = window.location.pathname.includes('/products/') ? '../' : '';
+    // Klasör yolunun arasına jilet gibi 'rms/' dizinini ekledik
+    rmsGorsel.setAttribute('src', prefix + 'assets/img/rms/rms-' + dil.toLowerCase() + '.svg');
   }
 }
 

@@ -74,20 +74,26 @@
         </filter>
     </defs>
 
+    <!-- Ana Boru Hattı Şasisi (Arka Plan Tamamen Şeffaftır) -->
     <g id="pipeline-group" transform="translate(0, 350)">
+        <!-- Üst ve Alt İnce Teknik Kılavuz Çizgileri -->
+        <!-- Üst ve Alt Kılavuz Çizgileri (Hem boruya hem kadrana 10px eşit mesafede) -->
         <path d="M 50 -45 L 478 -45 A 130 130 0 0 1 550 -120" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="4" />
         <path d="M 50 45 L 478 45 A 130 130 0 0 0 550 120" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="4" opacity="0.9" />
 
+        <!-- Yatay Ana Boru Gövdesi -->
         <rect x="0" y="-35" width="1200" height="70" fill="url(#pipeGradient)" rx="4" />
         <line x1="0" y1="-35" x2="1200" y2="-35" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
         <line x1="0" y1="35" x2="1200" y2="35" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" />
 
+        <!-- Gaz Akışı: Giriş (Yüksek Basınç - Canlı & Hızlı) -->
         <g id="inlet-flow" filter="url(#neon-glow)">
             <line x1="0" y1="-15" x2="520" y2="-15" class="flow-inlet" stroke-width="4" />
             <line x1="0" y1="0" x2="520" y2="0" class="flow-inlet" stroke-width="4" />
             <line x1="0" y1="15" x2="520" y2="15" class="flow-inlet" stroke-width="4" />
         </g>
 
+        <!-- Gaz Akışı: Çıkış (Düşük Basınç - Regüle Edilmiş & Sakin) -->
         <g id="outlet-flow">
             <line x1="680" y1="-15" x2="1200" y2="-15" class="flow-outlet" stroke-width="3" />
             <line x1="680" y1="0" x2="1200" y2="0" class="flow-outlet" stroke-width="3" />
@@ -95,10 +101,13 @@
         </g>
     </g>
 
+    <!-- Merkez Üssü: RMS Basınç Regülatör Modülü -->
     <g id="regulator-widget" transform="translate(600, 350)">
+        <!-- Kadran Gövdesi -->
         <circle r="120" fill="#0F172A" stroke="rgba(255, 255, 255, 0.15)" stroke-width="4" />
         <circle r="115" fill="none" stroke="#00FFFF" stroke-width="1" stroke-dasharray="2, 4" opacity="0.5" />
 
+        <!-- Saf CSS ile Oluşturulmuş Teknik Ölçüm Çizgileri (Ticks) -->
         <g id="ticks">
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255, 255, 255, 0.15)" stroke-width="6" transform="rotate(-120)" />
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255, 255, 255, 0.15)" stroke-width="6" transform="rotate(-105)" />
@@ -112,6 +121,7 @@
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255, 255, 255, 0.15)" stroke-width="6" transform="rotate(15)" />
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255, 255, 255, 0.15)" stroke-width="6" transform="rotate(30)" />
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255, 255, 255, 0.15)" stroke-width="6" transform="rotate(45)" />
+            <!-- Kritik Basınç Bölgesi Çizgileri (Kırmızımsı) -->
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255,0,0,0.5)" stroke-width="6" transform="rotate(60)" />
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255,0,0,0.5)" stroke-width="6" transform="rotate(75)" />
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255,0,0,0.5)" stroke-width="6" transform="rotate(90)" />
@@ -119,60 +129,41 @@
             <line x1="0" y1="-110" x2="0" y2="-100" stroke="rgba(255,0,0,0.5)" stroke-width="6" transform="rotate(120)" />
         </g>
 
+        <!-- Canlı Titreyen İbre Katmanı -->
         <g id="needle-group">
             <line x1="0" y1="0" x2="0" y2="-90" stroke="#00FFFF" stroke-width="6" stroke-linecap="round" class="status-glow" />
             <circle r="6" fill="#00FFFF" />
         </g>
 
+        <!-- Dijital Değer Metinleri -->
         <text y="48" text-anchor="middle" class="value-text" style="font-weight: 600;">4.0 bar</text>
-
-        <text y="68" text-anchor="middle" font-size="20" fill="#94A3B8" style="font-family: 'Inter', sans-serif; letter-spacing: 2px; font-weight: bold;"
-              data-en="REGULATING"
-              data-ru="РЕГУЛИРОВАНИЕ"
-              data-ar="تنظيم"
-              data-zh="调节中"
-              data-es="REGULANDO"
-              data-it="REGOLAZIONE">REGÜLASYON</text>
+        <text y="68" text-anchor="middle" font-size="20" fill="#94A3B8" style="font-family: 'Inter', sans-serif; letter-spacing: 2px; font-weight: bold;">REGOLAZIONE</text>
     </g>
 
+    <!-- Sol Giriş Bilgi Etiketleri (Yukarı taşındı ve arası açıldı) -->
     <g transform="translate(100, 230)">
-        <text y="15" class="label-text"
-              data-en="Inlet"
-              data-ru="Вход"
-              data-ar="المدخل"
-              data-zh="进口"
-              data-es="Entrada"
-              data-it="Ingresso">GİRİŞ</text>
+        <text y="15" class="label-text">PRESSIONE DI INGRESSO</text>
         <text y="55" class="value-text" fill="#00FFFF" style="font-weight: bold;">20.0 Bar</text>
         <path d="M 0 65 L 150 65" stroke="#00FFFF" stroke-width="1" opacity="0.6" />
     </g>
 
-    <g transform="translate(950, 230)">
-        <text y="15" class="label-text" text-anchor="end"
-              data-en="Outlet"
-              data-ru="Выход"
-              data-ar="المخرج"
-              data-zh="出口"
-              data-es="Salida"
-              data-it="Uscita">ÇIKIŞ</text>
+    <!-- Sağ Çıkış Bilgi Etiketleri (Yukarı taşındı ve arası açıldı) -->
+    <g transform="translate(1150, 230)">
+        <text y="15" class="label-text" text-anchor="end">PRESSIONE DI USCITA</text>
         <text y="55" x="0" class="value-text" text-anchor="end" fill="#22D3EE" style="font-weight: bold;">4.00 Bar</text>
         <path d="M -150 65 L 0 65" stroke="#22D3EE" stroke-width="1" opacity="0.6" />
     </g>
 
-    <text x="50" y="60" class="label-text" style="font-size: 28px; fill: #fff; font-weight: bold;">RMS-A/B/C STATIONS</text>
-    <text x="50" y="85" class="label-text" style="font-size: 16px; fill: #64748b;">NART GAZ // HIGH-TECH REGULATION SYSTEM</text>
+    <!-- Kurumsal Metadata Bilgileri -->
+    <text x="50" y="60" class="label-text" style="font-size: 28px; fill: #fff; font-weight: bold;">STAZIONI RMS-A/B/C</text>
+    <text x="50" y="85" class="label-text" style="font-size: 16px; fill: #64748b;">NART GAZ // SISTEMA DI REGOLAZIONE AD ALTA TECNOLOGIA</text>
 
-    <g transform="translate(1000, 45)">
-        <rect width="185" height="50" rx="25" fill="rgba(0,255,255,0.06)" stroke="#00FFFF" stroke-width="1" />
+    <!-- Sağ Üst Canlı Veri Sinyal Rozeti -->
+    <g transform="translate(989, 45)">
+        <rect width="210" height="50" rx="25" fill="rgba(0,255,255,0.06)" stroke="#00FFFF" stroke-width="1" />
         <circle cx="15" cy="25" r="4" fill="#00FFFF">
             <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" />
         </circle>
-        <text x="35" y="30" fill="#00FFFF" font-family="'Inter', sans-serif" font-size="20" font-weight="bold" letter-spacing="1"
-              data-en="LIVE DATA"
-              data-ru="ЖИВЫЕ ДАННЫЕ"
-              data-ar="بيانات حية"
-              data-zh="实时数据"
-              data-es="DATOS EN VIVO"
-              data-it="DATI IN DIRETTA">CANLI VERİ</text>
+        <text x="35" y="30" fill="#00FFFF" font-family="'Inter', sans-serif" font-size="20" font-weight="bold" letter-spacing="1">DATI IN DIRETTA</text>
     </g>
 </svg>
