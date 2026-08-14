@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Gas Station Operation Animation</title>
+    <style>
+        :root {
+            --bg: #0F172A;
+            --pipe: #475569;
+            --pipe-inner: #1E293B;
+            --gas: #38BDF8;
+            --accent: #F59E0B;
+            --danger: #EF4444;
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            max-width: 1200px;
+            filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+        }
+
+        .label {
+            font-size: 14px;
+            fill: var(--text-main);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .sub-label {
+            font-size: 10px;
+            fill: var(--text-dim);
+        }
+
+        .gauge-text {
+            font-size: 12px;
+            fill: var(--gas);
+            font-weight: bold;
+        }
+
+        /* Gas Flow Animation */
+        .gas-particle {
+            fill: var(--gas);
+            filter: blur(1px);
+        }
+
+        /* Regulator Pulse */
+        .regulator-active {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; stroke-width: 2; }
+            50% { opacity: 0.5; stroke-width: 4; }
+            100% { opacity: 1; stroke-width: 2; }
+        }
+
+        .panel {
+            fill: #1E293B;
+            stroke: #334155;
+            stroke-width: 1;
+        }
+
+        .status-light {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background Grid -->
+        <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1"/>
+            </pattern>
+
+            <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#64748b;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+            </linearGradient>
+
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+
+        <rect width="1200" height="700" fill="url(#grid)" />
+
+        <!-- Title & Info -->
+        <g transform="translate(50, 60)">
+            <text class="label" style="font-size: 24px;">NATURAL GAS PRESSURE REGULATION STATION</text>
+            <text x="0" y="25" class="sub-label">RMS-A / RMS-B TYPE SYSTEM MONITORING</text>
+            <rect x="0" y="40" width="300" height="2" fill="var(--gas)" />
+        </g>
+
+        <!-- Complex Piping System -->
+        <g id="pipes">
+            <!-- Main Inlet -->
+            <path d="M 0 350 L 150 350" stroke="url(#pipeGrad)" stroke-width="40" fill="none" />
+            <text x="20" y="320" class="label">INLET (High Pressure)</text>
+            <text x="20" y="385" class="sub-label">70-100 BAR</text>
+
+            <!-- Filter Section -->
+            <rect x="150" y="300" width="100" height="100" rx="10" class="panel" />
+            <path d="M 170 310 L 230 390 M 170 390 L 230 310" stroke="var(--text-dim)" stroke-width="2" />
+            <text x="200" y="290" class="label" text-anchor="middle">FILTRATION</text>
+
+            <!-- Pipe after filter splitting -->
+            <path d="M 250 350 L 350 350 L 350 200 L 450 200" stroke="url(#pipeGrad)" stroke-width="34" fill="none" />
+            <path d="M 350 350 L 350 500 L 450 500" stroke="url(#pipeGrad)" stroke-width="34" fill="none" />
+
+            <!-- Regulator 1 (Top) -->
+            <g id="regulator-1">
+                <rect x="450" y="150" width="120" height="100" rx="5" class="panel" />
+                <circle cx="510" cy="180" r="25" fill="#0F172A" stroke="var(--accent)" stroke-width="3" class="regulator-active" />
+                <path d="M 510 180 L 510 165" stroke="var(--accent)" stroke-width="3" transform-origin="510 180" id="needle-1" />
+                <text x="510" y="240" class="label" text-anchor="middle">REGULATOR A</text>
+            </g>
+
+            <!-- Regulator 2 (Bottom) -->
+            <g id="regulator-2">
+                <rect x="450" y="450" width="120" height="100" rx="5" class="panel" />
+                <circle cx="510" cy="480" r="25" fill="#0F172A" stroke="var(--accent)" stroke-width="3" />
+                <path d="M 510 480 L 510 465" stroke="var(--accent)" stroke-width="3" transform-origin="510 480" id="needle-2" />
+                <text x="510" y="540" class="label" text-anchor="middle">REGULATOR B</text>
+            </g>
+
+            <!-- Pipes after regulators -->
+            <path d="M 570 200 L 700 200 L 700 350" stroke="url(#pipeGrad)" stroke-width="28" fill="none" />
+            <path d="M 570 500 L 700 500 L 700 350" stroke="url(#pipeGrad)" stroke-width="28" fill="none" />
+
+            <!-- Flow Meter -->
+            <path d="M 700 350 L 900 350" stroke="url(#pipeGrad)" stroke-width="28" fill="none" />
+            <rect x="750" y="310" width="100" height="80" rx="5" class="panel" />
+            <text x="800" y="345" class="gauge-text" id="flow-val" text-anchor="middle">12,450</text>
+            <text x="800" y="365" class="sub-label" text-anchor="middle">m³/h</text>
+            <text x="800" y="300" class="label" text-anchor="middle">METERING</text>
+
+            <!-- Outlet -->
+            <path d="M 900 350 L 1200 350" stroke="url(#pipeGrad)" stroke-width="28" fill="none" />
+            <text x="1050" y="320" class="label">OUTLET (Low Pressure)</text>
+            <text x="1050" y="385" class="sub-label">4-10 BAR</text>
+        </g>
+
+        <!-- Dynamic Gas Particles Container -->
+        <g id="gas-particles"></g>
+
+        <!-- Status Panel -->
+        <g transform="translate(900, 500)">
+            <rect width="250" height="150" rx="10" fill="#1E293B" stroke="#334155" />
+            <text x="20" y="30" class="label">SYSTEM STATUS</text>
+
+            <circle cx="30" cy="60" r="6" fill="#22C55E" class="status-light" />
+            <text x="50" y="65" class="sub-label" fill="#fff">FLOW: ACTIVE</text>
+
+            <circle cx="30" cy="90" r="6" fill="#22C55E" />
+            <text x="50" y="95" class="sub-label" fill="#fff">TEMP: 15.4°C</text>
+
+            <rect x="20" y="115" width="210" height="20" rx="4" fill="#0F172A" />
+            <text x="30" y="130" class="sub-label" fill="var(--gas)">ODORIZATION: NORMAL</text>
+        </g>
+    </svg>
+</div>
+
+<script>
+    const particleContainer = document.getElementById('gas-particles');
+    const particles = [];
+    const particleCount = 120;
+
+    // Define the complex path for particles
+    // Path 1: Inlet -> Top Regulator -> Outlet
+    // Path 2: Inlet -> Bottom Regulator -> Outlet
+    function getGasPath(id) {
+        const isTop = id % 2 === 0;
+        if (isTop) {
+            return [
+                {x: 0, y: 350}, {x: 350, y: 350}, {x: 350, y: 200},
+                {x: 510, y: 200, slow: true}, // Regulator point
+                {x: 700, y: 200}, {x: 700, y: 350}, {x: 1200, y: 350}
+            ];
+        } else {
+            return [
+                {x: 0, y: 350}, {x: 350, y: 350}, {x: 350, y: 500},
+                {x: 510, y: 500, slow: true}, // Regulator point
+                {x: 700, y: 500}, {x: 700, y: 350}, {x: 1200, y: 350}
+            ];
+        }
+    }
+
+    class Particle {
+        constructor(id) {
+            this.id = id;
+            this.reset();
+            this.el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            this.el.setAttribute("r", Math.random() * 3 + 1);
+            this.el.setAttribute("class", "gas-particle");
+            particleContainer.appendChild(this.el);
+        }
+
+        reset() {
+            this.pathPoints = getGasPath(this.id);
+            this.segment = 0;
+            this.progress = Math.random(); // Start at random position for flow look
+            this.x = this.pathPoints[0].x;
+            this.y = this.pathPoints[0].y;
+            // Base speeds
+            this.speed = 0.01 + Math.random() * 0.005;
+        }
+
+        update() {
+            let currentPoint = this.pathPoints[this.segment];
+            let nextPoint = this.pathPoints[this.segment + 1];
+
+            if (!nextPoint) {
+                this.reset();
+                this.progress = 0;
+                return;
+            }
+
+            // Regulator Logic: Slow down when passing through regulator area
+            let actualSpeed = this.speed;
+            if (currentPoint.slow) {
+                actualSpeed *= 0.25; // Significant slowdown at regulator
+            } else if (this.segment > 3) {
+                actualSpeed *= 0.6; // Post-regulation flow is slower/controlled
+            }
+
+            this.progress += actualSpeed;
+
+            if (this.progress >= 1) {
+                this.progress = 0;
+                this.segment++;
+            } else {
+                this.x = currentPoint.x + (nextPoint.x - currentPoint.x) * this.progress;
+                this.y = currentPoint.y + (nextPoint.y - currentPoint.y) * this.progress;
+
+                // Add some "gas wiggle"
+                const wiggle = Math.sin(Date.now() * 0.01 + this.id) * 2;
+                this.el.setAttribute("cx", this.x);
+                this.el.setAttribute("cy", this.y + wiggle);
+
+                // Change opacity based on pressure (visual representation)
+                // High pressure = more opaque, Low pressure = more transparent
+                const opacity = this.segment <= 3 ? 0.9 : 0.4;
+                this.el.setAttribute("opacity", opacity);
+            }
+        }
+    }
+
+    // Initialize particles
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle(i));
+    }
+
+    // Gauges and UI updates
+    const flowVal = document.getElementById('flow-val');
+    const needle1 = document.getElementById('needle-1');
+    const needle2 = document.getElementById('needle-2');
+
+    function updateUI() {
+        // Update flow number
+        const val = 12450 + Math.sin(Date.now() * 0.001) * 50;
+        flowVal.textContent = Math.floor(val).toLocaleString();
+
+        // Jiggle needles
+        const angle1 = Math.sin(Date.now() * 0.005) * 20 - 10;
+        const angle2 = Math.sin(Date.now() * 0.002) * 5 - 2;
+        needle1.setAttribute("transform", `rotate(${angle1})`);
+        needle2.setAttribute("transform", `rotate(${angle2})`);
+    }
+
+    // Main Loop
+    function animate() {
+        particles.forEach(p => p.update());
+        updateUI();
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+</body>
+
+</html>

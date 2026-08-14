@@ -398,7 +398,7 @@ function loadScript(src) {
 }
 
 // ====================================================================================
-// 4. BÖLÜM: DİL MOTORU VE ANA BAŞLATICI SENKRONİZASYONU (7-LANGUAGE MASTER LOCALIZATION)
+// 4. BÖLÜM: DİL MOTORU VE ANA BAŞLATICI SENKRONİZASYONU (8-LANGUAGE MASTER LOCALIZATION)
 // ====================================================================================
 const NART_LANG_KEY = 'nart_secilen_dil';
 
@@ -408,8 +408,8 @@ window.nartDilDegistir = function(dil) {
 };
 
 function nartDiliUygula(dil) {
-  // 1. Metin, Megamenu ve SVG Grafik İçerik Çevirileri (TR, EN, RU, AR, ZH, ES, IT)
-  const elements = document.querySelectorAll('[data-en], [data-ru], [data-ar], [data-zh], [data-es], [data-it]');
+  // 1. Metin, Megamenu ve SVG Grafik İçerik Çevirileri (TR, EN, RU, AR, ZH, ES, IT, HI)
+  const elements = document.querySelectorAll('[data-en], [data-ru], [data-ar], [data-zh], [data-es], [data-it], [data-hi]');
   elements.forEach(el => {
     // 🔑 AKILLI SVG KALKANI: Elemanın bir SVG <text> düğümü olup olmadığını kontrol ediyoruz
     const isSvgText = el.tagName.toLowerCase() === 'text';
@@ -438,7 +438,7 @@ function nartDiliUygula(dil) {
   });
 
   // 2. İletişim Formu Giriş Alanları (Placeholder) Çevirileri
-  const inputs = document.querySelectorAll('[data-en-placeholder], [data-ru-placeholder], [data-ar-placeholder], [data-zh-placeholder], [data-es-placeholder], [data-it-placeholder]');
+  const inputs = document.querySelectorAll('[data-en-placeholder], [data-ru-placeholder], [data-ar-placeholder], [data-zh-placeholder], [data-es-placeholder], [data-it-placeholder], [data-hi-placeholder]');
   inputs.forEach(input => {
     if (!input.getAttribute('data-tr-placeholder')) {
       input.setAttribute('data-tr-placeholder', input.getAttribute('placeholder') || '');
@@ -455,7 +455,7 @@ function nartDiliUygula(dil) {
     }
   });
 
-  // 3. Üst Menüdeki Bayrak ve Yazı Motoru (Sözdizimi Tamamen Güvenli)
+  // 3. Üst Menüdeki Bayrak ve Yazı Motoru (Hintçe HI Bayrağı eklendi)
   var textEl = document.getElementById('nart-active-lang-text');
   if (textEl) {
     var flags = {
@@ -465,19 +465,19 @@ function nartDiliUygula(dil) {
       ar: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#fff"/><rect width="3" height="0.66" fill="#731412"/><rect width="3" height="0.66" y="1.33" fill="#000"/><path d="M 0,0 L 0.75,1 L 0,2 Z" fill="#114a2b"/></svg>',
       zh: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="30" height="20" fill="#de2110"/><path d="M5 5L3.4 6.2l.6-1.9-1.6-1.2h2l.6-1.9.6 1.9h2l-1.6 1.2.6 1.9zm5-2.5l-.2 1 .4-.9.7.5-.9.1.2 1-.5-.8-.8.6.6-.7-.5-.8h1zm2 2.5l-.6.8.1-1 .9.2-.8-.6.6-.8-.3.9-.9-.5.9-.2zm1 3l-.9.4.5-.8.6.7-.9-.1-.2 1-.1-.9-.9.4.8-.5zm-3 2l-.9-.4.9-.1-.1-.9.6.8.9-.5-.5.9.6.7-1-.1z" fill="#ffde00"/></svg>',
       es: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>',
-      it: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>'
+      it: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>',
+      hi: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="900" height="600" fill="#f93"/><rect width="900" height="400" y="200" fill="#fff"/><rect width="900" height="200" y="400" fill="#128807"/><circle cx="450" cy="300" r="90" fill="none" stroke="#008" stroke-width="12"/></svg>'
     };
 
-    var displayTexts = { tr: 'TR', en: 'EN', ru: 'RU', ar: 'AR', zh: 'ZH', es: 'ES', it: 'IT' };
+    var displayTexts = { tr: 'TR', en: 'EN', ru: 'RU', ar: 'AR', zh: 'ZH', es: 'ES', it: 'IT', hi: 'HI' };
     var currentLang = dil.toLowerCase();
 
     textEl.innerHTML = (flags[currentLang] || '') + (displayTexts[currentLang] || dil.toUpperCase());
   }
-  // 4. Harici Dinamik SVG Görsel Değiştirici Motoru (7 Dil - Alt Klasör Korumalı)
+  // 4. Harici Dinamik SVG Görsel Değiştirici Motoru (8 Dil - Alt Klasör Korumalı)
   const rmsGorsel = document.getElementById('nart-rms-gorsel');
   if (rmsGorsel) {
     const prefix = window.location.pathname.includes('/products/') ? '../' : '';
-    // Klasör yolunun arasına jilet gibi 'rms/' dizinini ekledik
     rmsGorsel.setAttribute('src', prefix + 'assets/img/rms/rms-' + dil.toLowerCase() + '.svg');
   }
 }
@@ -488,11 +488,10 @@ document.addEventListener("DOMContentLoaded", function() {
       initOrijinalTemaMekanizmasi();
       window.checkCookieConsent();
 
-      // ⚙️ Kapsam (Scope) hatası yaşanmaması için doğrudan string key ile dili çekiyoruz
       const defaultLang = localStorage.getItem('nart_secilen_dil') || 'tr';
       nartDiliUygula(defaultLang);
 
-      console.log("Nart Gaz: 6 Dilli lokalizasyon ve bileşen kalkanı başarıyla devreye alındı.");
+      console.log("Nart Gaz: 8 Dilli lokalizasyon ve bileşen kalkanı başarıyla devreye alındı.");
     })
     .catch(err => { console.error("Sistem başlatma hatası:", err); });
 });
