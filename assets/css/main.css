@@ -3169,3 +3169,20 @@ p {
 .mini-info-item a:hover {
     color: #42adf0;
 }
+
+/* 📱 Mobil Menü Kaydırma ve Taşma Düzeltmesi */
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      max-height: calc(100vh - 100px) !important; /* Ekran boyunu aşmasını engeller */
+      overflow-y: auto !important;                /* Menünün kendi içinde kaymasını sağlar */
+      -webkit-overflow-scrolling: touch;          /* iOS Safari için akıcı kaydırma */
+      overscroll-behavior: contain;              /* Kaydırmanın arkadaki sayfaya geçmesini önler */
+      padding-bottom: 30px;
+    }
+
+    .megamenu {
+      max-height: none !important;
+      overflow: visible !important;
+      position: static !important;
+    }
+  }

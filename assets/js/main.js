@@ -1,11 +1,9 @@
 // ====================================================================================
-// 1. BÖLÜM: DİNAMİK BİLEŞEN YÜKLEYİCİ & AKILLI YOL DÜZELTME MOTORU (ROUTE AUTO-FIX)
+// 1. BÖLÜM: DİNAMİK BİLEŞEN YÜKLEYİCİ & AKILLI YOL DÜZELTME MOTORU
 // ====================================================================================
 function nartBilesenleriYukle() {
-  // 🌐 KLASÖR DERİNLİK KALKANI: Eğer /products/ klasöründeysek otomatik '../' prefix üretir
   const prefix = window.location.pathname.includes('/products/') ? '../' : '';
 
-  // 1. Üst Menüyü (Header) İnternetten Çekiyoruz
   return fetch(prefix + 'components/header.html')
     .then(response => {
       if (!response.ok) throw new Error('Header dosyası bulunamadı.');
@@ -16,16 +14,13 @@ function nartBilesenleriYukle() {
       if (headerContainer) {
         headerContainer.innerHTML = headerHtml;
 
-        // Eğer alt klasördeysek header içindeki tüm göreli resim ve link yollarını otomatik tamir et
         if (prefix) {
-          // Logoları ve görselleri düzelt (products/assets/... hatasını engeller)
           headerContainer.querySelectorAll('img').forEach(img => {
             const src = img.getAttribute('src');
             if (src && !src.startsWith('http') && !src.startsWith('data:') && !src.startsWith('../')) {
               img.setAttribute('src', prefix + src);
             }
           });
-          // Menü linklerini düzelt (products/certificates.html hatasını kökten çözer)
           headerContainer.querySelectorAll('a').forEach(link => {
             const href = link.getAttribute('href');
             if (href && !href.startsWith('http') && !href.startsWith('javascript') && !href.startsWith('#') && !href.startsWith('../')) {
@@ -35,7 +30,7 @@ function nartBilesenleriYukle() {
         }
       }
 
-      // 🌟 FIX: Nokta Atışı Kök Link Aktiflik Kontrolü (Çoklu Çizgi Hatası Çözüldü)
+      // Aktif Menü Linki Tespiti
       const currentPage = window.location.pathname.split("/").pop() || "index.html";
       const currentHash = window.location.hash;
 
@@ -43,33 +38,21 @@ function nartBilesenleriYukle() {
         let href = link.getAttribute("href");
         if (!href) return;
 
-        // Eğer alt klasör kalkanı linkin başına '../' eklediyse temizle ki saf karşılaştırma yapalım
         if (prefix && href.startsWith(prefix)) { href = href.substring(prefix.length); }
-
-        // Link yollarını parçala (Örn: 'index.html#why' -> Sayfa: 'index.html', Hash: '#why')
         const hrefPage = href.split('#')[0] || "index.html";
         const hrefHash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
 
-        // İlk yüklemede kafasına göre eklenen tüm aktif sınıflarını temizle
         link.classList.remove("active");
 
         if (currentPage === "index.html") {
-          // Eğer ana sayfadaysak ve adreste özel bir hash (#why vb.) varsa sadece onu yakala
-          if (currentHash) {
-            if (hrefHash === currentHash) link.classList.add("active");
-          } else {
-            // Eğer doğrudan logoya basıp düz ana sayfaya geldiysek SADECE Anasayfa (#home) çizilsin
-            if (hrefHash === "#home") link.classList.add("active");
-          }
-        } else {
-          // Diğer iç sayfalardaysak (about.html, certificates.html vb.) tam dosya adı eşleşmesine bak
-          if (hrefPage === currentPage) {
-            link.classList.add("active");
-          }
+          if (currentHash && hrefHash === currentHash) link.classList.add("active");
+          else if (!currentHash && hrefHash === "#home") link.classList.add("active");
+        } else if (hrefPage === currentPage) {
+          link.classList.add("active");
         }
       });
 
-      // 🌐 DİL DUYARLI MEGAMENÜ TAKİP MOTORU
+      // Megamenü Hover
       const megaIcon = document.getElementById('nart-mega-preview-icon');
       const megaImg = document.getElementById('nart-mega-preview-img');
       const megaText = document.getElementById('nart-mega-preview-text');
@@ -79,14 +62,13 @@ function nartBilesenleriYukle() {
           link.addEventListener('mouseenter', function() {
             const targetImg = this.getAttribute('data-preview');
             const currentLang = localStorage.getItem('nart_secilen_dil') || 'tr';
-
             const targetTitle = currentLang === 'en'
               ? (this.getAttribute('data-en-title') || this.getAttribute('data-title'))
               : this.getAttribute('data-title');
 
             if (targetImg) {
               megaIcon.style.display = 'none';
-              megaImg.src = prefix + targetImg; // Alt klasör görsel önizleme fix'i
+              megaImg.src = prefix + targetImg;
               megaImg.style.display = 'block';
             }
             if (targetTitle) {
@@ -95,26 +77,22 @@ function nartBilesenleriYukle() {
           });
         });
 
-        // Mouse megamenü dışına çıktığında varsayılan fabrika görseline geri döndürme motoru
         const megaMenuContainer = document.querySelector('.megamenu');
         if (megaMenuContainer) {
           megaMenuContainer.addEventListener('mouseleave', function() {
-            // İkonu gizli tutuyoruz, resim alanına default görselimizi basıyoruz
             megaIcon.style.display = 'none';
-            megaImg.src = prefix + 'assets/img/hero/nartgaz-1.png'; // Alt klasör korumalı yol yapısı
+            megaImg.src = prefix + 'assets/img/hero/nartgaz-1.png';
             megaImg.style.display = 'block';
 
             const currentLang = localStorage.getItem('nart_secilen_dil') || 'tr';
-            if (currentLang === 'en') {
-              megaText.textContent = megaText.getAttribute('data-en') || "Our Products";
-            } else {
-              megaText.textContent = megaText.getAttribute('data-tr') || "Ürün Gruplarımız";
-            }
+            megaText.textContent = (currentLang === 'en')
+              ? (megaText.getAttribute('data-en') || "Our Products")
+              : (megaText.getAttribute('data-tr') || "Ürün Gruplarımız");
           });
         }
       }
 
-      // 📱 RESPONSIVE MOBİL AKORDEON MOTORU
+      // Responsive Mobil Menü
       const nartNavRoot = document.getElementById('nav');
       if (nartNavRoot) {
         nartNavRoot.addEventListener('click', function(e) {
@@ -142,7 +120,6 @@ function nartBilesenleriYukle() {
       }
     })
     .then(() => {
-      // 2. Alt Bilgiyi (Footer) Çekiyoruz
       return fetch(prefix + 'components/footer.html')
         .then(response => response.text())
         .then(footerHtml => {
@@ -150,17 +127,13 @@ function nartBilesenleriYukle() {
           if (footerContainer) {
             footerContainer.innerHTML = footerHtml;
 
-            // 🌟 SİHİRLİ DOKUNUŞ: Alt klasördeysek footer içindeki logo resmini ve linkleri otomatik tamir et
             if (prefix) {
-              // Footer içi resimleri tamir et (Kırık beyaz logo sorununu kökten çözer)
               footerContainer.querySelectorAll('img').forEach(img => {
                 const src = img.getAttribute('src');
                 if (src && !src.startsWith('http') && !src.startsWith('data:') && !src.startsWith('../')) {
                   img.setAttribute('src', prefix + src);
                 }
               });
-
-              // Footer içi linkleri tamir et
               footerContainer.querySelectorAll('a').forEach(link => {
                 const href = link.getAttribute('href');
                 if (href && !href.startsWith('http') && !href.startsWith('javascript') && !href.startsWith('#') && !href.startsWith('../')) {
@@ -172,233 +145,202 @@ function nartBilesenleriYukle() {
         });
     })
     .then(() => {
-      // 3. Çerez Sözleşmesini (Cookie) Çekiyoruz
       return fetch(prefix + 'components/cookie.html')
         .then(response => {
-          if (!response.ok) throw new Error('Cookie HTML dosyası bulunamadı.');
+          if (!response.ok) throw new Error('Cookie dosyası bulunamadı.');
           return response.text();
         })
         .then(cookieHtml => {
-          const cookieWrapper = document.createElement('div');
-          cookieWrapper.id = 'nart-cookie-wrapper';
-          cookieWrapper.innerHTML = cookieHtml;
-          document.body.appendChild(cookieWrapper);
+          if (!document.getElementById('nart-cookie-wrapper')) {
+            const cookieWrapper = document.createElement('div');
+            cookieWrapper.id = 'nart-cookie-wrapper';
+            cookieWrapper.innerHTML = cookieHtml;
+            document.body.appendChild(cookieWrapper);
+          }
         });
     });
 }
 
 // ====================================================================================
-// 2. BÖLÜM: ORİJİNAL TEMA FONKSİYONLARI (SCROLL VE ÇAPRAZ SAYFA GEÇİŞ ÇÖZÜMÜ)
+// 2. BÖLÜM: BELLEK DOSTU TEMA & SCROLL MOTORU (THROTTLED & OPTIMIZED)
 // ====================================================================================
 function initOrijinalTemaMekanizmasi() {
-  // 🌟 FIX: Prefix değişkenini en tepeye taşıdık ki çapraz link kalkanı hata vermesin
   const prefix = window.location.pathname.includes('/products/') ? '../' : '';
 
-  window.setTimeout(fadeout, 500);
-  function fadeout() {
+  setTimeout(() => {
     const preloader = document.querySelector(".preloader");
-    if(preloader) { preloader.style.opacity = "0"; preloader.style.display = "none"; }
-  }
+    if (preloader) { preloader.style.opacity = "0"; preloader.style.display = "none"; }
+  }, 300);
 
-  // Sticky Navbar Efekti & Aşağı Kaydırınca Derinlik Uyumlu Logo Değişimi
-  window.onscroll = function () {
-    const header_navbar = document.querySelector(".navbar-area");
-    const logo = document.querySelector(".navbar-brand img");
-    const scrollText = document.querySelector(".scroll-only-text");
-    const backToTo = document.querySelector(".scroll-top");
-
-    if(header_navbar && logo) {
-      const sticky = header_navbar.offsetTop || 0;
-      if (window.pageYOffset > sticky) {
-          header_navbar.classList.add("sticky");
-          logo.src = prefix + "assets/img/logo/nart_renkli.svg";
-          if(scrollText) scrollText.style.display = "inline-block";
-      } else {
-          header_navbar.classList.remove("sticky");
-          logo.src = prefix + "assets/img/logo/nart_beyaz.svg";
-          if(scrollText) scrollText.style.display = "none";
+  // Performanslı Scroll (requestAnimationFrame ile RAM sızıntısı engellendi)
+  let isScrolling = false;
+  const header_navbar = document.querySelector(".navbar-area");
+  const logo = document.querySelector(".navbar-brand img");
+  const scrollText = document.querySelector(".scroll-only-text");
+  const backToTop = document.querySelector(".scroll-top");
+  const sections = Array.from(document.querySelectorAll(".page-scroll"))
+    .map(link => {
+      const href = link.getAttribute("href");
+      if (href && href.includes("#")) {
+        const target = document.querySelector(href.substring(href.indexOf('#')));
+        return target ? { link, target } : null;
       }
-    }
+      return null;
+    })
+    .filter(Boolean);
 
-    if(backToTo) {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        backToTo.style.display = "flex";
-      } else {
-        backToTo.style.display = "none";
-      }
-    }
-  };
+  window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-  // 🌟 SİHİRLİ DOKUNUŞ: Sayfalar Arası Çapraz Geçişli Smooth Scroll Mekanizması
-  const pageLink = document.querySelectorAll(".page-scroll");
-  pageLink.forEach((elem) => {
+        // Sticky Navbar & Logo
+        if (header_navbar && logo) {
+          if (scrollPos > 50) {
+            header_navbar.classList.add("sticky");
+            logo.src = prefix + "assets/img/logo/nart_renkli.svg";
+            if (scrollText) scrollText.style.display = "inline-block";
+          } else {
+            header_navbar.classList.remove("sticky");
+            logo.src = prefix + "assets/img/logo/nart_beyaz.svg";
+            if (scrollText) scrollText.style.display = "none";
+          }
+        }
+
+        // Back to top butonu
+        if (backToTop) {
+          backToTop.style.display = scrollPos > 200 ? "flex" : "none";
+        }
+
+        // Scroll Spy
+        const scrollWithOffset = scrollPos + 100;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const item = sections[i];
+          if (item.target.offsetTop <= scrollWithOffset) {
+            document.querySelectorAll(".page-scroll.active").forEach(el => el.classList.remove("active"));
+            item.link.classList.add("active");
+            break;
+          }
+        }
+
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  }, { passive: true });
+
+  // Sayfalar arası pürüzsüz kaydırma
+  document.querySelectorAll(".page-scroll").forEach((elem) => {
     elem.addEventListener("click", (e) => {
       e.preventDefault();
       const targetAttr = elem.getAttribute("href");
-
-      // Linkin içindeki hash'i (#contact, #why) tespit edelim
       const hashIndex = targetAttr.indexOf('#');
       const hash = hashIndex !== -1 ? targetAttr.substring(hashIndex) : '';
 
       if (hash) {
         const targetSection = document.querySelector(hash);
-
         if (targetSection) {
-          // 1. DURUM (Aynı Sayfadayız): Sadece aşağı kaydır (Menünün arkasında kalmaması için 80px boşluk)
-          const headerOffset = 80;
-          const elementPosition = targetSection.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          const offsetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - 80;
           window.scrollTo({ top: offsetPosition, behavior: "smooth" });
         } else {
-          // 2. DURUM (Başka Sayfadayız): Hiç düşünmeden doğrudan anasayfadaki hedef bölüme zıplat!
           window.location.href = prefix + "index.html" + hash;
         }
       } else {
-        // Hedefte hiç '#' yoksa normal sayfa geçişidir, standart aç
         window.location.href = prefix + targetAttr;
       }
     });
   });
 
-  // 🌟 BONUS: Dışarıdan Anasayfaya (#contact vb.) ile gelinirse başlığın menü altında gizlenmesini engeller
-  if (window.location.hash) {
-    setTimeout(() => {
-      const targetSection = document.querySelector(window.location.hash);
-      if (targetSection) {
-        const headerOffset = 80;
-        const elementPosition = targetSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-      }
-    }, 600); // Sayfa ve preloader tam yüklenince pürüzsüzce kaydırır
-  }
-
-  // Scroll Spy (Aşağı indikçe sarı çizginin otomatik yer değiştirmesi) Mekanizması
-  function onScroll(event) {
-    const sections = document.querySelectorAll(".page-scroll");
-    const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-    for (let i = 0; i < sections.length; i++) {
-      const currLink = sections[i];
-      let val = currLink.getAttribute("href");
-      if(val && val.includes("#")) {
-        val = val.substring(val.indexOf('#'));
-        const refElement = document.querySelector(val);
-        if(refElement) {
-          const scrollTopMinus = scrollPos + 85; // Header ofseti
-          if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus) {
-            const activeActive = document.querySelector(".page-scroll.active");
-            if(activeActive) activeActive.classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
-        }
-      }
-    }
-  }
-  window.document.addEventListener("scroll", onScroll);
-
-  let navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarToggler = document.querySelector(".navbar-toggler");
   const navbarCollapse = document.querySelector(".navbar-collapse");
-
-  if(navbarToggler && navbarCollapse) {
-    document.querySelectorAll(".page-scroll").forEach((e) =>
+  if (navbarToggler && navbarCollapse) {
+    document.querySelectorAll(".page-scroll").forEach(e =>
       e.addEventListener("click", () => {
         navbarToggler.classList.remove("active");
         navbarCollapse.classList.remove("show");
       })
     );
-    navbarToggler.addEventListener("click", function () {
-      navbarToggler.classList.toggle("active");
-    });
+    navbarToggler.addEventListener("click", () => navbarToggler.classList.toggle("active"));
   }
 
   if (typeof WOW !== 'undefined') { new WOW().init(); }
   const heroCarousel = document.querySelector('#nartHeroSlider');
-  if (heroCarousel) { new bootstrap.Carousel(heroCarousel, { interval: 4000, pause: false, wrap: true }).cycle(); }
+  if (heroCarousel && !bootstrap.Carousel.getInstance(heroCarousel)) {
+    new bootstrap.Carousel(heroCarousel, { interval: 5000, pause: 'hover', wrap: true });
+  }
 }
 
 // ====================================================================================
-// 3. BÖLÜM: ÇEREZ RIZA SÖZLEŞME VE ONAY MEKANİZMASI (COOKIE LOGIC SYSTEM)
+// 3. BÖLÜM: ÇEREZ SİSTEMİ
 // ====================================================================================
 const COOKIE_CONSENT_KEY = 'çerez_kabul_edildi';
 
 window.toggleCookieModal = function() {
-    let modalElement = document.getElementById('çerezAyarlariModal');
-    if (!modalElement) return;
-    let modalInstance = bootstrap.Modal.getInstance(modalElement);
-    if (!modalInstance) { modalInstance = new bootstrap.Modal(modalElement, { backdrop: 'static', keyboard: false }); }
-    if (modalElement.classList.contains('show')) { modalInstance.hide(); } else { updateModalSwitchesFromStorage(); modalInstance.show(); }
+  const modalElement = document.getElementById('çerezAyarlariModal');
+  if (!modalElement) return;
+  let modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement, { backdrop: 'static', keyboard: false });
+  if (modalElement.classList.contains('show')) { modalInstance.hide(); } else { updateModalSwitchesFromStorage(); modalInstance.show(); }
 };
 
 window.checkCookieConsent = function() {
-    let consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    const banner = document.getElementById('çerez-uyarisi-banner');
-    if (!consent) { if(banner) banner.style.display = 'block'; } else { loadThirdPartyScripts(); }
+  const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+  const banner = document.getElementById('çerez-uyarisi-banner');
+  if (!consent && banner) banner.style.display = 'block';
 };
 
 window.acceptAllCookiesShort = function() { setCookieConsentShort({ gerekli: true, analitik: true, reklam: true, pazarlama: true }); };
 window.acceptNecessaryCookiesShort = function() { setCookieConsentShort({ gerekli: true, analitik: false, reklam: false, pazarlama: false }); };
 
 function setCookieConsentShort(settings) {
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(settings));
-    const banner = document.getElementById('çerez-uyarisi-banner');
-    if(banner) banner.style.display = 'none';
-    loadThirdPartyScripts();
+  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(settings));
+  const banner = document.getElementById('çerez-uyarisi-banner');
+  if (banner) banner.style.display = 'none';
 }
 
 function updateModalSwitchesFromStorage() {
-    let settings = getCookieSettings();
-    const chkGerekli = document.getElementById('checkGerekli');
-    const chkAnalitik = document.getElementById('checkAnalitik');
-    const chkReklam = document.getElementById('checkReklam');
-    const chkPazarlama = document.getElementById('checkPazarlama');
+  const settings = getCookieSettings();
+  const chkGerekli = document.getElementById('checkGerekli');
+  const chkAnalitik = document.getElementById('checkAnalitik');
+  const chkReklam = document.getElementById('checkReklam');
+  const chkPazarlama = document.getElementById('checkPazarlama');
 
-    if(chkGerekli) chkGerekli.checked = settings.gerekli;
-    if(chkAnalitik) chkAnalitik.checked = settings.analitik;
-    if(chkReklam) chkReklam.checked = settings.reklam;
-    if(chkPazarlama) chkPazarlama.checked = settings.pazarlama;
+  if (chkGerekli) chkGerekli.checked = settings.gerekli;
+  if (chkAnalitik) chkAnalitik.checked = settings.analitik;
+  if (chkReklam) chkReklam.checked = settings.reklam;
+  if (chkPazarlama) chkPazarlama.checked = settings.pazarlama;
 }
 
 window.saveCookieSettings = function() {
-    const chkAnalitik = document.getElementById('checkAnalitik');
-    const chkReklam = document.getElementById('checkReklam');
-    const chkPazarlama = document.getElementById('checkPazarlama');
+  const chkAnalitik = document.getElementById('checkAnalitik');
+  const chkReklam = document.getElementById('checkReklam');
+  const chkPazarlama = document.getElementById('checkPazarlama');
 
-    const settings = {
-        gerekli: true,
-        analitik: chkAnalitik ? chkAnalitik.checked : false,
-        reklam: chkReklam ? chkReklam.checked : false,
-        pazarlama: chkPazarlama ? chkPazarlama.checked : false
-    };
+  const settings = {
+    gerekli: true,
+    analitik: chkAnalitik ? chkAnalitik.checked : false,
+    reklam: chkReklam ? chkReklam.checked : false,
+    pazarlama: chkPazarlama ? chkPazarlama.checked : false
+  };
 
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(settings));
-    const banner = document.getElementById('çerez-uyarisi-banner');
-    if(banner) banner.style.display = 'none';
+  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(settings));
+  const banner = document.getElementById('çerez-uyarisi-banner');
+  if (banner) banner.style.display = 'none';
 
-    let modalElement = document.getElementById('çerezAyarlariModal');
-    if (modalElement) { let modalInstance = bootstrap.Modal.getInstance(modalElement); if(modalInstance) modalInstance.hide(); }
-    loadThirdPartyScripts();
+  const modalElement = document.getElementById('çerezAyarlariModal');
+  if (modalElement) {
+    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+    if (modalInstance) modalInstance.hide();
+  }
 };
 
 function getCookieSettings() {
-    let consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (consent) { try { return JSON.parse(consent); } catch (e) { return { gerekli: true, analitik: false, reklam: false, pazarlama: false }; } }
-    return { gerekli: true, analitik: false, reklam: false, pazarlama: false };
-}
-
-function loadThirdPartyScripts() {
-    const settings = getCookieSettings();
-    if (settings.analitik) { loadScript("https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"); }
-}
-
-function loadScript(src) {
-    let script = document.createElement('script'); script.src = src; script.async = true; document.head.appendChild(script);
+  const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+  if (consent) { try { return JSON.parse(consent); } catch (e) { return { gerekli: true, analitik: false, reklam: false, pazarlama: false }; } }
+  return { gerekli: true, analitik: false, reklam: false, pazarlama: false };
 }
 
 // ====================================================================================
-// 4. BÖLÜM: DİL MOTORU VE ANA BAŞLATICI SENKRONİZASYONU (8-LANGUAGE MASTER LOCALIZATION)
+// 4. BÖLÜM: BELLEK DOSTU DİL MOTORU (8 DİL)
 // ====================================================================================
 const NART_LANG_KEY = 'nart_secilen_dil';
 
@@ -408,25 +350,20 @@ window.nartDilDegistir = function(dil) {
 };
 
 function nartDiliUygula(dil) {
-  // 1. Metin, Megamenu ve SVG Grafik İçerik Çevirileri (TR, EN, RU, AR, ZH, ES, IT, HI)
   const elements = document.querySelectorAll('[data-en], [data-ru], [data-ar], [data-zh], [data-es], [data-it], [data-hi]');
   elements.forEach(el => {
-    // 🔑 AKILLI SVG KALKANI: Elemanın bir SVG <text> düğümü olup olmadığını kontrol ediyoruz
     const isSvgText = el.tagName.toLowerCase() === 'text';
 
     if (!el.getAttribute('data-tr')) {
-      // SVG düğümleri innerHTML kabul etmediği için textContent ile ilk dil kaydını yedekliyoruz
       el.setAttribute('data-tr', isSvgText ? el.textContent : el.innerHTML);
     }
 
     let targetContent = (dil === 'tr') ? el.getAttribute('data-tr') : el.getAttribute('data-' + dil);
-
     if (!targetContent && dil !== 'tr') {
       targetContent = el.getAttribute('data-en') || el.getAttribute('data-tr');
     }
 
     if (targetContent) {
-      // 🔑 AKILLI YAZMA MOTORU: SVG elemanlarına textContent ile güvenli atama yapıyoruz
       if (isSvgText) {
         el.textContent = targetContent;
       } else if (targetContent.includes('<')) {
@@ -437,7 +374,6 @@ function nartDiliUygula(dil) {
     }
   });
 
-  // 2. İletişim Formu Giriş Alanları (Placeholder) Çevirileri
   const inputs = document.querySelectorAll('[data-en-placeholder], [data-ru-placeholder], [data-ar-placeholder], [data-zh-placeholder], [data-es-placeholder], [data-it-placeholder], [data-hi-placeholder]');
   inputs.forEach(input => {
     if (!input.getAttribute('data-tr-placeholder')) {
@@ -445,7 +381,6 @@ function nartDiliUygula(dil) {
     }
 
     let targetPlaceholder = (dil === 'tr') ? input.getAttribute('data-tr-placeholder') : input.getAttribute('data-' + dil + '-placeholder');
-
     if (!targetPlaceholder && dil !== 'tr') {
       targetPlaceholder = input.getAttribute('data-en-placeholder') || input.getAttribute('data-tr-placeholder');
     }
@@ -455,26 +390,22 @@ function nartDiliUygula(dil) {
     }
   });
 
-  // 3. Üst Menüdeki Bayrak ve Yazı Motoru (Hintçe HI Bayrağı eklendi)
-  var textEl = document.getElementById('nart-active-lang-text');
+  const textEl = document.getElementById('nart-active-lang-text');
   if (textEl) {
-    var flags = {
-      tr: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="1200" height="800" fill="#e30a17"/><circle cx="400" cy="400" r="200" fill="#fff"/><circle cx="450" cy="400" r="160" fill="#e30a17"/><polygon points="575,400 516.2,419.1 552.5,369.1 552.5,430.9 516.2,380.9" fill="#fff"/></svg>',
-      en: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>',
-      ru: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="900" height="600" fill="#fff"/><rect width="900" height="400" y="200" fill="#0039a6"/><rect width="900" height="200" y="400" fill="#d52b1e"/></svg>',
-      ar: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#fff"/><rect width="3" height="0.66" fill="#731412"/><rect width="3" height="0.66" y="1.33" fill="#000"/><path d="M 0,0 L 0.75,1 L 0,2 Z" fill="#114a2b"/></svg>',
-      zh: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="30" height="20" fill="#de2110"/><path d="M5 5L3.4 6.2l.6-1.9-1.6-1.2h2l.6-1.9.6 1.9h2l-1.6 1.2.6 1.9zm5-2.5l-.2 1 .4-.9.7.5-.9.1.2 1-.5-.8-.8.6.6-.7-.5-.8h1zm2 2.5l-.6.8.1-1 .9.2-.8-.6.6-.8-.3.9-.9-.5.9-.2zm1 3l-.9.4.5-.8.6.7-.9-.1-.2 1-.1-.9-.9.4.8-.5zm-3 2l-.9-.4.9-.1-.1-.9.6.8.9-.5-.5.9.6.7-1-.1z" fill="#ffde00"/></svg>',
-      es: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>',
-      it: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>',
-      hi: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"><rect width="900" height="600" fill="#f93"/><rect width="900" height="400" y="200" fill="#fff"/><rect width="900" height="200" y="400" fill="#128807"/><circle cx="450" cy="300" r="90" fill="none" stroke="#008" stroke-width="12"/></svg>'
+    const flags = {
+      tr: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="1200" height="800" fill="#e30a17"/><circle cx="400" cy="400" r="200" fill="#fff"/><circle cx="450" cy="400" r="160" fill="#e30a17"/><polygon points="575,400 516.2,419.1 552.5,369.1 552.5,430.9 516.2,380.9" fill="#fff"/></svg>',
+      en: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>',
+      ru: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="900" height="600" fill="#fff"/><rect width="900" height="400" y="200" fill="#0039a6"/><rect width="900" height="200" y="400" fill="#d52b1e"/></svg>',
+      ar: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="3" height="2" fill="#fff"/><rect width="3" height="0.66" fill="#731412"/><rect width="3" height="0.66" y="1.33" fill="#000"/><path d="M 0,0 L 0.75,1 L 0,2 Z" fill="#114a2b"/></svg>',
+      zh: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="30" height="20" fill="#de2110"/><path d="M5 5L3.4 6.2l.6-1.9-1.6-1.2h2l.6-1.9.6 1.9h2l-1.6 1.2.6 1.9zm5-2.5l-.2 1 .4-.9.7.5-.9.1.2 1-.5-.8-.8.6.6-.7-.5-.8h1zm2 2.5l-.6.8.1-1 .9.2-.8-.6.6-.8-.3.9-.9-.5.9-.2zm1 3l-.9.4.5-.8.6.7-.9-.1-.2 1-.1-.9-.9.4.8-.5zm-3 2l-.9-.4.9-.1-.1-.9.6.8.9-.5-.5.9.6.7-1-.1z" fill="#ffde00"/></svg>',
+      es: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="3" height="2" fill="#c60b1e"/><rect width="3" height="1" y="0.5" fill="#ffc400"/></svg>',
+      it: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>',
+      hi: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="width: 16px; height: auto; margin-right: 8px; border-radius: 2px; vertical-align: middle;"><rect width="900" height="600" fill="#f93"/><rect width="900" height="400" y="200" fill="#fff"/><rect width="900" height="200" y="400" fill="#128807"/><circle cx="450" cy="300" r="90" fill="none" stroke="#008" stroke-width="12"/></svg>'
     };
-
-    var displayTexts = { tr: 'TR', en: 'EN', ru: 'RU', ar: 'AR', zh: 'ZH', es: 'ES', it: 'IT', hi: 'HI' };
-    var currentLang = dil.toLowerCase();
-
-    textEl.innerHTML = (flags[currentLang] || '') + (displayTexts[currentLang] || dil.toUpperCase());
+    const currentLang = dil.toLowerCase();
+    textEl.innerHTML = (flags[currentLang] || '') + currentLang.toUpperCase();
   }
-  // 4. Harici Dinamik SVG Görsel Değiştirici Motoru (8 Dil - Alt Klasör Korumalı)
+
   const rmsGorsel = document.getElementById('nart-rms-gorsel');
   if (rmsGorsel) {
     const prefix = window.location.pathname.includes('/products/') ? '../' : '';
@@ -490,8 +421,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const defaultLang = localStorage.getItem('nart_secilen_dil') || 'tr';
       nartDiliUygula(defaultLang);
-
-      console.log("Nart Gaz: 8 Dilli lokalizasyon ve bileşen kalkanı başarıyla devreye alındı.");
     })
     .catch(err => { console.error("Sistem başlatma hatası:", err); });
 });
