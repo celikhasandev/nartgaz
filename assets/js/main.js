@@ -92,12 +92,40 @@ function nartBilesenleriYukle() {
         }
       }
 
-      // Responsive Mobil Menü
+      // 📱 KİLİTLENMEYİ ENGELLEYEN RESPONSIVE MOBİL AKORDEON MOTORU
       const nartNavRoot = document.getElementById('nav');
       if (nartNavRoot) {
         nartNavRoot.addEventListener('click', function(e) {
+          if (window.innerWidth >= 992) return;
+
+          // 1. Ana Menü Başlıkları (Ürünlerimiz & Hizmetler) Mobilde Tıklanınca Aç/Kapa
+          const dropdownToggle = e.target.closest('.nav-item.dropdown > .dropdown-toggle');
+          if (dropdownToggle) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const parentDropdown = dropdownToggle.closest('.nav-item.dropdown');
+            const targetMegamenu = parentDropdown.querySelector('.dropdown-menu');
+
+            if (targetMegamenu) {
+              // Diğer açık ana dropdown varsa kapat
+              document.querySelectorAll('#nav .nav-item.dropdown').forEach(item => {
+                if (item !== parentDropdown) {
+                  item.classList.remove('show');
+                  const otherMenu = item.querySelector('.dropdown-menu');
+                  if (otherMenu) otherMenu.classList.remove('show');
+                }
+              });
+
+              parentDropdown.classList.toggle('show');
+              targetMegamenu.classList.toggle('show');
+            }
+            return;
+          }
+
+          // 2. Alt İstasyon ve Regülatör Akordeonları (RMS-B, RMS-C vb.)
           const toggleLink = e.target.closest('.has-sub-sub > a');
-          if (toggleLink && window.innerWidth < 992) {
+          if (toggleLink) {
             e.preventDefault();
             e.stopPropagation();
 
