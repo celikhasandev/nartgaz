@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="no-js" lang="tr">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title data-en="Station Maintenance & Repair Services | Nart Gaz" data-ru="Обслуживание и ремонт станций | Nart Gaz" data-ar="خدمات صيانة وإصلاح المحطات | نارت غاز" data-zh="调压站维护与维修服务 | Nart Gaz" data-es="Mantenimiento y Reparación de Estaciones | Nart Gaz" data-it="Manutenzione e Riparazione Stazioni | Nart Gaz" data-hi="स्टेशन रखरखाव और मरम्मत सेवाएं | Nart Gaz">İstasyon Bakım Onarım ve Saha Revizyon Hizmetleri | Nart Gaz</title>
+    <meta name="description" content="Nart Gaz; RMS-A, RMS-B, RMS-C ve RS-C doğalgaz basınç düşürme ve ölçüm istasyonları için periyodik bakım, regülatör/vana revizyonu, SAV trip testleri, kalibrasyon ve 7/24 acil saha mühendisliği sunar." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+
+    <!-- ======== CSS Dosyaları ======== -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/lineicons.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <style>
+      /* Görsel ve Kart Stilleri */
+      .service-main-img-box {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+        background: #fff;
+      }
+      .service-main-img-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .service-main-img-box:hover img {
+        transform: scale(1.02);
+      }
+      .service-img-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(22, 36, 71, 0.92);
+        backdrop-filter: blur(8px);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 8px;
+        border-left: 3px solid #42adf0;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* Sidebar & Menü */
+      .service-sidebar-widget {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 30px;
+      }
+      .service-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .service-nav-list li {
+        margin-bottom: 8px;
+      }
+      .service-nav-list a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 18px;
+        background: #fff;
+        border-radius: 8px;
+        color: #1e293b;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+      .service-nav-list a:hover,
+      .service-nav-list a.active {
+        background: #002e5b;
+        color: #fff;
+        border-color: #002e5b;
+        transform: translateX(4px);
+      }
+      .service-nav-list a.active {
+        background: #42adf0;
+        border-color: #42adf0;
+      }
+
+      /* Teknik Özellik Kartları */
+      .tech-spec-card {
+        background: #fff;
+        border: 1px solid #edf2f7;
+        border-radius: 10px;
+        padding: 22px;
+        height: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      }
+      .tech-spec-card:hover {
+        border-color: #42adf0;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(66, 173, 240, 0.1);
+      }
+      .tech-spec-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: rgba(66, 173, 240, 0.12);
+        color: #002e5b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      /* Süreç Çizgisi */
+      .process-step-box {
+        border-left: 2px dashed #42adf0;
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .process-step-box::before {
+        content: "";
+        position: absolute;
+        left: -9px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #42adf0;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #42adf0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Dinamik Header Alanı -->
+    <div id="nart-header"></div>
+
+    <!-- ======== Hero Üst Başlık Bölümü ======== -->
+    <section class="hero-section" style="padding: 180px 0 80px; background-color: #162447;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <div class="hero-content mb-0">
+              <h1 class="wow fadeInUp" data-wow-delay=".2s"
+                  data-en="Station Maintenance & Repair"
+                  data-ru="Обслуживание и ремонт станций"
+                  data-ar="صيانة وإصلاح المحطات"
+                  data-zh="调压站维护与维修"
+                  data-es="Mantenimiento y Reparación de Estaciones"
+                  data-it="Manutenzione e Riparazione Stazioni"
+                  data-hi="स्टेशन रखरखाव और मरम्मत"
+                  style="font-size: 48px; margin-bottom: 15px;">
+                İstasyon Bakım Onarım
+              </h1>
+              <p class="wow fadeInUp" data-wow-delay=".4s"
+                 data-en="Periodic maintenance, regulator overhaul, calibration, and 24/7 technical field support for RMS and RS natural gas stations."
+                 data-ru="Периодическое техническое обслуживание, капитальный ремонт регуляторов, калибровка и круглосуточная поддержка станций ГРП и РС."
+                 data-ar="الصيانة الدورية، وإصلاح المنظمات، والمعايرة، والدعم الفني الميداني على مدار 24/7 لمحطات الغاز الطبيعي RMS و RS."
+                 data-zh="RMS 和 RS 天然气调压站的定期维护、调压器大修、计量校准及 7/24 全天候现场技术支持。"
+                 data-es="Mantenimiento periódico, revisión de reguladores, calibración y soporte técnico de campo 24/7 para estaciones de gas natural RMS y RS."
+                 data-it="Manutenzione periodica, revisione dei regolatori, calibrazione e supporto tecnico sul campo 24/7 per stazioni gas metano RMS e RS."
+                 data-hi="RMS और RS प्राकृतिक गैस स्टेशनों के लिए आवधिक रखरखाव, नियामक ओवरहाल, अंशांकन और 24/7 तकनीकी क्षेत्र सहायता।"
+                 style="color: rgba(255,255,255,0.7); margin-bottom: 0;">
+                RMS ve RS doğalgaz basınç düşürme ve ölçüm istasyonlarında kesintisiz güvenlik, periyodik kalibrasyon ve 7/24 saha mühendisliği.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 text-md-end mt-4 mt-md-0">
+            <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
+              <ol class="breadcrumb justify-content-md-end mb-0" style="background: transparent; padding: 0;">
+                <li class="breadcrumb-item">
+                  <a href="../index.html" data-en="Home" data-ru="Главная" data-ar="الرئيسية" data-zh="首页" data-es="Inicio" data-it="Home" data-hi="होम" style="color: rgba(255,255,255,0.6);">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="../index.html#features" data-en="Services" data-ru="Услуги" data-ar="الخدمات" data-zh="服务" data-es="Servicios" data-it="Servizi" data-hi="सेवाएं" style="color: rgba(255,255,255,0.6);">Hizmetlerimiz</a>
+                </li>
+                <li class="breadcrumb-item active text-white" aria-current="page" data-en="Station Maintenance" data-ru="Обслуживание станций" data-ar="صيانة المحطات" data-zh="调压站维护" data-es="Mantenimiento de Estaciones" data-it="Manutenzione Stazioni" data-hi="स्टेशन रखरखाव">
+                  İstasyon Bakım Onarım
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Detay İçerik Alanı ======== -->
+    <section class="service-detail-section pt-100 pb-120" style="background: #fdfefe;">
+      <div class="container">
+        <div class="row">
+
+          <!-- SOL / ANA KOLON -->
+          <div class="col-lg-8">
+
+            <div class="service-main-img-box mb-40 wow fadeInUp" data-wow-delay=".2s">
+              <img src="../assets/img/services/2.webp" alt="Nart Gaz Endüstriyel İstasyon Bakım Onarım ve Kalibrasyon Hizmetleri" />
+              <div class="service-img-badge"
+                   data-en="<i class='lni lni-support me-1'></i> 24/7 Field Engineering & Emergency Support"
+                   data-ru="<i class='lni lni-support me-1'></i> Круглосуточная выездная поддержка и аварийная служба 24/7"
+                   data-ar="<i class='lni lni-support me-1'></i> هندسة ميدانية مستمرة واستجابة طارئة 24/7"
+                   data-zh="<i class='lni lni-support me-1'></i> 7/24 不间断现场工程与应急响应"
+                   data-es="<i class='lni lni-support me-1'></i> Ingeniería de Campo 24/7 y Respuesta a Emergencias"
+                   data-it="<i class='lni lni-support me-1'></i> Ingegneria sul Campo 24/7 e Intervento di Emergenza"
+                   data-hi="<i class='lni lni-support me-1'></i> 24/7 निर्बाध फील्ड इंजीनियरिंग और आपातकालीन प्रतिक्रिया">
+                <i class="lni lni-support me-1"></i> 7/24 Kesintisiz Saha Mühendisliği & Acil Müdahale
+              </div>
+            </div>
+
+            <div class="service-content-block mb-45 wow fadeInUp" data-wow-delay=".3s">
+              <h2 class="fw-bold text-dark mb-20" style="font-size: 26px;"
+                  data-en="Zero Tolerance in Gas Infrastructure: Proactive Maintenance and Seamless Continuity"
+                  data-ru="Нулевая толерантность к сбоям в газовой инфраструктуре: проактивное обслуживание и непрерывность"
+                  data-ar="عدم التهاون في البنية التحتية للغاز: صيانة استباقية واستمرارية متواصلة"
+                  data-zh="燃气基础设施中的零容忍标准：预防性维护与不间断连续运行"
+                  data-es="Tolerancia Cero en Infraestructura de Gas: Mantenimiento Proactivo y Continuidad Ininterrumpida"
+                  data-it="Tolleranza Zero nelle Infrastrutture Gas: Manutenzione Proattiva e Continuità Senza Interruzioni"
+                  data-hi="गैस बुनियादी ढांचे में शून्य सहनशीलता: सक्रिय रखरखाव और निर्बाध निरंतरता">
+                Doğalgaz Altyapılarında Sıfır Tolerans: Proaktif Bakım ve Kesintisiz Süreklilik
+              </h2>
+              <p style="color: #4b5563; font-size: 15.5px; line-height: 1.8; margin-bottom: 20px;"
+                 data-en="RMS-A, RMS-B, RMS-C, and RS-C stations—the lifeblood of industrial plants, power stations, and city networks—operate under continuous dynamic pressure and flow control. A millisecond regulation instability, filter clogging, or slam-shut (SSV/SAV) delay can cause massive production halts and irrecoverable safety hazards."
+                 data-ru="Станции ГРП (RMS-A, RMS-B, RMS-C и RS-C), являющиеся жизненно важными артериями промышленных предприятий, электростанций и городских сетей, работают в условиях непрерывного динамического контроля давления и расхода. Миллисекундная нестабильность регулирования, засорение фильтра или задержка срабатывания ПЗК могут привести к остановке производства и серьезным рискам безопасности."
+                 data-ar="تعمل محطات RMS-A و RMS-B و RMS-C و RS-C - شريان الحياة للمنشآت الصناعية ومحطات الطاقة وشبكات التوزيع - تحت تحكم ديناميكي مستمر في الضغط والتدفق. إن أي عدم استقرار في التنظيم لجزء من الثانية أو انسداد في الفلاتر أو تأخر في صمام الأمان (SAV) قد يسبب توقفات هائلة للإنتاج ومخاطر أمنية لا يمكن تعويضها."
+                 data-zh="作为工业生产设施、发电厂和城市输配网络核心动脉的 RMS-A、RMS-B、RMS-C 及 RS-C 调压站，均在严苛的动态压力与流量控制下运行。毫秒级的调压波动、过滤器堵塞或切断阀（SAV）响应延迟，都可能导致巨大的停产损失和不可挽回的安全风险。"
+                 data-es="Las estaciones RMS-A, RMS-B, RMS-C y RS-C, el núcleo de las plantas industriales, centrales eléctricas y redes de distribución, operan bajo un control dinámico continuo de presión y caudal. Una inestabilidad de milisegundos en la regulación, obstrucción de filtros o retraso en la válvula de seguridad (SAV) pueden provocar costosas paradas de producción y graves riesgos."
+                 data-it="Le stazioni RMS-A, RMS-B, RMS-C e RS-C, arterie vitali di impianti industriali, centrali elettriche e reti cittadine, operano sotto costante controllo dinamico di pressione e portata. Un'instabilità di pochi millisecondi, l'intasamento dei filtri o un ritardo della valvola di sicurezza (SAV) possono causare pesanti fermi impianto e gravi rischi di sicurezza."
+                 data-hi="RMS-A, RMS-B, RMS-C और RS-C स्टेशन—औद्योगिक संयंत्रों, बिजली स्टेशनों और शहर वितरण लाइनों की जीवन रेखा—निरंतर गतिशील दबाव और प्रवाह नियंत्रण के तहत काम करते हैं। एक मिलीसेकंड का विनियमन अस्थिरता, फिल्टर रुकावट या सुरक्षा शट-ऑफ (SAV) में देरी से भारी उत्पादन रुक सकता है और गंभीर सुरक्षा खतरे हो सकते हैं।">
+                Endüstriyel üretim tesislerinin, enerji santrallerinin ve şehir dağıtım hatlarının can damarı olan <strong>RMS-A, RMS-B, RMS-C ve RS-C istasyonları</strong>, kesintisiz bir dinamik basınç ve debi kontrolü altında çalışır. Bu sistemlerde meydana gelebilecek milisaniyelik bir regülasyon kararsızlığı, filtre tıkanıklığı veya emniyet kapatma (SAV) gecikmesi; hem devasa üretim duruşlarına hem de telafisi imkansız güvenlik risklerine yol açabilir.
+              </p>
+              <p style="color: #4b5563; font-size: 15.5px; line-height: 1.8; margin-bottom: 20px;"
+                 data-en="At Nart Gaz, our maintenance philosophy is built not just on reactive repairs, but on proactive and predictive maintenance protocols that prevent failures before they occur. From pilot regulator springs and diaphragm inspections to slam-shut trip setpoint tests, differential pressure (ΔP) transmitter calibrations, and heat exchanger descaling, we restore all pneumatic, mechanical, and instrumentation components to factory tolerances."
+                 data-ru="Философия обслуживания Nart Gaz основана не просто на устранении поломок, а на предиктивных протоколах, предотвращающих сбои до их возникновения. От проверки пружин и мембран пилотных регуляторов до тестирования ПЗК, калибровки датчиков перепада давления (ΔP) и очистки теплообменников — мы возвращаем все пневматические, механические и контрольно-измерительные компоненты к заводским допускам."
+                 data-ar="في نارت غاز، لا نبني مفهوم الصيانة لدينا على الإصلاح بعد وقوع العطل فحسب، بل على بروتوكولات الصيانة الاستباقية والتنبؤية التي تمنع الأعطال قبل حدوثها. من فحص نوابض وأغشية المنظم الدليلي (Pilot) إلى اختبارات نقاط ضبط صمامات الإغلاق السريع (Slam-shut)، ومعايرة مرسلات فرق الضغط (ΔP)، وتنظيف المبادلات الحرارية، نعيد جميع المكونات إلى تفاوتات المصنع الأصلية."
+                 data-zh="在 Nart Gaz，我们的维护理念不仅限于事后维修，而是基于在故障发生前予以消除的预防性与预测性维护协议。从指挥器弹簧与膜片检查，到超压切断阀（SAV）设定值动作测试、差压变送器（ΔP）校准及换热器清洗除垢，我们将调压站的所有气动、机械与仪表组件全面恢复至出厂公差精度。"
+                 data-es="En Nart Gaz, nuestra filosofía de mantenimiento se basa en protocolos proactivos y predictivos que previenen fallas antes de que ocurran. Desde la inspección de resortes y diafragmas de reguladores piloto hasta pruebas de disparo de válvulas de seguridad (SAV), calibración de transmisores de presión diferencial (ΔP) y desincrustación de intercambiadores, devolvemos cada componente a sus tolerancias de fábrica."
+                 data-it="In Nart Gaz, la nostra filosofia di manutenzione si basa su protocolli proattivi e predittivi che prevengono i guasti prima che si verifichino. Dai controlli delle molle e membrane dei regolatori pilota ai test di intervento delle valvole di blocco (SAV), taratura dei trasmettitori di pressione differenziale (ΔP) e pulizia degli scambiatori, riportiamo ogni componente alle tolleranze di fabbrica."
+                 data-hi="Nart Gaz में, हमारा रखरखाव दर्शन केवल टूटने की स्थिति में मरम्मत करने पर नहीं, बल्कि सक्रिय और भविष्य कहनेवाला रखरखाव प्रोटोकॉल पर बना है जो विफलताओं को होने से पहले रोकता है। पायलट रेगुलेटर स्प्रिंग्स और डायाफ्राम निरीक्षण से लेकर स्लैम-शट वाल्व सेटपॉइंट परीक्षण, अंतर दबाव (ΔP) ट्रांसमीटर अंशांकन और हीट एक्सचेंजर सफाई तक, हम सभी घटकों को कारखाने की सहनशीलता में पुनर्स्थापित करते हैं।">
+                <strong>Nart Gaz</strong> olarak bakım anlayışımızı yalnızca "arıza çıktığında tamir etmek" üzerine değil; arızayı henüz oluşmadan engelleyen <strong>proaktif ve kestirimci bakım protokolleri</strong> üzerine inşa ediyoruz. Pilot regülatör yay ve diyafram kontrollerinden slam-shut emniyet vanalarının set değer testlerine, diferansiyel basınç ($\Delta P$) transmitter kalibrasyonlarından eşanjör kireç-tortu temizliklerine kadar istasyonun tüm pnömatik, mekanik ve enstrümantal bileşenlerini fabrika çıkış toleranslarına geri döndürüyoruz.
+              </p>
+            </div>
+
+            <!-- 4'lü Teknik Hizmet Kartı -->
+            <h3 class="fw-bold text-dark mb-25 wow fadeInUp" data-wow-delay=".3s" style="font-size: 22px;"
+                data-en="Comprehensive Station Engineering Services"
+                data-ru="Комплексные инженерные услуги для станций"
+                data-ar="خدمات هندسية شاملة لمحطات الغاز"
+                data-zh="全方位调压站工程技术服务"
+                data-es="Servicios Integrales de Ingeniería de Estaciones"
+                data-it="Servizi Ingegneristici Completi per Stazioni Gas"
+                data-hi="व्यापक स्टेशन इंजीनियरिंग सेवाएं">
+              Kapsamlı İstasyon Mühendislik Hizmetlerimiz
+            </h3>
+            <div class="row g-3 mb-50">
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-shield"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Slam-Shut (SSV/SAV) & Trip Testing"
+                      data-ru="ПЗК (SAV) и испытания на срабатывание"
+                      data-ar="صمامات الإغلاق السريع (SAV) واختبارات الفصل"
+                      data-zh="紧急切断阀 (SAV) 与动作测试"
+                      data-es="Válvulas de Seguridad (SAV) y Pruebas de Disparo"
+                      data-it="Valvole di Blocco (SAV) e Test di Intervento"
+                      data-hi="सुरक्षा शट-ऑफ (SAV) और ट्रिप परीक्षण">
+                    Emniyet Kapatma (SAV) & Trip Testleri
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="High (OPSO) and low (UPSO) pressure safety shut-off mechanisms are tested under live pipeline conditions to guarantee millisecond response times."
+                     data-ru="Механизмы защитного отключения по высокому (OPSO) и низкому (UPSO) давлению тестируются в реальных условиях для гарантии миллисекундного отклика."
+                     data-ar="يتم اختبار آليات الإغلاق الآمن للضغط العالي (OPSO) والمنخفض (UPSO) في ظروف الخط الفعلية لضمان زمن استجابة فائق السرعة."
+                     data-zh="在带气工况下对高压（OPSO）与低压（UPSO）安全切断机构进行精确动作测试，确保毫秒级的紧急响应速度。"
+                     data-es="Los mecanismos de corte por sobrepresión (OPSO) y bajapresión (UPSO) se prueban en condiciones reales de tubería para garantizar respuestas en milisegundos."
+                     data-it="I meccanismi di blocco per massima (OPSO) e minima (UPSO) pressione vengono collaudati in condizioni reali per garantire tempi di risposta in millisecondi."
+                     data-hi="उच्च (OPSO) और निम्न (UPSO) दबाव सुरक्षा शट-ऑफ तंत्र का लाइव पाइपलाइन स्थितियों में परीक्षण किया जाता है ताकि मिलीसेकंड प्रतिक्रिया समय की गारंटी दी जा सके।">
+                    Yüksek (OPSO) ve alçak (UPSO) basınç emniyet kapatma mekanizmalarının gerçek hat koşullarında tetikleme eşikleri test edilerek milisaniyelik tepki süreleri güvenceye alınır.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-cog"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Regulator Overhaul & Parts Replacement"
+                      data-ru="Капремонт регуляторов и замена деталей"
+                      data-ar="إصلاح شامل للمنظمات واستبدال القطع"
+                      data-zh="调压器全面大修与备件更换"
+                      data-es="Revisión de Reguladores y Reemplazo de Piezas"
+                      data-it="Revisione Regolatori e Sostituzione Componenti"
+                      data-hi="नियामक ओवरहाल और पुर्जे प्रतिस्थापन">
+                    Regülatör Overhaul & Parça Yenileme
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Disassembly of main regulators and pilot control units, replacement of diaphragms, O-rings, and seat/pads, followed by dynamic stabilization tests."
+                     data-ru="Разборка основных регуляторов и пилотных узлов, замена мембран, уплотнений, седел и проведение динамических испытаний на стабильность."
+                     data-ar="تفكيك المنظمات الرئيسية ووحدات التحكم الدليلية، واستبدال الأغشية والحلقات الدائرية والجلود، وإجراء اختبارات استقرار الضغط الديناميكي."
+                     data-zh="主调压器与指挥器控制单元的完全解体检修，更换膜片、O型圈、阀口密封垫，并进行动态稳压测试。"
+                     data-es="Desmontaje de reguladores principales y pilotos, sustitución de diafragmas, juntas tóricas y asientos, seguido de pruebas de estabilidad dinámica."
+                     data-it="Smontaggio dei regolatori principali e dei piloti, sostituzione di membrane, O-ring e otturatori, con successivi test di stabilità dinamica."
+                     data-hi="मुख्य नियामकों और पायलट नियंत्रण इकाइयों को अलग करना, डायाफ्राम, ओ-रिंग और सीट/पैड का प्रतिस्थापन, जिसके बाद गतिशील स्थिरीकरण परीक्षण किया जाता है।">
+                    Ana regülatör ve pilot kontrol ünitelerinin sökümü, diyafram, O-ring, sit-klape yenilemeleri ve dinamik basınç dalgalanma testleri gerçekleştirilir.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-target"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Filtration & Heat Exchanger Servicing"
+                      data-ru="Обслуживание фильтрации и теплообменников"
+                      data-ar="خدمة الفلاتر وصيانة المبادلات الحرارية"
+                      data-zh="过滤器与水浴换热器清洗维护"
+                      data-es="Servicio de Filtración e Intercambiadores"
+                      data-it="Manutenzione Filtrazione e Scambiatori"
+                      data-hi="निस्पंदन और हीट एक्सचेंजर सर्विसिंग">
+                    Filtrasyon & Eşanjör Temizliği
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Replacing cartridge/separator filter elements, cleaning particulate chambers, and descaling water-bath heaters preventing Joule-Thomson freezing."
+                     data-ru="Замена картриджей и сепараторов, очистка корпусов от частиц и удаление накипи в подогревателях для предотвращения эффекта Джоуля-Томсона."
+                     data-ar="استبدال خراطيش الفلاتر والفواصل، وتنظيف حجرات الرواسب، وإزالة الترسبات من سخانات حمام الماء لمنع تجمد جول-طومسون."
+                     data-zh="更换滤芯与分离器过滤元件，清理腔体积碳杂质，对防止焦耳-汤姆逊节流结冰的水浴加热器进行除垢保养。"
+                     data-es="Reemplazo de cartuchos y separadores de filtro, limpieza de partículas y desincrustación de calentadores para evitar la congelación Joule-Thomson."
+                     data-it="Sostituzione cartucce filtranti e separatori, pulizia del corpo filtro e disincrostazione degli scambiatori per prevenire il congelamento Joule-Thomson."
+                     data-hi="कारतूस/विभाजक फिल्टर तत्वों को बदलना, कण कक्षों की सफाई करना और जूल-थॉमसन ठंड को रोकने वाले वॉटर-बाथ हीटर को साफ करना।">
+                    Kartuşlu veya separatörlü çelik filtre elemanlarının değişimi, gövde partikül temizliği ve Joule-Thomson soğumasını dengeleyen su banyolu eşanjör bakımı.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-timer"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Meters, Volume Correctors & SCADA"
+                      data-ru="Счетчики, корректоры объема и SCADA"
+                      data-ar="العدادات، مصححات الحجم وأنظمة SCADA"
+                      data-zh="流量计、体积修正仪与 SCADA 远程测控"
+                      data-es="Medidores, Correctores de Volumen y SCADA"
+                      data-it="Contatori, Correttori di Volume e SCADA"
+                      data-hi="मीटर, वॉल्यूम सुधारक और SCADA">
+                    Sayaç, Hacim Düzeltici & SCADA
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Accuracy calibration of turbine/rotary gas meters, electronic volume correctors (EVC), PTZ transmitters, and telemetry SCADA data links."
+                     data-ru="Калибровка точности турбинных и ротационных счетчиков газа, электронных корректоров объема (EVC), датчиков PTZ и каналов телеметрии SCADA."
+                     data-ar="معايرة دقة عدادات الغاز التوربينية والدوارة، ومصححات الحجم الإلكترونية (EVC)، ومرسلات PTZ، وخطوط نقل بيانات القياس عن بعد SCADA."
+                     data-zh="对涡轮/罗茨气体流量计、电子体积修正仪（EVC）、PTZ 压力温度传感器及 SCADA 遥测数据传输链路进行精密校准。"
+                     data-es="Calibración de precisión de medidores de gas de turbina/rotativos, correctores de volumen (EVC), transmisores PTZ y enlaces de telemetría SCADA."
+                     data-it="Taratura di precisione di contatori a turbina/rotativi, correttori di volume elettronici (EVC), trasmettitori PTZ e linee telemetriche SCADA."
+                     data-hi="टरबाइन/रोटरी गैस मीटर, इलेक्ट्रॉनिक वॉल्यूम सुधारक (EVC), PTZ ट्रांसमीटर और टेलीमेट्री SCADA डेटा लिंक का सटीकता अंशांकन।">
+                    Türbin/rotary gaz sayaçları, elektronik hacim düzelticiler (korektör), PTZ transmitterları ve telemetri veri aktarım hatlarının doğruluk kalibrasyonu.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Süreç Akışı -->
+            <div class="service-process-wrapper mb-40 wow fadeInUp" data-wow-delay=".4s">
+              <h3 class="fw-bold text-dark mb-25" style="font-size: 22px;"
+                  data-en="Periodic Maintenance & Field Workflow"
+                  data-ru="Периодическое обслуживание и рабочий процесс"
+                  data-ar="الصيانة الدورية وسير العمل الميداني"
+                  data-zh="定期维护与现场作业流程"
+                  data-es="Mantenimiento Periódico y Flujo de Trabajo de Campo"
+                  data-it="Manutenzione Periodica e Flusso di Lavoro sul Campo"
+                  data-hi="आवधिक रखरखाव और क्षेत्र कार्यप्रवाह">
+                Periyodik Bakım ve Saha İş Akışı
+              </h3>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="1. Parametric Status Assessment & Live Line Analysis"
+                    data-ru="1. Параметрическая оценка состояния и анализ рабочей линии"
+                    data-ar="1. تقييم الحالة المعلمية وتحليل الخط المباشر"
+                    data-zh="1. 运行参数状态评估与在线管线分析"
+                    data-es="1. Evaluación Paramétrica y Análisis de Línea Activa"
+                    data-it="1. Diagnosi Parametrica e Analisi della Linea in Esercizio"
+                    data-hi="1. पैरामीट्रिक स्थिति मूल्यांकन और लाइव लाइन विश्लेषण">
+                  1. Parametrik Durum Tespiti & Canlı Hat Analizi
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Station inlet/outlet pressures, flow trends, temperature metrics, and differential pressure gauges are comprehensively logged."
+                   data-ru="Регистрация входного и выходного давления, трендов расхода, температурных показателей и дифференциального давления."
+                   data-ar="يتم تسجيل ضغوط مدخل ومخرج المحطة، واتجاهات التدفق، ومؤشرات درجات الحرارة، وقراءات فرق الضغط بدقة."
+                   data-zh="全面记录调压站进出口压力、流量变化趋势、温度参数以及差压指示仪表数值。"
+                   data-es="Se registran exhaustivamente las presiones de entrada/salida, tendencias de caudal, temperatura y manómetros de presión diferencial."
+                   data-it="Vengono registrate pressioni di ingresso/uscita, trend di portata, valori di temperatura e letture della pressione differenziale."
+                   data-hi="स्टेशन इनलेट/आउटलेट दबाव, प्रवाह रुझान, तापमान मेट्रिक्स और अंतर दबाव गेज को व्यापक रूप से लॉग किया जाता है।">
+                  İstasyon giriş-çıkış basınçları, debi trendleri, sıcaklık değerleri ve diferansiyel basınç göstergeleri kayıt altına alınır.
+                </p>
+              </div>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="2. Line Isolation, Gas Venting & Mechanical Overhaul"
+                    data-ru="2. Изоляция линии, сброс газа и механический капремонт"
+                    data-ar="2. عزل الخط وتفريغ الغاز والإصلاح الميكانيكي"
+                    data-zh="2. 管线安全隔离、放空排气与机械检修"
+                    data-es="2. Aislamiento de Línea, Venteo de Gas y Revisión Mecánica"
+                    data-it="2. Isolamento della Linea, Sfiato Gas e Revisione Meccanica"
+                    data-hi="2. लाइन अलगाव, गैस वेंटिंग और यांत्रिक ओवरहाल">
+                  2. İzolasyon, Gaz Tahliyesi & Mekanik Revizyon
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="The redundant standby stream is activated while the active line is safely vented; regulator trims, seals, and filter cartridges are renewed with OEM parts."
+                   data-ru="Резервная линия вводится в работу, а активная безопасно продувается; уплотнения, картриджи и детали регуляторов заменяются на оригинальные OEM."
+                   data-ar="يتم تفعيل الخط الاحتياطي وتفريغ الخط النشط بأمان؛ ويتم تجديد أطقم المنظمات والأختام وخراطيش الفلاتر بقطع أصلية OEM."
+                   data-zh="切换至备用支路平稳供气，将主路安全泄压放空；使用原厂备件全面更新调压阀芯组件、密封圈及过滤滤芯。"
+                   data-es="Se activa la línea de reserva redundante y se ventea la activa; se renuevan diafragmas, sellos y cartuchos con repuestos originales."
+                   data-it="Viene attivata la linea di riserva mentre la linea attiva viene sfiatata in sicurezza; guarnizioni e cartucce vengono rinnovate con parti originali."
+                   data-hi="सक्रिय लाइन को सुरक्षित रूप से वेंट करते समय बैकअप लाइन को सक्रिय किया जाता है; रेगुलेटर ट्रिम्स, सील और फिल्टर कार्ट्रिज को बदला जाता है।">
+                  Yedekli hat devreye alınarak aktif hat güvenle izole edilir; regülatör iç takımları, contalar ve filtre kartuşları orijinal parçalarla yenilenir.
+                </p>
+              </div>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="3. Electronic Leak Detection & Setpoint Calibration"
+                    data-ru="3. Электронный контроль утечек и калибровка уставок"
+                    data-ar="3. الكشف الإلكتروني عن التسرب ومعايرة نقاط الضبط"
+                    data-zh="3. 电子激光气密性检漏与参数精密调定"
+                    data-es="3. Detección Electrónica de Fugas y Calibración de Ajustes"
+                    data-it="3. Rilevamento Elettronico Fughe e Calibrazione Setpoint"
+                    data-hi="3. इलेक्ट्रॉनिक रिसाव का पता लगाना और सेटपॉइंट अंशांकन">
+                  3. Elektronik Sızıntı Kontrolü & Ayar Kalibrasyonu
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Zero-leakage is confirmed using ATEX-certified laser gas detectors; SAV slam-shut trip points and relief valves are calibrated to precise bar ratings."
+                   data-ru="Герметичность подтверждается лазерными детекторами ATEX; уставки срабатывания ПЗК (SAV) и предохранительных сбросных клапанов (ПСК) калибруются с точностью до бар."
+                   data-ar="يتم التحقق من عدم وجود تسرب باستخدام أجهزة كشف ليزرية معتمدة من ATEX؛ وتتم معايرة نقاط ضبط صمامات SAV وصمامات التنفيس بدقة عالية بالبار."
+                   data-zh="使用 ATEX 防爆激光检漏仪确认系统零泄漏；将安全切断阀（SAV）切断值与安全放散阀（Relief）起跳压力校准至精准 Bar 值。"
+                   data-es="Se confirma la ausencia de fugas con detectores láser certificados ATEX; los puntos de disparo SAV y válvulas de alivio se calibran con precisión en bar."
+                   data-it="L'assenza di fughe è verificata con rilevatori laser certificati ATEX; i punti di intervento SAV e le valvole di sfogo sono tarati con precisione in bar."
+                   data-hi="ATEX प्रमाणित लेजर गैस डिटेक्टरों का उपयोग करके शून्य रिसाव की पुष्टि की जाती है; SAV शट-ऑफ पॉइंट और रिलीफ वाल्व को सटीक बार पर कैलिब्रेट किया जाता है।">
+                  ATEX sertifikalı lazer gaz algılayıcılarla sızdırmazlık teyit edilir; SAV açma-kapama ve tahliye (relief) ventillerinin bar ayarları hassasça kalibre edilir.
+                </p>
+              </div>
+
+              <div class="process-step-box" style="border-left-color: transparent;">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="4. Official Maintenance Certification & Safe Commissioning"
+                    data-ru="4. Официальный акт обслуживания и безопасный пуск"
+                    data-ar="4. محضر الصيانة الرسمي وإعادة التشغيل الآمن"
+                    data-zh="4. 官方维护验收报告出具与安全投运"
+                    data-es="4. Certificación Oficial de Mantenimiento y Puesta en Servicio"
+                    data-it="4. Verbale Ufficiale di Manutenzione e Rimessa in Servizio"
+                    data-hi="4. आधिकारिक रखरखाव प्रमाणन और सुरक्षित कमीशनिंग">
+                  4. Resmi Bakım Tutanağı & Güvenli Devreye Alma
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="A comprehensive technical compliance report conforming to distribution and regulatory standards is issued; the station is safely commissioned with full operational stability."
+                   data-ru="Оформляется технический акт в соответствии со стандартами регуляторов и распределительных сетей; станция вводится в эксплуатацию с полной стабильностью."
+                   data-ar="يتم إصدار تقرير امتثال فني شامل وفقًا لمعايير شركات التوزيع واللوائح التنظيمية؛ وتتم إعادة تشغيل المحطة بكامل استقرارها التشغيلي."
+                   data-zh="出具符合燃气分销商与监管规范的综合技术报告；调压站在最佳运行稳定性状态下安全投入正式供气。"
+                   data-es="Se emite un informe técnico de conformidad según las normas de la distribuidora y regulatorias; la estación se pone en servicio con total estabilidad."
+                   data-it="Viene rilasciato un verbale tecnico di conformità secondo le norme dell'ente distributore; la stazione viene rimessa in servizio con piena stabilità operativa."
+                   data-hi="वितरण और नियामक मानकों के अनुरूप एक व्यापक तकनीकी अनुपालन रिपोर्ट जारी की जाती है; स्टेशन पूरी परिचालन स्थिरता के साथ सुरक्षित रूप से चालू होता है।">
+                  Dağıtım şirketi ve EPDK normlarına uygun teknik rapor düzenlenir; istasyon tam operasyonel kararlılıkla devreye alınır.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SAĞ KOLON -->
+          <div class="col-lg-4">
+            <div class="service-sidebar">
+
+              <!-- Hizmet Menüsü -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".2s">
+                <h4 class="fw-bold text-dark mb-20" style="font-size: 18px;"
+                    data-en="Our Services" data-ru="Наши услуги" data-ar="خدماتنا" data-zh="我们的服务" data-es="Nuestros Servicios" data-it="I Nostri Servizi" data-hi="हमारी सेवाएं">
+                  Hizmetlerimiz
+                </h4>
+                <ul class="service-nav-list">
+                  <li>
+                    <a href="kaynakli-imalat.html">
+                      <span data-en="<i class='lni lni-construction me-2'></i> Welded Manufacturing" data-ru="<i class='lni lni-construction me-2'></i> Сварочное производство" data-ar="<i class='lni lni-construction me-2'></i> التصنيع الملحوم" data-zh="<i class='lni lni-construction me-2'></i> 焊接制造" data-es="<i class='lni lni-construction me-2'></i> Fabricación Soldada" data-it="<i class='lni lni-construction me-2'></i> Carpenteria Saldata" data-hi="<i class='lni lni-construction me-2'></i> वेल्डेड निर्माण"><i class="lni lni-construction me-2"></i> Kaynaklı İmalat</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="istasyon-bakim-onarim.html" class="active">
+                      <span data-en="<i class='lni lni-cog me-2'></i> Station Maintenance" data-ru="<i class='lni lni-cog me-2'></i> Обслуживание станций" data-ar="<i class='lni lni-cog me-2'></i> صيانة المحطات" data-zh="<i class='lni lni-cog me-2'></i> 调压站维护" data-es="<i class='lni lni-cog me-2'></i> Mantenimiento de Estaciones" data-it="<i class='lni lni-cog me-2'></i> Manutenzione Stazioni" data-hi="<i class='lni lni-cog me-2'></i> स्टेशन रखरखाव"><i class="lni lni-cog me-2"></i> İstasyon Bakım Onarım</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="danismanlik.html">
+                      <span data-en="<i class='lni lni-briefcase me-2'></i> Consultancy Services" data-ru="<i class='lni lni-briefcase me-2'></i> Консалтинговые услуги" data-ar="<i class='lni lni-briefcase me-2'></i> الخدمات الاستشارية" data-zh="<i class='lni lni-briefcase me-2'></i> 咨询服务" data-es="<i class='lni lni-briefcase me-2'></i> Servicios de Consultoría" data-it="<i class='lni lni-briefcase me-2'></i> Servizi di Consulenza" data-hi="<i class='lni lni-briefcase me-2'></i> परामर्श सेवाएं"><i class="lni lni-briefcase me-2"></i> Danışmanlık Hizmetleri</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Teklif & Servis Çağrısı Kutusu -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".3s" style="background: linear-gradient(145deg, #002e5b 0%, #162447 100%); color: #fff; border: none;">
+                <h4 class="fw-bold text-white mb-15" style="font-size: 20px;"
+                    data-en="Need Service for Your Station?"
+                    data-ru="Требуется обслуживание вашей станции?"
+                    data-ar="هل تحتاج إلى خدمة لمحطتك؟"
+                    data-zh="您的调压站需要维保服务吗？"
+                    data-es="¿Necesita Servicio para su Estación?"
+                    data-it="Hai Bisogno di Assistenza per la Tua Stazione?"
+                    data-hi="क्या आपके स्टेशन के लिए सेवा की आवश्यकता है?">
+                  İstasyonunuz İçin Servis mi Gerekiyor?
+                </h4>
+                <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px;"
+                   data-en="Contact our engineering team immediately for periodic maintenance contracts, emergency breakdown support, or calibration requests."
+                   data-ru="Свяжитесь с нашей инженерной службой для заключения договоров периодического обслуживания, аварийного выезда или калибровки."
+                   data-ar="تواصل مع فريقنا الهندسي فوراً لعقود الصيانة الدورية، أو الدعم في حالات الأعطال الطارئة، أو طلبات المعايرة."
+                   data-zh="如需定期维保合同、应急故障排除支持或仪表校准服务，请立即联系我们的专业工程团队。"
+                   data-es="Póngase en contacto con nuestro equipo de ingeniería para contratos de mantenimiento periódico, soporte ante averías o calibraciones."
+                   data-it="Contattate il nostro team di ingegneri per contratti di manutenzione periodica, pronto intervento guasti o richieste di taratura."
+                   data-hi="आवधिक रखरखाव अनुबंधों, आपातकालीन ब्रेकडाउन सहायता, या अंशांकन अनुरोधों के लिए तुरंत हमारी इंजीनियरिंग टीम से संपर्क करें।">
+                  Periyodik bakım anlaşmaları, acil arıza müdahaleleri veya kalibrasyon talepleriniz için mühendislik ekibimizle anında iletişime geçebilirsiniz.
+                </p>
+                <div class="d-flex align-items-center mb-20">
+                  <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(66, 173, 240, 0.2); display: flex; align-items: center; justify-content: center; color: #42adf0; font-size: 18px; margin-right: 12px;">
+                    <i class="lni lni-envelope"></i>
+                  </div>
+                  <div>
+                    <span style="font-size: 12px; color: #94a3b8; display: block;"
+                          data-en="E-Mail & Service Request" data-ru="Эл. почта и заявка" data-ar="البريد الإلكتروني وطلب الخدمة" data-zh="电子邮件与服务申请" data-es="Correo y Solicitud de Servicio" data-it="E-mail e Richiesta di Servizio" data-hi="ई-मेल और सेवा अनुरोध">
+                      E-Posta & Talep
+                    </span>
+                    <a href="mailto:info@nartgaz.com" style="color: #fff; font-weight: 700; text-decoration: none; font-size: 14.5px;">info@nartgaz.com</a>
+                  </div>
+                </div>
+                <a href="../index.html#contact" class="main-btn btn-hover" style="background: #42adf0; color: #fff; width: 100%; text-align: center; border-radius: 8px; font-weight: 700; border: none; padding: 12px; display: block;"
+                   data-en="Service & Maintenance Request" data-ru="Запрос на сервис и обслуживание" data-ar="طلب الصيانة والخدمة" data-zh="维保服务申请表单" data-es="Solicitud de Servicio y Mantenimiento" data-it="Richiesta di Assistenza e Manutenzione" data-hi="सेवा और रखरखाव अनुरोध">
+                  Servis ve Bakım Talebi
+                </a>
+              </div>
+
+              <!-- Standartlar & Yönetmelikler Widget -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".4s">
+                <h4 class="fw-bold text-dark mb-15" style="font-size: 17px;"
+                    data-en="Referenced Standards" data-ru="Справочные стандарты" data-ar="المعايير المعتمدة" data-zh="参考规范与标准" data-es="Normas de Referencia" data-it="Standard di Riferimento" data-hi="संदर्भित मानक">
+                  Uluslararası Uyumluluk
+                </h4>
+                <ul class="list-unstyled mb-0" style="font-size: 13.5px; color: #64748b; line-height: 2;">
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS EN 12186</strong> (<span data-en="Gas Pressure Regulating Stations" data-ru="Газорегулирующие станции" data-ar="محطات تنظيم ضغط الغاز" data-zh="气体调压站规范" data-es="Estaciones de Regulación de Gas" data-it="Stazioni di Regolazione Gas" data-hi="गैस दबाव विनियमन स्टेशन">Gaz Basınç Düşürme İstasyonları</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS EN 12279</strong> (<span data-en="Gas Pressure Regulating Installations" data-ru="Газорегулирующие установки" data-ar="تركيبات تنظيم ضغط الغاز" data-zh="燃气调压装置" data-es="Instalaciones de Regulación de Gas" data-it="Impianti di Regolazione Gas" data-hi="गैस विनियमन प्रतिष्ठान">Gaz Regülasyon Tesisatı</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong data-en="Energy Market Regulations" data-ru="Технические регламенты" data-ar="اللوائح الفنية للطاقة" data-zh="能源市场技术法规" data-es="Regulaciones Técnicas del Mercado" data-it="Regolamentazioni Tecniche" data-hi="ऊर्जा बाजार तकनीकी नियम">EPDK Dağıtım ve Tesis Şartnamesi</strong></li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>ATEX Zone 1 / Zone 2</strong> (<span data-en="Hazardous Explosive Atmosphere" data-ru="Взрывоопасная среда" data-ar="بيئة قابلة للانفجار" data-zh="防爆危险环境" data-es="Atmósfera Explosiva" data-it="Atmosfera Esplosiva" data-hi="विस्फोटक वातावरण">Patlayıcı Ortam</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>ISO 9001 & ISO 45001</strong> (<span data-en="Field Safety & Quality Management" data-ru="Безопасность и менеджмент качества" data-ar="إدارة الجودة والسلامة المهنية" data-zh="现场安全与质量管理体系" data-es="Seguridad en Campo y Calidad" data-it="Sicurezza sul Campo e Qualità" data-hi="फील्ड सुरक्षा और गुणवत्ता प्रबंधन">Saha Güvenliği</span>)</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dinamik Footer Alanı -->
+    <div id="nart-footer"></div>
+
+    <a href="#" class="scroll-top btn-hover"><i class="lni lni-chevron-up"></i></a>
+
+    <!-- ======== JS Dosyaları ======== -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- 🌟 Components Header & Footer ve Dil Eşitleme Yükleyici -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof WOW !== 'undefined') { new WOW().init(); }
+
+        // Header Yükle
+        fetch("../components/header.html")
+          .then(r => r.text())
+          .then(d => {
+            document.getElementById("nart-header").innerHTML = d
+              .replace(/href="(?!http|javascript|#)([^"]+)"/g, 'href="../$1"')
+              .replace(/src="(?!http)([^"]+)"/g, 'src="../$1"')
+              .replace(/data-preview="(?!http)([^"]+)"/g, 'data-preview="../$1"');
+
+            const aktifDil = localStorage.getItem('nart_selected_lang');
+            if (aktifDil && typeof nartDilDegistir === 'function') {
+              nartDilDegistir(aktifDil);
+            }
+          })
+          .catch(e => console.warn("Header:", e));
+
+        // Footer Yükle
+        fetch("../components/footer.html")
+          .then(r => r.text())
+          .then(d => {
+            document.getElementById("nart-footer").innerHTML = d
+              .replace(/href="(?!http|javascript|#|tel|mailto)([^"]+)"/g, 'href="../$1"')
+              .replace(/src="(?!http)([^"]+)"/g, 'src="../$1"');
+
+            const aktifDil = localStorage.getItem('nart_selected_lang');
+            if (aktifDil && typeof nartDilDegistir === 'function') {
+              nartDilDegistir(aktifDil);
+            }
+          })
+          .catch(e => console.warn("Footer:", e));
+      });
+    </script>
+  </body>
+</html>

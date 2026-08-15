@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="no-js" lang="tr">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title data-en="Welded Manufacturing & Custom Fabrication | Nart Gaz" data-ru="Сварочное производство и индивидуальное изготовление | Nart Gaz" data-ar="التصنيع الملحوم والحلول المخصصة | نارت غاز" data-zh="焊接制造与定制加工 | Nart Gaz" data-es="Fabricación Soldada y Personalizada | Nart Gaz" data-it="Carpenteria Saldata e Fabbricazione su Misura | Nart Gaz" data-hi="वेल्डेड विनिर्माण और कस्टम फैब्रिकेशन | Nart Gaz">Kaynaklı İmalat ve Özel Birleştirme Çözümleri | Nart Gaz</title>
+    <meta name="description" content="Nart Gaz; yüksek basınç hatlarından özel flanş-boru bağlantılarına, fason ve seri kaynaklı parçalardan prototip birleştirmelere kadar uluslararası standartlarda (ASME, EN ISO) sertifikalı kaynaklı imalat hizmeti sunar." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+
+    <!-- ======== CSS Dosyaları ======== -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/lineicons.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <style>
+      /* Görsel ve Kart Stilleri */
+      .service-main-img-box {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+        background: #fff;
+      }
+      .service-main-img-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .service-main-img-box:hover img {
+        transform: scale(1.02);
+      }
+      .service-img-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(22, 36, 71, 0.92);
+        backdrop-filter: blur(8px);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 8px;
+        border-left: 3px solid #42adf0;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* Sidebar & Menü */
+      .service-sidebar-widget {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 30px;
+      }
+      .service-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .service-nav-list li {
+        margin-bottom: 8px;
+      }
+      .service-nav-list a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 18px;
+        background: #fff;
+        border-radius: 8px;
+        color: #1e293b;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+      .service-nav-list a:hover,
+      .service-nav-list a.active {
+        background: #002e5b;
+        color: #fff;
+        border-color: #002e5b;
+        transform: translateX(4px);
+      }
+      .service-nav-list a.active {
+        background: #42adf0;
+        border-color: #42adf0;
+      }
+
+      /* Teknik Özellik Kartları */
+      .tech-spec-card {
+        background: #fff;
+        border: 1px solid #edf2f7;
+        border-radius: 10px;
+        padding: 22px;
+        height: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      }
+      .tech-spec-card:hover {
+        border-color: #42adf0;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(66, 173, 240, 0.1);
+      }
+      .tech-spec-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: rgba(66, 173, 240, 0.12);
+        color: #002e5b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      /* Süreç Çizgisi */
+      .process-step-box {
+        border-left: 2px dashed #42adf0;
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .process-step-box::before {
+        content: "";
+        position: absolute;
+        left: -9px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #42adf0;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #42adf0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Dinamik Header Alanı -->
+    <div id="nart-header"></div>
+
+    <!-- ======== Hero Üst Başlık Bölümü ======== -->
+    <section class="hero-section" style="padding: 180px 0 80px; background-color: #162447;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <div class="hero-content mb-0">
+              <h1 class="wow fadeInUp" data-wow-delay=".2s"
+                  data-en="Welded Manufacturing"
+                  data-ru="Сварочное производство"
+                  data-ar="التصنيع الملحوم"
+                  data-zh="焊接制造"
+                  data-es="Fabricación Soldada"
+                  data-it="Carpenteria Saldata"
+                  data-hi="वेल्डेड निर्माण"
+                  style="font-size: 48px; margin-bottom: 15px;">
+                Kaynaklı İmalat
+              </h1>
+              <p class="wow fadeInUp" data-wow-delay=".4s"
+                 data-en="High-precision welded fabrication, custom flange-pipe joining, and certified serial production solutions."
+                 data-ru="Высокоточное сварочное производство, нестандартные соединения фланцев и труб, а также сертифицированное серийное производство."
+                 data-ar="تصنيع ملحوم عالي الدقة، وتجميع مخصص للفلنجات والأنابيب، وحلول إنتاج متسلسل معتمدة."
+                 data-zh="高精度焊接加工、定制法兰管道连接与经认证的批量生产解决方案。"
+                 data-es="Fabricación soldada de alta precisión, unión personalizada de bridas y tuberías y producción en serie certificada."
+                 data-it="Carpenteria saldata di precisione, giunzione su misura di flange e tubi e produzione in serie certificata."
+                 data-hi="उच्च-सटीक वेल्डेड फैब्रिकेशन, कस्टम निकला हुआ किनारा-पाइप जुड़ना और प्रमाणित धारावाहिक उत्पादन समाधान।"
+                 style="color: rgba(255,255,255,0.7); margin-bottom: 0;">
+                Yüksek hassasiyetli kaynaklı montaj, özel nozul-flanş birleştirmeleri ve sertifikalı seri imalat çözümleri.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 text-md-end mt-4 mt-md-0">
+            <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
+              <ol class="breadcrumb justify-content-md-end mb-0" style="background: transparent; padding: 0;">
+                <li class="breadcrumb-item">
+                  <a href="../index.html" data-en="Home" data-ru="Главная" data-ar="الرئيسية" data-zh="首页" data-es="Inicio" data-it="Home" data-hi="होम" style="color: rgba(255,255,255,0.6);">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="../index.html#features" data-en="Services" data-ru="Услуги" data-ar="الخدمات" data-zh="服务" data-es="Servicios" data-it="Servizi" data-hi="सेवाएं" style="color: rgba(255,255,255,0.6);">Hizmetlerimiz</a>
+                </li>
+                <li class="breadcrumb-item active text-white" aria-current="page" data-en="Welded Manufacturing" data-ru="Сварочное производство" data-ar="التصنيع الملحوم" data-zh="焊接制造" data-es="Fabricación Soldada" data-it="Carpenteria Saldata" data-hi="वेल्डेड निर्माण">
+                  Kaynaklı İmalat
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Detay İçerik Alanı ======== -->
+    <section class="service-detail-section pt-100 pb-120" style="background: #fdfefe;">
+      <div class="container">
+        <div class="row">
+
+          <!-- SOL / ANA KOLON -->
+          <div class="col-lg-8">
+
+            <div class="service-main-img-box mb-40 wow fadeInUp" data-wow-delay=".2s">
+              <img src="../assets/img/services/1.webp" alt="Nart Gaz Hassas Kaynaklı İmalat ve Flanş Nozulları" />
+              <div class="service-img-badge"
+                   data-en="<i class='lni lni-certificate me-1'></i> ASME Sec. IX & EN ISO 15614 Certified WPS/PQR"
+                   data-ru="<i class='lni lni-certificate me-1'></i> Сертифицированные WPS/PQR по ASME Sec. IX и EN ISO 15614"
+                   data-ar="<i class='lni lni-certificate me-1'></i> WPS/PQR معتمد وفقًا لـ ASME Sec. IX و EN ISO 15614"
+                   data-zh="<i class='lni lni-certificate me-1'></i> ASME Sec. IX 与 EN ISO 15614 认证 WPS/PQR"
+                   data-es="<i class='lni lni-certificate me-1'></i> WPS/PQR Certificado según ASME Sec. IX y EN ISO 15614"
+                   data-it="<i class='lni lni-certificate me-1'></i> WPS/PQR Certificati ASME Sec. IX ed EN ISO 15614"
+                   data-hi="<i class='lni lni-certificate me-1'></i> ASME Sec. IX और EN ISO 15614 प्रमाणित WPS/PQR">
+                <i class="lni lni-certificate me-1"></i> ASME Sec. IX & EN ISO 15614 Onaylı WPS/PQR
+              </div>
+            </div>
+
+            <div class="service-content-block mb-45 wow fadeInUp" data-wow-delay=".3s">
+              <h2 class="fw-bold text-dark mb-20" style="font-size: 26px;"
+                  data-en="From Micro Tolerances to Macro Infrastructure: Qualified Metallurgical Joining"
+                  data-ru="От микродопусков до макроинфраструктуры: квалифицированное металлургическое соединение"
+                  data-ar="من التفاوتات الدقيقة إلى البنى التحتية الكبرى: ربط وتجميع ميتالورجي عالي الجودة"
+                  data-zh="从微观公差到宏观基建：高标准冶金焊接连接"
+                  data-es="De Micro Tolerancias a Macro Infraestructuras: Unión Metalúrgica Cualificada"
+                  data-it="Dalle Micro Tolleranze alle Macro Infrastrutture: Giunzione Metallurgica Qualificata"
+                  data-hi="सूक्ष्म सहनशीलता से लेकर मैक्रो बुनियादी ढांचे तक: योग्य धातुकर्म जुड़ाव">
+                Mikro Toleranslardan Makro Altyapılara: Nitelikli Metalürjik Birleştirme
+              </h2>
+              <p style="color: #4b5563; font-size: 15.5px; line-height: 1.8; margin-bottom: 20px;"
+                 data-en="In industrial gas lines and high-pressure fluid systems, the most critical cornerstone is joining two metallic elements with molecular-level continuity. At Nart Gaz, we do not limit our manufacturing capabilities only to turnkey mega station (RMS-A, RMS-B, RMS-C) projects; we respond to our industry partners' most specific contract or serial component welding demands with the same rigorous precision."
+                 data-ru="В промышленных газопроводах и гидросистемах высокого давления ключевым элементом является соединение металлов с безупречной молекулярной сплошностью. В Nart Gaz мы не ограничиваемся строительством крупных ГРП (RMS-A, RMS-B, RMS-C); мы выполняем самые специфические контрактные и серийные заказы по сварке с высочайшей инженерной точностью."
+                 data-ar="في خطوط الغاز الصناعية وأنظمة السوائل عالية الضغط، يعتبر الركيزة الأساسية هي ربط عنصرين معدنيين باستمرارية جزيئية لا تشوبها شائبة. في نارت غاز، لا نحصر قدراتنا فقط في مشاريع المحطات الكبرى (RMS-A، RMS-B، RMS-C)؛ بل نلبي أدق متطلبات لحام الأجزاء المخصصة أو المتسلسلة لشركائنا بأعلى درجات الدقة الهندسية."
+                 data-zh="在工业燃气管线与高压流体系统中，最关键的核心在于使两个金属构件在分子层面实现无缺陷的连续熔合。在 Nart Gaz，我们的制造能力不仅限于交钥匙大型调压站（RMS-A、RMS-B、RMS-C）项目；我们以同样严苛的工程精度响应工业界最特定的定制件、代工及批量焊接需求。"
+                 data-es="En líneas de gas industrial y sistemas de fluidos de alta presión, la piedra angular más crítica es unir dos elementos metálicos con una continuidad molecular impecable. En Nart Gaz, no limitamos nuestra capacidad solo a megaestaciones (RMS-A, RMS-B, RMS-C); respondemos a las demandas de soldadura más específicas de piezas personalizadas o en serie con el máximo rigor técnico."
+                 data-it="Nelle condotte di gas industriale e nei sistemi ad alta pressione, il tassello più critico è l'unione di due elementi metallici con continuità molecolare perfetta. In Nart Gaz non limitiamo le capacità solo a mega stazioni (RMS-A, RMS-B, RMS-C); rispondiamo anche alle richieste più specifiche di saldatura di componenti su commessa o in serie con rigore ingegneristico."
+                 data-hi="औद्योगिक गैस लाइनों और उच्च दबाव तरल प्रणालियों में सबसे महत्वपूर्ण आधार दो धातु तत्वों को निर्दोष आणविक निरंतरता के साथ जोड़ना है। Nart Gaz में, हम अपनी विनिर्माण क्षमताओं को केवल मेगा स्टेशनों (RMS-A, RMS-B, RMS-C) तक सीमित नहीं रखते हैं; हम समान कठोर सटीकता के साथ विशिष्ट, अनुबंध या धारावाहिक घटक वेल्डिंग मांगों का जवाब देते हैं।">
+                Endüstriyel gaz hatlarında ve yüksek basınçlı akışkan sistemlerinde en kritik yapı taşı, iki metalik elemanın moleküler düzeyde kusursuz süreklilikle bir araya getirilmesidir. <strong>Nart Gaz</strong> olarak üretim kabiliyetimizi yalnızca anahtar teslim mega istasyon (RMS-A, RMS-B, RMS-C) projeleriyle sınırlamıyoruz; sanayinin ve iş ortaklarımızın ihtiyaç duyduğu <strong>en spesifik, fason veya seri parça birleştirme taleplerine</strong> de aynı askeri hassasiyet ve mühendislik ciddiyetiyle yanıt veriyoruz[cite: 5].
+              </p>
+              <p style="color: #4b5563; font-size: 15.5px; line-height: 1.8; margin-bottom: 20px;"
+                 data-en="When joining two separate parts delivered to us (e.g. forged steel flanges to seamless steel pipes, custom threaded nozzles, manifold bodies, or pressure-retaining fittings), chemical composition, carbon equivalent, and heat-affected zone (HAZ) dynamics are meticulously analyzed. From single prototypes to batches of thousands, every stage is executed in strict compliance with qualified WPS and PQR parameters."
+                 data-ru="При соединении двух независимых деталей (кованых фланцев с бесшовными трубами, резьбовых штуцеров, коллекторов или фитингов высокого давления) тщательно анализируются химический состав, углеродный эквивалент и зона термического влияния (ЗТВ). Все этапы строго соответствуют квалифицированным спецификациям WPS и PQR."
+                 data-ar="عند تجميع قطعتين مستقلتين يتم تسليمهما إلينا (مثل الفلنجات الفولاذية المطروقة مع الأنابيب غير الملحومة، أو الفوهات المسننة، أو المشعبات)، يتم تحليل التركيب الكيميائي والمكافئ الكربوني والمنطقة المتأثرة بالحرارة (HAZ) بدقة. تُنفذ جميع المراحل بالالتزام الصارم بمواصفات WPS و PQR المعتمدة."
+                 data-zh="在对客户交付的独立部件（如锻钢法兰与无缝钢管、特制螺纹管嘴、汇管或承压管件）进行焊接时，我们会严密分析化学成分、碳当量及热影响区（HAZ）动态。无论是单件打样还是数千件的批量生产，均严格执行受控的 WPS 与 PQR 焊接工艺参数。"
+                 data-es="Al unir dos piezas independientes (bridas forjadas con tubos sin costura, boquillas roscadas, colectores o accesorios de presión), analizamos meticulosamente la composición química, el carbono equivalente y la zona afectada por el calor (ZAT). Cada etapa se ejecuta bajo estrictos parámetros calificados de WPS y PQR."
+                 data-it="Nell'unione di due pezzi indipendenti (flange forgiate con tubi senza saldatura, ugelli filettati, collettori o raccordi a pressione), analizziamo composizione chimica, carbonio equivalente e zona termicamente alterata (ZTA). Ogni fase rispetta rigorosamente i parametri qualificati WPS e PQR."
+                 data-hi="हमें सौंपे गए दो अलग-अलग हिस्सों (जैसे जालीदार स्टील फ्लैंग्स को सीमलेस स्टील पाइप, कस्टम थ्रेडेड नोजल या मैनिफोल्ड) को जोड़ते समय, रासायनिक संरचना, कार्बन समकक्ष और गर्मी प्रभावित क्षेत्र (HAZ) का सावधानीपूर्वक विश्लेषण किया जाता है। प्रत्येक चरण को योग्य WPS और PQR मापदंडों के अनुसार निष्पादित किया जाता है।">
+                Tarafımıza ulaştırılan iki bağımsız parçanın (örneğin dövme çelik flanş ile çekme çelik borunun, özel dişli nozulların, manifold gövdelerinin veya basınç tutucu ara bağlantı elemanlarının) birleştirilmesinde; malzemenin kimyasal bileşimi, karbon eşdeğeri ve ısıdan etkilenen bölge (HAZ) dinamikleri titizlikle analiz edilir[cite: 5]. Gerek tekil prototiplerde gerekse binlerce adetlik seri imalat partilerinde, kaynak ağzı geometrisinden kök paso nüfuziyetine kadar her aşama kayıt altına alınmış <strong>WPS (Kaynak Prosedür Şartnamesi)</strong> ve <strong>PQR (Prosedür Kalifikasyon Kaydı)</strong> parametrelerine harfiyen bağlı kalınarak icra edilir[cite: 5].
+              </p>
+            </div>
+
+            <!-- 4'lü İmalat Parametreleri Kartları -->
+            <h3 class="fw-bold text-dark mb-25 wow fadeInUp" data-wow-delay=".3s" style="font-size: 22px;"
+                data-en="Our Manufacturing Parameters & Advantages"
+                data-ru="Наши производственные параметры и преимущества"
+                data-ar="معايير التصنيع ومزايانا التنافسية"
+                data-zh="我们的制造参数与工艺优势"
+                data-es="Nuestros Parámetros y Ventajas de Fabricación"
+                data-it="I Nostri Parametri di Produzione e Vantaggi"
+                data-hi="हमारे विनिर्माण पैरामीटर और लाभ">
+              İmalat Parametrelerimiz ve Üstünlüklerimiz
+            </h3>
+            <div class="row g-3 mb-50">
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-cog"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Fixtured & Distortion-Free Welding"
+                      data-ru="Сварка в кондукторах без деформаций"
+                      data-ar="لحام مثبت بأدوات دقيقة وبدون تشوهات"
+                      data-zh="工装夹具定位与无变形焊接"
+                      data-es="Soldadura con Fijación y Sin Deformaciones"
+                      data-it="Saldatura con Dime e Senza Deformazioni"
+                      data-hi="फिक्स्चर्ड और विरूपण-मुक्त वेल्डिंग">
+                    Fikstürlü & Deformasyonsuz Kaynak
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="By utilizing custom clamping fixtures and rotary positioners, thermal distortion and angular misalignment are completely prevented, preserving flange face parallelism."
+                     data-ru="Использование специальных зажимных приспособлений и позиционеров полностью предотвращает термические поводки и угловые перекосы, сохраняя параллельность фланцев."
+                     data-ar="من خلال استخدام مثبتات التثبيت المخصصة وأجهزة تحديد الموضع الدوارة، يتم منع التشوه الحراري والانحراف الزاوي تمامًا، مع الحفاظ على توازي أسطح الفلنجات."
+                     data-zh="利用专用夹具与高精度旋转变位机，彻底消除焊接热变形与角度偏斜，确保法兰端面绝佳的平行度与同轴度。"
+                     data-es="Mediante accesorios de sujeción personalizados y posicionadores, se eliminan por completo las distorsiones térmicas y desalineaciones angulares, preservando el paralelismo de bridas."
+                     data-it="Utilizzando dime di bloccaggio e posizionatori rotanti, si prevengono distorsioni termiche e disallineamenti angolari, preservando la planarità e parallelismo delle flange."
+                     data-hi="कस्टम क्लैम्पिंग फिक्स्चर और पोजीशनर का उपयोग करके, थर्मल विरूपण और कोणीय मिसलिग्न्मेंट को पूरी तरह से रोका जाता है, निकला हुआ किनारा समानांतरता को बनाए रखा जाता है।">
+                    Özel bağlama fikstürleri ve hassas pozisyonerler kullanılarak ısıl çarpılmalar (distorsiyon) ve açısal kaçıklıklar tamamen engellenir; flanş yüzey paralelliği korunur[cite: 5].
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-layers"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Broad Metallurgical Spectrum"
+                      data-ru="Широкий металлургический спектр"
+                      data-ar="نطاق ميتالورجي واسع ومتنوع"
+                      data-zh="广泛的冶金材料焊接能力"
+                      data-es="Amplio Espectro Metalúrgico"
+                      data-it="Ampio Spettro Metallurgico"
+                      data-hi="विस्तृत धातुकर्म स्पेक्ट्रम">
+                    Geniş Metalurjik Yelpaze
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Flawless welding capability across carbon steels (P235GH, ASTM A106/A105), stainless steel grades (AISI 304L/316L), and high-yield line pipe steels."
+                     data-ru="Безупречная сварка углеродистых сталей (P235GH, ASTM A106/A105), нержавеющих сталей (AISI 304L/316L) и высокопрочных трубных сталей."
+                     data-ar="قدرة لحام فائقة للفولاذ الكربوني (P235GH, ASTM A106/A105)، ومجموعات الفولاذ المقاوم للصدأ (AISI 304L/316L)، وسبائك الأنابيب عالية الصلابة."
+                     data-zh="在碳素钢（P235GH、ASTM A106/A105）、不锈钢（AISI 304L/316L）及高强管线钢材上展现无暇的熔敷质量。"
+                     data-es="Capacidad de soldadura impecable en aceros al carbono (P235GH, ASTM A106/A105), aceros inoxidables (AISI 304L/316L) y aceros para tuberías de alta resistencia."
+                     data-it="Saldatura impeccabile su acciai al carbonio (P235GH, ASTM A106/A105), acciai inossidabili (AISI 304L/316L) e acciai per tubazioni ad alto snervamento."
+                     data-hi="कार्बन स्टील्स (P235GH, ASTM A106/A105), स्टेनलेस स्टील (AISI 304L/316L) और उच्च-शक्ति पाइप स्टील्स में निर्दोष वेल्डिंग क्षमता।">
+                    Karbon çelikleri (P235GH, ASTM A106/A105), paslanmaz çelik grupları (AISI 304L/316L) ve yüksek mukavemetli boru çeliklerinde kusursuz kaynak kabiliyeti[cite: 5].
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-shield"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="100% NDT Inspection Assurance"
+                      data-ru="100% гарантия неразрушающего контроля (NDT)"
+                      data-ar="ضمان الفحص غير المدمر (NDT) بنسبة 100%"
+                      data-zh="100% 无损检测 (NDT) 质量保障"
+                      data-es="Garantía de Inspección NDT 100%"
+                      data-it="Garanzia di Controllo CND al 100%"
+                      data-hi="100% NDT निरीक्षण आश्वासन">
+                    %100 NDT Muayene Güvencesi
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Visual Testing (VT), Liquid Penetrant (PT), Magnetic Particle (MT), Ultrasonic (UT), and Radiographic (RT) X-ray testing per project specifications."
+                     data-ru="Визуальный (VT), капиллярный (PT), магнитопорошковый (MT), ультразвуковой (UT) и радиографический (RT) рентген-контроль по спецификациям проекта."
+                     data-ar="اختبارات الفحص البصري (VT)، واختبار السوائل النافذة (PT)، والجسيمات المغناطيسية (MT)، والموجات فوق الصوتية (UT)، والأشعة السينية (RT) وفق متطلبات المشروع."
+                     data-zh="根据项目规格书提供目视检测（VT）、着色渗透（PT）、磁粉探伤（MT）、超声波（UT）及 X 射线射线照相（RT）全面无损检测。"
+                     data-es="Inspección visual (VT), líquidos penetrantes (PT), partículas magnéticas (MT), ultrasonido (UT) y radiografía (RT) según especificaciones del proyecto."
+                     data-it="Esami visivi (VT), liquidi penetranti (PT), particelle magnetiche (MT), ultrasuoni (UT) e radiografie (RT) in base alle specifiche di progetto."
+                     data-hi="परियोजना विनिर्देशों के अनुसार विजुअल टेस्टिंग (VT), लिक्विड पेनिट्रेंट (PT), मैग्नेटिक पार्टिकल (MT), अल्ट्रासोनिक (UT) और रेडियोग्राफिक (RT) परीक्षण।">
+                    İsteğe ve proje şartnamesine bağlı olarak Görsel Muayene (VT), Sıvı Penetrant (PT), Manyetik Parçacık (MT), Ultrasonik (UT) ve Radyografik (RT) röntgen testleri[cite: 5].
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-timer"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Serial Production & Contract Manufacturing"
+                      data-ru="Серийное и контрактное производство"
+                      data-ar="الإنتاج المتسلسل والتصنيع التعاقدي (فاسون)"
+                      data-zh="批量生产与定制代工制造"
+                      data-es="Producción en Serie y Fabricación a Terceros"
+                      data-it="Produzione in Serie e Conto Terzi"
+                      data-hi="धारावाहिक उत्पादन और अनुबंध विनिर्माण">
+                    Seri Üretim & Fason İmalat
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Whether subcontracted joining of customer-supplied raw parts or turnkey fabrication including material procurement, all backed by fast delivery schedules."
+                     data-ru="Сварка деталей заказчика или производство «под ключ» с закупкой материалов в строгие и быстрые сроки поставки."
+                     data-ar="سواء كان تجميع أجزاء العميل بنظام التعاقد أو التصنيع المتكامل تسليم مفتاح مع توريد المواد، مع جداول تسليم سريعة ودقيقة."
+                     data-zh="无论是客户来料部件的代工焊接装配，还是包含原材料采购的交钥匙整件加工，均承诺极具竞争力的快速交付期。"
+                     data-es="Tanto la unión subcontratada de piezas suministradas como la fabricación llave en mano con suministro de material, con plazos de entrega rápidos."
+                     data-it="Sia l'unione conto terzi di componenti forniti sia la fornitura chiavi in mano con acquisto materiali, con tempistiche di consegna rapide."
+                     data-hi="चाहे ग्राहक द्वारा आपूर्ति किए गए कच्चे भागों का अनुबंध जुड़ाव हो या सामग्री खरीद सहित टर्नकी निर्माण, सभी तेजी से वितरण कार्यक्रम के साथ।">
+                    İster elinizdeki ham parçaların fason olarak birleştirilmesi, ister sıfırdan malzeme teminiyle anahtar teslim üretimi; hızlı teslimat takvimleriyle[cite: 5].
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Süreç Akışı -->
+            <div class="service-process-wrapper mb-40 wow fadeInUp" data-wow-delay=".4s">
+              <h3 class="fw-bold text-dark mb-25" style="font-size: 22px;"
+                  data-en="Our Welded Fabrication Workflow"
+                  data-ru="Наш технологический процесс сварки"
+                  data-ar="سير عمل تصنيع وتجميع الأجزاء الملحومة"
+                  data-zh="焊接构件加工制造流程"
+                  data-es="Nuestro Flujo de Trabajo de Fabricación Soldada"
+                  data-it="Il Nostro Flusso di Lavoro di Carpenteria Saldata"
+                  data-hi="हमारा वेल्डेड फैब्रिकेशन कार्यप्रवाह">
+                Kaynaklı Parça İmalat Sürecimiz
+              </h3>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="1. Technical Drawing & Part Analysis"
+                    data-ru="1. Анализ чертежей и деталей"
+                    data-ar="1. تحليل المخططات الهندسية والأجزاء"
+                    data-zh="1. 工程图纸审查与构件解析"
+                    data-es="1. Análisis de Planos y Piezas"
+                    data-it="1. Analisi del Disegno Tecnico e dei Pezzi"
+                    data-hi="1. तकनीकी ड्राइंग और भाग विश्लेषण">
+                  1. Teknik Resim & Parça Analizi
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Samples, parts, or CAD/technical drawings provided by the customer are reviewed to define weld bevel geometry and target tolerances."
+                   data-ru="Образцы или CAD-чертежи заказчика анализируются для выбора геометрии разделки кромок под сварку и допусков."
+                   data-ar="تتم مراجعة العينات أو المخططات الفنية و CAD المقدمة من العميل لتحديد هندسة حواف اللحام والتفاوتات المطلوبة."
+                   data-zh="深入评审客户提供的样品或 CAD 图纸，确定坡口形式、根部间隙及严苛的加工公差目标。"
+                   data-es="Se revisan muestras o planos CAD para definir la geometría del bisel de soldadura y las tolerancias objetivo."
+                   data-it="Si esaminano campioni o disegni CAD per definire la geometria del cianfrino e le tolleranze richieste."
+                   data-hi="वेल्ड बेवल ज्यामिति और लक्ष्य सहनशीलता को परिभाषित करने के लिए नमूनों या CAD चित्रों की समीक्षा की जाती है।">
+                  Müşteriden gelen numune, parça veya CAD/teknik çizimler incelenerek kaynak ağzı geometrisi ve tolerans hedefleri belirlenir[cite: 5].
+                </p>
+              </div>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="2. Surface Preparation & Fixturing"
+                    data-ru="2. Подготовка поверхностей и фиксация"
+                    data-ar="2. تجهيز الأسطح والتثبيت الدقيق"
+                    data-zh="2. 坡口表面处理与工装精确定位"
+                    data-es="2. Preparación de Superficie y Fijación"
+                    data-it="2. Preparazione Superficiale e Bloccaggio"
+                    data-hi="2. सतह की तैयारी और फिक्सिंग">
+                  2. Yüzey Hazırlığı ve Fikstürleme
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Cleaned of oxides, oils, and burrs, parts are clamped onto dedicated fabrication jigs to eliminate micro-axial deviations."
+                   data-ru="Очищенные от оксидов, масел и заусенцев детали фиксируются в технологических кондукторах для устранения смещений осей."
+                   data-ar="يتم تنظيف الأجزاء من الأكاسيد والزيوت والشوائب وتثبيتها بدقة على مثبتات مخصصة لمنع أي انحراف في المحاذاة."
+                   data-zh="彻底清除氧化层、油脂及毛刺，构件装夹于专用工装夹具中，彻底杜绝微米级轴向同轴度偏差。"
+                   data-es="Las piezas desengrasadas y desbarbadas se fijan en plantillas dedicadas para evitar desviaciones axiales."
+                   data-it="Privati di ossidi e bave, i componenti vengono staffati su dime dedicate per evitare scostamenti assiali."
+                   data-hi="ऑक्सीजन और तेल से साफ किए गए हिस्सों को सूक्ष्म-अक्षीय विचलन को रोकने के लिए फिक्स्चर में क्लैंप किया जाता है।">
+                  Oksit, yağ ve çapaklardan arındırılan parçalar, mikro eksenel sapmaları önleyen özel imalat aparatlarına hassasiyetle sabitlenir[cite: 5].
+                </p>
+              </div>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="3. Certified Welding Operation (TIG / MIG-MAG / SMAW)"
+                    data-ru="3. Сертифицированная сварка (TIG / MIG-MAG / SMAW)"
+                    data-ar="3. عمليات اللحام المعتمدة (TIG / MIG-MAG / SMAW)"
+                    data-zh="3. 持证专家焊接作业 (TIG / MIG-MAG / SMAW)"
+                    data-es="3. Operación de Soldadura Certificada (TIG / MIG-MAG / SMAW)"
+                    data-it="3. Operazione di Saldatura Certificata (TIG / MIG-MAG / SMAW)"
+                    data-hi="3. प्रमाणित वेल्डिंग ऑपरेशन (TIG / MIG-MAG / SMAW)">
+                  3. Sertifikalı Kaynak Operasyonu (TIG / MIG-MAG / SMAW)
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Root and cap passes are deposited with controlled heat input by our EN ISO 9606-1 / ASME certified specialist welders."
+                   data-ru="Корневые и заполняющие проходы выполняются с контролируемым тепловложением сварщиками с аттестацией EN ISO 9606-1 / ASME."
+                   data-ar="يقوم فنيو اللحام المعتمدون وفقًا لـ EN ISO 9606-1 / ASME بتنفيذ طبقات اللحام الجذرية والملء تحت تحكم دقيق في الحرارة."
+                   data-zh="由具备 EN ISO 9606-1 / ASME 资格认证的专家焊工在严控热输入条件下施焊打底及盖面焊道。"
+                   data-es="Soldadores certificados según EN ISO 9606-1 / ASME depositan los pases de raíz y relleno con aporte térmico controlado."
+                   data-it="Saldatori certificati EN ISO 9606-1 / ASME eseguono passate di fondo e riempimento con apporto termico controllato."
+                   data-hi="EN ISO 9606-1 / ASME प्रमाणित वेल्डर द्वारा नियंत्रित गर्मी इनपुट के साथ रूट और कैप पास जमा किए जाते हैं।">
+                  EN ISO 9606-1 / ASME sertifikalı uzman kaynakçılarımız tarafından kontrollü ısı girdisiyle kök ve dolgu pasoları çekilir[cite: 5].
+                </p>
+              </div>
+
+              <div class="process-step-box" style="border-left-color: transparent;">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="4. Quality Control, Pressure Testing & Dispatch"
+                    data-ru="4. Контроль качества, опрессовка и отгрузка"
+                    data-ar="4. مراقبة الجودة، واختبارات الضغط والتسليم"
+                    data-zh="4. 质量复检、承压气密试验与出厂交付"
+                    data-es="4. Control de Calidad, Prueba de Presión y Entrega"
+                    data-it="4. Controllo Qualità, Test di Pressione e Consegna"
+                    data-hi="4. गुणवत्ता नियंत्रण, दबाव परीक्षण और प्रेषण">
+                  4. Kalite Kontrol, Basınç Testi ve Teslimat
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Dimensional measurement reports, leak tightness, and hydrostatic pressure tests are completed before final packaging and shipment."
+                   data-ru="Оформляются отчеты об измерениях, проводятся гидроиспытания и проверка на герметичность перед отправкой."
+                   data-ar="يتم إعداد تقارير القياسات الأبعادية وإجراء اختبارات السلامة الهيدروستاتيكية وإحكام الغاز قبل التعبئة والشحن."
+                   data-zh="完成全尺寸三坐标检测报告，通过水压强度及气密性测试后包装出厂。"
+                   data-es="Se completan informes dimensionales, pruebas de estanqueidad y ensayos hidrostáticos antes del despacho."
+                   data-it="Vengono redatti i report dimensionali ed eseguiti collaudi idrostatici e di tenuta prima della spedizione."
+                   data-hi="अंतिम पैकेजिंग और शिपमेंट से पहले आयामी माप रिपोर्ट, रिसाव तंगता और हाइड्रोस्टैटिक परीक्षण पूरे किए जाते हैं।">
+                  Boyutsal ölçüm raporlamaları, sızdırmazlık & hidrostatik mukavemet testleri tamamlanarak parçalar sevk edilmeye hazır hale getirilir[cite: 5].
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SAĞ KOLON -->
+          <div class="col-lg-4">
+            <div class="service-sidebar">
+
+              <!-- Hizmet Menüsü -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".2s">
+                <h4 class="fw-bold text-dark mb-20" style="font-size: 18px;"
+                    data-en="Our Services" data-ru="Наши услуги" data-ar="خدماتنا" data-zh="我们的服务" data-es="Nuestros Servicios" data-it="I Nostri Servizi" data-hi="हमारी सेवाएं">
+                  Hizmetlerimiz
+                </h4>
+                <ul class="service-nav-list">
+                  <li>
+                    <a href="kaynakli-imalat.html" class="active">
+                      <span data-en="<i class='lni lni-construction me-2'></i> Welded Manufacturing" data-ru="<i class='lni lni-construction me-2'></i> Сварочное производство" data-ar="<i class='lni lni-construction me-2'></i> التصنيع الملحوم" data-zh="<i class='lni lni-construction me-2'></i> 焊接制造" data-es="<i class='lni lni-construction me-2'></i> Fabricación Soldada" data-it="<i class='lni lni-construction me-2'></i> Carpenteria Saldata" data-hi="<i class='lni lni-construction me-2'></i> वेल्डेड निर्माण"><i class="lni lni-construction me-2"></i> Kaynaklı İmalat</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="istasyon-bakim-onarim.html">
+                      <span data-en="<i class='lni lni-cog me-2'></i> Station Maintenance" data-ru="<i class='lni lni-cog me-2'></i> Обслуживание станций" data-ar="<i class='lni lni-cog me-2'></i> صيانة المحطات" data-zh="<i class='lni lni-cog me-2'></i> 调压站维护" data-es="<i class='lni lni-cog me-2'></i> Mantenimiento de Estaciones" data-it="<i class='lni lni-cog me-2'></i> Manutenzione Stazioni" data-hi="<i class='lni lni-cog me-2'></i> स्टेशन रखरखाव"><i class="lni lni-cog me-2"></i> İstasyon Bakım Onarım</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="danismanlik.html">
+                      <span data-en="<i class='lni lni-briefcase me-2'></i> Consultancy Services" data-ru="<i class='lni lni-briefcase me-2'></i> Консалтинговые услуги" data-ar="<i class='lni lni-briefcase me-2'></i> الخدمات الاستشارية" data-zh="<i class='lni lni-briefcase me-2'></i> 咨询服务" data-es="<i class='lni lni-briefcase me-2'></i> Servicios de Consultoría" data-it="<i class='lni lni-briefcase me-2'></i> Servizi di Consulenza" data-hi="<i class='lni lni-briefcase me-2'></i> परामर्श सेवाएं"><i class="lni lni-briefcase me-2"></i> Danışmanlık Hizmetleri</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Doğrudan Teklif Formuna (#contact) Yönlendiren Kutucuk -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".3s" style="background: linear-gradient(145deg, #002e5b 0%, #162447 100%); color: #fff; border: none;">
+                <h4 class="fw-bold text-white mb-15" style="font-size: 20px;"
+                    data-en="Need Custom Component Welding?"
+                    data-ru="Требуется сварка нестандартных деталей?"
+                    data-ar="هل تحتاج إلى لحام أجزاء وقطع مخصصة؟"
+                    data-zh="需要定制管件与结构焊接加工？"
+                    data-es="¿Necesita Soldadura de Piezas Personalizadas?"
+                    data-it="Hai Bisogno di Saldatura per Pezzi Speciali?"
+                    data-hi="क्या आपको कस्टम घटक वेल्डिंग की आवश्यकता है?">
+                  Özel Parça Kaynağı mı Gerekiyor?
+                </h4>
+                <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px;"
+                   data-en="Send us your sample or technical drawing; our engineers will project the optimal welding method, metallurgy, and cost in no time."
+                   data-ru="Отправьте нам чертеж или образец; наши инженеры в кратчайшие сроки рассчитают технологию сварки, подберут материалы и стоимость."
+                   data-ar="أرسل لنا عينتك أو مخططات مشروعك؛ وسيقوم مهندسونا بتحديد طريقة اللحام المثلى والمواد والتكلفة في أسرع وقت."
+                   data-zh="请将您的样品或工程图纸发送给我们；我们的工程师将在最短时间内评估出最佳焊接工艺、材料匹配与成本预算。"
+                   data-es="Envíenos su muestra o plano técnico; nuestros ingenieros definirán el método de soldadura, materiales y costo en breve."
+                   data-it="Inviateci il vostro campione o disegno tecnico; i nostri ingegneri elaboreranno rapidamente metodo di saldatura, materiali e preventivo."
+                   data-hi="हमें अपना नमूना या तकनीकी चित्र भेजें; हमारे इंजीनियर कुछ ही समय में इष्टतम वेल्डिंग विधि, धातु विज्ञान और लागत का अनुमान लगाएंगे।">
+                  Numunenizi veya projenizin detaylarını bize iletin; mühendislerimiz kaynak yöntemini, malzeme uyumunu ve maliyeti en kısa sürede projelendirsin[cite: 5].
+                </p>
+                <div class="d-flex align-items-center mb-20">
+                  <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(66, 173, 240, 0.2); display: flex; align-items: center; justify-content: center; color: #42adf0; font-size: 18px; margin-right: 12px;">
+                    <i class="lni lni-envelope"></i>
+                  </div>
+                  <div>
+                    <span style="font-size: 12px; color: #94a3b8; display: block;"
+                          data-en="E-Mail & Quotation" data-ru="Эл. почта и расчет" data-ar="البريد الإلكتروني وعرض السعر" data-zh="电子邮件与报价" data-es="Correo y Cotización" data-it="E-mail e Preventivo" data-hi="ई-मेल और उद्धरण">
+                      E-Posta & Teklif
+                    </span>
+                    <a href="mailto:info@nartgaz.com" style="color: #fff; font-weight: 700; text-decoration: none; font-size: 14.5px;">info@nartgaz.com</a>
+                  </div>
+                </div>
+                <a href="../index.html#contact" class="main-btn btn-hover" style="background: #42adf0; color: #fff; width: 100%; text-align: center; border-radius: 8px; font-weight: 700; border: none; padding: 12px; display: block;"
+                   data-en="Quotation & Contact Form" data-ru="Форма запроса и контактов" data-ar="نموذج طلب عرض السعر والاتصال" data-zh="报价与咨询表单" data-es="Formulario de Cotización y Contacto" data-it="Modulo di Preventivo e Contatto" data-hi="उद्धरण और संपर्क फ़ॉर्म">
+                  Teklif ve İletişim Formu
+                </a>
+              </div>
+
+              <!-- İmalat Normları ve Standartlar Rozeti -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".4s">
+                <h4 class="fw-bold text-dark mb-15" style="font-size: 17px;"
+                    data-en="International Compliance" data-ru="Международные стандарты" data-ar="الامتثال والمعايير الدولية" data-zh="国际标准与规范" data-es="Cumplimiento Internacional" data-it="Conformità Internazionale" data-hi="अंतर्राष्ट्रीय अनुपालन">
+                  Uluslararası Uyumluluk
+                </h4>
+                <ul class="list-unstyled mb-0" style="font-size: 13.5px; color: #64748b; line-height: 2;">
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>ASME Section IX</strong> (<span data-en="Welding Qualifications" data-ru="Квалификация сварки" data-ar="تأهيل اللحام" data-zh="焊接工艺评定" data-es="Calificación de Soldadura" data-it="Qualifica Saldatori" data-hi="वेल्डिंग योग्यता">Kaynak Kalifikasyonu</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS EN ISO 15614-1</strong> (<span data-en="WPS / PQR Specification" data-ru="Спецификация WPS/PQR" data-ar="اعتماد إجراءات WPS/PQR" data-zh="WPS/PQR 焊接工艺认定" data-es="Especificación WPS/PQR" data-it="Specifica WPS/PQR" data-hi="WPS/PQR विनिर्देश">WPS/PQR</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS EN ISO 9606-1</strong> (<span data-en="Certified Welders" data-ru="Аттестованный персонал" data-ar="فنيو لحام معتمدون" data-zh="认证持证焊工" data-es="Personal Certificado" data-it="Personale Certificato" data-hi="प्रमाणित वेल्डर">Sertifikalı Personel</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS EN ISO 3834-2</strong> (<span data-en="Quality Requirements" data-ru="Требования к качеству" data-ar="متطلبات الجودة" data-zh="熔化焊质量要求" data-es="Requisitos de Calidad" data-it="Requisiti di Qualità" data-hi="गुणवत्ता आवश्यकताएं">Kalite Şartları</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>ASME B31.3 / B31.8</strong> (<span data-en="Pressure Piping" data-ru="Напорные трубопроводы" data-ar="الأنابيب المضغوطة" data-zh="压力管道规范" data-es="Tuberías a Presión" data-it="Tubazioni a Pressione" data-hi="दबाव पाइपिंग">Basınçlı Borulama</span>)</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dinamik Footer Alanı -->
+    <div id="nart-footer"></div>
+
+    <a href="#" class="scroll-top btn-hover"><i class="lni lni-chevron-up"></i></a>
+
+    <!-- ======== JS Dosyaları ======== -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- 🌟 Components Header & Footer ve Dil Eşitleme Yükleyici -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof WOW !== 'undefined') { new WOW().init(); }
+
+        // Header Yükle
+        fetch("../components/header.html")
+          .then(r => r.text())
+          .then(d => {
+            document.getElementById("nart-header").innerHTML = d
+              .replace(/href="(?!http|javascript|#)([^"]+)"/g, 'href="../$1"')
+              .replace(/src="(?!http)([^"]+)"/g, 'src="../$1"')
+              .replace(/data-preview="(?!http)([^"]+)"/g, 'data-preview="../$1"');
+
+            const aktifDil = localStorage.getItem('nart_selected_lang');
+            if (aktifDil && typeof nartDilDegistir === 'function') {
+              nartDilDegistir(aktifDil);
+            }
+          })
+          .catch(e => console.warn("Header:", e));
+
+        // Footer Yükle
+        fetch("../components/footer.html")
+          .then(r => r.text())
+          .then(d => {
+            document.getElementById("nart-footer").innerHTML = d
+              .replace(/href="(?!http|javascript|#|tel|mailto)([^"]+)"/g, 'href="../$1"')
+              .replace(/src="(?!http)([^"]+)"/g, 'src="../$1"');
+
+            const aktifDil = localStorage.getItem('nart_selected_lang');
+            if (aktifDil && typeof nartDilDegistir === 'function') {
+              nartDilDegistir(aktifDil);
+            }
+          })
+          .catch(e => console.warn("Footer:", e));
+      });
+    </script>
+  </body>
+</html>

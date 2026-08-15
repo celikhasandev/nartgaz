@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="no-js" lang="tr">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title data-en="Engineering & Consultancy Services | Nart Gaz" data-ru="Инжиниринговые и консалтинговые услуги | Nart Gaz" data-ar="خدمات الهندسة والاستشارات | نارت غاز" data-zh="工程与咨询服务 | Nart Gaz" data-es="Servicios de Ingeniería y Consultoría | Nart Gaz" data-it="Servizi di Ingegneria e Consulenza | Nart Gaz" data-hi="इंजीनियरिंग और परामर्श सेवाएं | Nart Gaz">Mühendislik ve Danışmanlık Hizmetleri | Nart Gaz</title>
+    <meta name="description" content="Nart Gaz; endüstriyel doğalgaz altyapıları, RMS istasyon projelendirme, EPDK ve dağıtım şirketi mevzuat uyumu, hidrolik hesaplamalar, ATEX risk analizleri ve fizibilite danışmanlığı sunar." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+
+    <!-- ======== CSS Dosyaları ======== -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/lineicons.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <style>
+      /* Görsel ve Kart Stilleri */
+      .service-main-img-box {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+        background: #fff;
+      }
+      .service-main-img-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .service-main-img-box:hover img {
+        transform: scale(1.02);
+      }
+      .service-img-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(22, 36, 71, 0.92);
+        backdrop-filter: blur(8px);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 8px;
+        border-left: 3px solid #42adf0;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* Sidebar & Menü */
+      .service-sidebar-widget {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 30px;
+      }
+      .service-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .service-nav-list li {
+        margin-bottom: 8px;
+      }
+      .service-nav-list a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 18px;
+        background: #fff;
+        border-radius: 8px;
+        color: #1e293b;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+      .service-nav-list a:hover,
+      .service-nav-list a.active {
+        background: #002e5b;
+        color: #fff;
+        border-color: #002e5b;
+        transform: translateX(4px);
+      }
+      .service-nav-list a.active {
+        background: #42adf0;
+        border-color: #42adf0;
+      }
+
+      /* Teknik Özellik Kartları */
+      .tech-spec-card {
+        background: #fff;
+        border: 1px solid #edf2f7;
+        border-radius: 10px;
+        padding: 22px;
+        height: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      }
+      .tech-spec-card:hover {
+        border-color: #42adf0;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(66, 173, 240, 0.1);
+      }
+      .tech-spec-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: rgba(66, 173, 240, 0.12);
+        color: #002e5b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      /* Süreç Çizgisi */
+      .process-step-box {
+        border-left: 2px dashed #42adf0;
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .process-step-box::before {
+        content: "";
+        position: absolute;
+        left: -9px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #42adf0;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #42adf0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Dinamik Header Alanı -->
+    <div id="nart-header"></div>
+
+    <!-- ======== Hero Üst Başlık Bölümü ======== -->
+    <section class="hero-section" style="padding: 180px 0 80px; background-color: #162447;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <div class="hero-content mb-0">
+              <h1 class="wow fadeInUp" data-wow-delay=".2s"
+                  data-en="Engineering & Consultancy"
+                  data-ru="Инжиниринг и консалтинг"
+                  data-ar="الهندسة والاستشارات"
+                  data-zh="工程与咨询服务"
+                  data-es="Ingeniería y Consultoría"
+                  data-it="Ingegneria e Consulenza"
+                  data-hi="इंजीनियरिंग और परामर्श"
+                  style="font-size: 48px; margin-bottom: 15px;">
+                Danışmanlık Hizmetleri
+              </h1>
+              <p class="wow fadeInUp" data-wow-delay=".4s"
+                 data-en="Strategic engineering guidance in your industrial natural gas investments, from feasibility to hydraulic design, regulatory compliance to ATEX risk assessments."
+                 data-ru="Стратегическое инженерное руководство в ваших инвестициях в промышленный природный газ, от технико-экономического обоснования до гидравлического проектирования, соблюдения нормативных требований и оценки рисков ATEX."
+                 data-ar="توجيه هندسي استراتيجي في استثمارات الغاز الطبيعي الصناعي، من دراسات الجدوى إلى التصميم الهيدروليكي، والامتثال التنظيمي وتقييم مخاطر ATEX."
+                 data-zh="在工业天然气投资中提供从可行性研究到水力设计、法规合规性到 ATEX 风险评估的全方位战略工程指导。"
+                 data-es="Orientación de ingeniería estratégica en sus inversiones en gas natural industrial, desde la viabilidad hasta el diseño hidráulico, el cumplimiento normativo y la evaluación de riesgos ATEX."
+                 data-it="Guida ingegneristica strategica nei vostri investimenti nel gas naturale industriale, dalla fattibilità alla progettazione idraulica, conformità normativa e valutazione dei rischi ATEX."
+                 data-hi="औद्योगिक प्राकृतिक गैस निवेश में रणनीतिक इंजीनियरिंग मार्गदर्शन, व्यवहार्यता से लेकर हाइड्रोलिक डिजाइन, नियामक अनुपालन और ATEX जोखिम मूल्यांकन तक।"
+                 style="color: rgba(255,255,255,0.7); margin-bottom: 0;">
+                Endüstriyel doğalgaz yatırımlarınızda fizibiliteden hidrolik projelendirmeye, EPDK mevzuatından ATEX risk değerlendirmelerine kadar stratejik mühendislik rehberliği.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 text-md-end mt-4 mt-md-0">
+            <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
+              <ol class="breadcrumb justify-content-md-end mb-0" style="background: transparent; padding: 0;">
+                <li class="breadcrumb-item">
+                  <a href="../index.html" data-en="Home" data-ru="Главная" data-ar="الرئيسية" data-zh="首页" data-es="Inicio" data-it="Home" data-hi="होम" style="color: rgba(255,255,255,0.6);">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="../index.html#features" data-en="Services" data-ru="Услуги" data-ar="الخدمات" data-zh="服务" data-es="Servicios" data-it="Servizi" data-hi="सेवाएं" style="color: rgba(255,255,255,0.6);">Hizmetlerimiz</a>
+                </li>
+                <li class="breadcrumb-item active text-white" aria-current="page" data-en="Consultancy" data-ru="Консалтинг" data-ar="الاستشارات" data-zh="咨询服务" data-es="Consultoría" data-it="Consulenza" data-hi="परामर्श">
+                  Danışmanlık
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Detay İçerik Alanı ======== -->
+    <section class="service-detail-section pt-100 pb-120" style="background: #fdfefe;">
+      <div class="container">
+        <div class="row">
+
+          <!-- SOL / ANA KOLON -->
+          <div class="col-lg-8">
+
+            <div class="service-main-img-box mb-40 wow fadeInUp" data-wow-delay=".2s">
+              <img src="../assets/img/services/3.webp" alt="Nart Gaz Mühendislik ve Danışmanlık Hizmetleri" />
+              <div class="service-img-badge"
+                   data-en="<i class='lni lni-certificate me-1'></i> 25+ Years Experience & Full Regulatory Compliance"
+                   data-ru="<i class='lni lni-certificate me-1'></i> 25+ Лет Опыта и Нормативное Соответствие"
+                   data-ar="<i class='lni lni-certificate me-1'></i> أكثر من 25 عامًا من الخبرة والامتثال التنظيمي"
+                   data-zh="<i class='lni lni-certificate me-1'></i> 25年以上的行业经验与法规合规"
+                   data-es="<i class='lni lni-certificate me-1'></i> Más de 25 Años de Experiencia y Cumplimiento"
+                   data-it="<i class='lni lni-certificate me-1'></i> Oltre 25 Anni di Esperienza e Conformità Normativa"
+                   data-hi="<i class='lni lni-certificate me-1'></i> 25+ वर्षों का अनुभव और पूर्ण नियामक अनुपालन">
+                <i class="lni lni-certificate me-1"></i> 25+ Yıllık Altyapı Deneyimi & EPDK Uyumluluğu
+              </div>
+            </div>
+
+            <div class="service-content-block mb-45 wow fadeInUp" data-wow-delay=".3s">
+              <h2 class="fw-bold text-dark mb-20" style="font-size: 26px;"
+                  data-en="From Investment to Commissioning: Zero-Defect Engineering Consultancy"
+                  data-ru="От инвестиций до ввода в эксплуатацию: инжиниринговый консалтинг с нулевым уровнем дефектов"
+                  data-ar="من الاستثمار إلى التشغيل: استشارات هندسية بلا أخطاء"
+                  data-zh="从项目投资到系统投产：零缺陷工程咨询服务"
+                  data-es="De la Inversión a la Puesta en Marcha: Consultoría de Ingeniería Cero Errores"
+                  data-it="Dall'Investimento alla Messa in Servizio: Consulenza Ingegneristica a Zero Difetti"
+                  data-hi="निवेश से लेकर चालू करने तक: शून्य-त्रुटि इंजीनियरिंग परामर्श">
+                Yatırımdan Devreye Almaya: Sıfır Hata Hedefli Mühendislik Danışmanlığı
+              </h2>
+              <p style="color: #4b5563; font-size: 15.5px; line-height: 1.8; margin-bottom: 20px;"
+                 data-en="Installing natural gas infrastructure in industrial plants or Organized Industrial Zones (OIZ) is not just about purchasing equipment. An incorrectly calculated line flow rate, improperly sized regulator, or non-compliant station layout can multiply investment costs and delay gas turn-on for months."
+                 data-ru="Создание инфраструктуры природного газа на промышленных объектах или в организованных промышленных зонах (ОПЗ) — это не просто закупка оборудования. Неправильно рассчитанный расход, некорректный размер регулятора или несоответствующее расположение станции могут многократно увеличить затраты и задержать пуск газа на месяцы."
+                 data-ar="إن إنشاء البنية التحتية للغاز الطبيعي في المنشآت الصناعية أو المناطق الصناعية المنظمة لا يقتصر على شراء المعدات فحسب. فحساب تدفق الخط بشكل غير دقيق أو اختيار قطر غير مناسب للمنظم أو وضع المحطة بما يخالف اللوائح قد يضاعف تكاليف الاستثمار ويؤخر إمداد الغاز لعدة أشهر."
+                 data-zh="在工业厂区或工业园区建立天然气基础设施绝不仅仅是采购设备。管线流量计算错误、调压器选型不当或调压站布局不合规，都可能使投资成本成倍增加，并导致通气验收延误数月。"
+                 data-es="Instalar infraestructura de gas natural en plantas industriales o Zonas Industriales Organizadas no se trata solo de comprar equipos. Un caudal de línea mal calculado, un regulador de tamaño inadecuado o una ubicación de estación no reglamentaria pueden multiplicar los costos de inversión y retrasar el suministro de gas durante meses."
+                 data-it="Realizzare un'infrastruttura di gas naturale in impianti industriali o Zone Industriali non significa solo acquistare attrezzature. Una portata di linea calcolata male, un regolatore dimensionato male o una disposizione della stazione non a norma possono moltiplicare i costi e ritardare l'avvio del gas per mesi."
+                 data-hi="औद्योगिक संयंत्रों या संगठित औद्योगिक क्षेत्रों में प्राकृतिक गैस बुनियादी ढांचा स्थापित करना केवल उपकरण खरीदने के बारे में नहीं है। गलत तरीके से गणना की गई लाइन प्रवाह दर, अनुचित नियामक आकार या गैर-अनुपालन स्टेशन लेआउट निवेश लागत को बढ़ा सकता है और गैस आपूर्ति में महीनों की देरी कर सकता है।">
+                Endüstriyel tesislerde veya Organize Sanayi Bölgelerinde (OSB) doğalgaz altyapısı kurmak, yalnızca ekipman satın almaktan ibaret değildir. Yanlış hesaplanmış bir hat debisi, hatalı seçilmiş bir regülatör çapı ya da mevzuata aykırı bir istasyon yerleşimi; yatırım maliyetlerini katladığı gibi tesisin gaz açma süreçlerinde aylarca gecikmesine sebep olabilir.
+              </p>
+              <p style="color: #4b5563; font-size: 15.5px; line-height: 1.8; margin-bottom: 20px;"
+                 data-en="Nart Gaz puts over 25 years of field and manufacturing experience at the service of industrialists and investors. By simulating instantaneous and future peak gas demand profiles, we provide end-to-end consultancy in selecting RMS-A / RMS-B / RMS-C station types, hydraulic piping loss analysis, P&ID diagrams, full compliance with gas distribution specifications, and ATEX explosion risk assessments."
+                 data-ru="Nart Gaz предоставляет более чем 25-летний опыт работы на объектах и в производстве на службу промышленникам и инвесторам. Моделируя профили пикового потребления газа, мы обеспечиваем комплексный консалтинг по выбору типов станций RMS-A/RMS-B/RMS-C, гидравлическим расчетам, P&ID диаграммам, соблюдению техусловий распределительных компаний и оценке рисков ATEX."
+                 data-ar="تضع نارت غاز أكثر من 25 عامًا من الخبرة الميدانية والتصنيعية في خدمة الصناعيين والمستثمرين. من خلال محاكاة متطلبات استهلاك الغاز القصوى الحالية والمستقبلية، نقدم استشارات متكاملة في اختيار أنواع محطات RMS-A / RMS-B / RMS-C، وتحليل الفاقد الهيدروليكي للأنابيب، ومخططات P&ID، والامتثال لمواصفات شركات التوزيع، وتحليلات مخاطر انفجار ATEX."
+                 data-zh="Nart Gaz 凭借25年以上的现场与制造经验为工业界和投资者赋能。通过模拟当前和未来的峰值用气曲线，我们在 RMS-A / RMS-B / RMS-C 调压站选型、管道水力压降分析、P&ID 管道仪表流程图设计、燃气分销商技术规范合规以及 ATEX 防爆风险评估等方面提供端到端咨询。"
+                 data-es="Nart Gaz pone más de 25 años de experiencia de campo y fabricación al servicio de industriales e inversores. Al simular perfiles de consumo pico de gas actuales y futuros, brindamos consultoría integral en la selección de tipos de estaciones RMS-A / RMS-B / RMS-C, análisis de pérdidas hidráulicas, diagramas P&ID, cumplimiento de especificaciones de distribución y evaluaciones de riesgo de explosión ATEX."
+                 data-it="Nart Gaz mette oltre 25 anni di esperienza sul campo e produttiva al servizio di industriali e investitori. Simulando i profili di consumo di picco del gas, forniamo consulenza end-to-end nella selezione delle stazioni RMS-A / RMS-B / RMS-C, analisi delle perdite idrauliche, schemi P&ID, conformità tecnica con i distributori e valutazioni del rischio ATEX."
+                 data-hi="Nart Gaz उद्योगपतियों और निवेशकों की सेवा में 25 से अधिक वर्षों के क्षेत्रीय और विनिर्माण अनुभव को समर्पित करता है। वर्तमान और भविष्य के पीक गैस खपत प्रोफाइल का अनुकरण करके, हम RMS-A / RMS-B / RMS-C स्टेशन प्रकारों के चयन, हाइड्रोलिक पाइपिंग नुकसान विश्लेषण, P&ID आरेखों, वितरण विनिर्देशों के अनुपालन और ATEX विस्फोट जोखिम आकलन में शुरू से अंत तक परामर्श प्रदान करते हैं।">
+                <strong>Nart Gaz</strong>, 25 yılı aşkın saha ve üretim birikimini sanayicilerin ve yatırımcıların hizmetine sunar. Tesisinizin anlık ve gelecekteki pik gaz tüketim profillerini simüle ederek; <strong>RMS-A / RMS-B / RMS-C istasyon tiplerinin seçimi</strong>, hidrolik borulama kayıp analizleri, P&ID diyagramları, gaz dağıtım şirketleri teknik şartnamelerine tam uyum ve ATEX patlama risk analizleri konularında uçtan uca danışmanlık sağlar.
+              </p>
+            </div>
+
+            <!-- 4'lü Danışmanlık Yetkinlik Kartı -->
+            <h3 class="fw-bold text-dark mb-25 wow fadeInUp" data-wow-delay=".3s" style="font-size: 22px;"
+                data-en="Our Consultancy and Expertise Areas"
+                data-ru="Наши области консалтинга и экспертизы"
+                data-ar="مجالات الاستشارات والخبرة لدينا"
+                data-zh="我们的咨询与专业领域"
+                data-es="Nuestras Áreas de Consultoría y Experiencia"
+                data-it="Le Nostre Aree di Consulenza e Competenza"
+                data-hi="हमारे परामर्श और विशेषज्ञता के क्षेत्र">
+              Danışmanlık ve Uzmanlık Alanlarımız
+            </h3>
+            <div class="row g-3 mb-50">
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-pie-chart"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Feasibility & Capacity Modeling"
+                      data-ru="ТЭО и моделирование мощности"
+                      data-ar="دراسة الجدوى ونمذجة السعة"
+                      data-zh="可行性分析与容量建模"
+                      data-es="Viabilidad y Modelado de Capacidad"
+                      data-it="Fattibilità e Modellazione della Capacità"
+                      data-hi="व्यवहार्यता और क्षमता मॉडलिंग">
+                    Fizibilite & Kapasite Modelleme
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Calculating simultaneous consumption diversity factors to specify optimal nominal flow (Qmax), pressure stages (P1/P2), and station footprint."
+                     data-ru="Расчет коэффициентов одновременности потребления для определения оптимального номинального расхода (Qmax), ступеней давления (P1/P2) и площади станции."
+                     data-ar="حساب معاملات التزامن للاستهلاك لتحديد التدفق الاسمي الأمثل (Qmax)، ومراحل الضغط (P1/P2)، والمساحة المطلوبة للمحطة."
+                     data-zh="计算用气同时率，确定最佳额定流量（Qmax）、调压级数（P1/P2）以及调压站占地空间。"
+                     data-es="Cálculo de factores de simultaneidad para determinar el caudal nominal óptimo (Qmax), etapas de presión (P1/P2) y dimensiones de la estación."
+                     data-it="Calcolo dei fattori di contemporaneità per determinare la portata nominale ottimale (Qmax), i salti di pressione (P1/P2) e l'ingombro della stazione."
+                     data-hi="इष्टतम नाममात्र प्रवाह (Qmax), दबाव चरणों (P1/P2) और स्टेशन पदचिह्न को निर्धारित करने के लिए समकालिक खपत कारकों की गणना करना।">
+                    Tesisin eşzamanlı tüketim katsayıları hesaplanarak en verimli nominal debi ($Q_{\max}$), basınç kademesi ($P_1/P_2$) ve istasyon ayak izi belirlenir.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-files"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Regulatory & Distribution Approvals"
+                      data-ru="Нормативы и согласования с сетями"
+                      data-ar="اللوائح وإجراءات موافقة التوزيع"
+                      data-zh="法规合规与管网审批流程"
+                      data-es="Regulaciones y Aprobaciones de Distribución"
+                      data-it="Conformità Normativa e Approvazioni di Rete"
+                      data-hi="नियामक और वितरण अनुमोदन प्रक्रियाएं">
+                    Mevzuat & Dağıtım Onay Süreçleri
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Preparing project files in full compliance with technical standards of transmission and local gas distribution companies."
+                     data-ru="Подготовка проектной документации в строгом соответствии с критериями приемки газораспределительных организаций и отраслевых стандартов."
+                     data-ar="إعداد الملفات والمخططات الهندسية بما يتوافق تمامًا مع معايير القبول لشركات توزيع الغاز واللوائح التنظيمية الرسمية."
+                     data-zh="严格根据燃气输配公司与能源监管机构的验收技术规范准备工程报审文件。"
+                     data-es="Preparación de expedientes de proyecto en pleno cumplimiento de los estándares técnicos y normativos de las compañías distribuidoras de gas."
+                     data-it="Preparazione della documentazione di progetto in piena conformità con i criteri tecnici delle aziende di distribuzione del gas."
+                     data-hi="गैस वितरण कंपनियों और ऊर्जा विनियामक तकनीकी मानकों के पूर्ण अनुपालन में परियोजना दस्तावेज तैयार करना।">
+                    BOTAŞ, İGDAŞ, Başkentgaz ve ilgili yerel dağıtım şirketlerinin kabul kriterlerine, EPDK teknik regülasyonlarına tam uyumlu dosya hazırlığı.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-construction"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="Hydraulic Sizing & 3D Piping"
+                      data-ru="Гидравлический расчет и 3D трубопроводы"
+                      data-ar="الحسابات الهيدروليكية والأنابيب ثلاثية الأبعاد"
+                      data-zh="水力计算与 3D 管道建模"
+                      data-es="Cálculo Hidráulico y Tuberías 3D"
+                      data-it="Calcolo Idraulico e Piping 3D"
+                      data-hi="हाइड्रोलिक गणना और 3D पाइपिंग">
+                    Hidrolik Hesap & 3D Borulama
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Pressure drop (ΔP), gas velocity calculations, wall thickness selection (ASME B31.8 / EN 12186), and 3D isometric piping modeling."
+                     data-ru="Расчет перепада давления (ΔP), скорости потока, подбор толщины стенок труб (ASME B31.8 / EN 12186) и 3D изометрическое моделирование."
+                     data-ar="حساب هبوط الضغط (ΔP)، وسرعات التدفق، واختيار سمك جدار الأنابيب (ASME B31.8 / EN 12186)، ونمذجة الأنابيب متساوية القياس ثلاثية الأبعاد."
+                     data-zh="压降（ΔP）计算、流速分析、管壁厚度选型（ASME B31.8 / EN 12186）以及 3D 轴测管道建模。"
+                     data-es="Cálculo de caída de presión (ΔP), velocidades de flujo, selección de espesor de tubería (ASME B31.8 / EN 12186) y modelado isométrico 3D."
+                     data-it="Calcolo delle perdite di carico (ΔP), velocità del flusso, scelta degli spessori (ASME B31.8 / EN 12186) e modellazione isometrica 3D."
+                     data-hi="दबाव ड्रॉप (ΔP), प्रवाह वेग, पाइप दीवार मोटाई चयन (ASME B31.8 / EN 12186) और 3D आइसोमेट्रिक पाइपिंग मॉडलिंग।">
+                    Basınç düşümü ($ \Delta P $), akış hızları, boru et kalınlığı seçimleri (ASME B31.8 / EN 12186) ve 3D izometrik borulama modellemeleri.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                <div class="tech-spec-card">
+                  <div class="tech-spec-icon"><i class="lni lni-shield"></i></div>
+                  <h5 class="fw-bold mb-10 text-dark" style="font-size: 17px;"
+                      data-en="ATEX & Safety Risk Assessments"
+                      data-ru="ATEX и анализ рисков безопасности"
+                      data-ar="تحليل مخاطر السلامة و ATEX"
+                      data-zh="ATEX 防爆与安全风险评估"
+                      data-es="ATEX y Análisis de Riesgos de Seguridad"
+                      data-it="ATEX e Valutazione dei Rischi di Sicurezza"
+                      data-hi="ATEX और सुरक्षा जोखिम विश्लेषण">
+                    ATEX & Güvenlik Risk Analizleri
+                  </h5>
+                  <p class="mb-0 text-muted" style="font-size: 13.5px; line-height: 1.6;"
+                     data-en="Hazardous area classification (Zone 1 / Zone 2), emergency shutdown scenarios, ventilation rates, and safety distance evaluations."
+                     data-ru="Классификация взрывоопасных зон (Zone 1 / Zone 2), сценарии аварийного отключения газа, расчет вентиляции и безопасных расстояний."
+                     data-ar="تصنيف المناطق الخطرة (Zone 1 / Zone 2)، وسيناريوهات قطع الغاز في حالات الطوارئ، ومعدلات التهوية، ودراسات مسافات الأمان."
+                     data-zh="危险区域防爆分区（Zone 1 / Zone 2）、紧急切断联锁方案、通风换气率及安全防护间距评估。"
+                     data-es="Clasificación de áreas peligrosas (Zone 1 / Zone 2), escenarios de corte de emergencia, tasas de ventilación y distancias de seguridad."
+                     data-it="Classificazione delle aree pericolose (Zone 1 / Zone 2), scenari di blocco d'emergenza, tassi di ventilazione e distanze di sicurezza."
+                     data-hi="खतरनाक क्षेत्र वर्गीकरण (Zone 1 / Zone 2), आपातकालीन गैस शट-ऑफ परिदृश्य, वेंटिलेशन दर और सुरक्षा दूरी अध्ययन।">
+                    Patlayıcı ortam zonlama (Zone 1 / Zone 2), acil gaz kesme senaryoları, havalandırma katsayıları ve emniyet mesafesi etütleri.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Süreç Akışı -->
+            <div class="service-process-wrapper mb-40 wow fadeInUp" data-wow-delay=".4s">
+              <h3 class="fw-bold text-dark mb-25" style="font-size: 22px;"
+                  data-en="Our Consultancy Methodology"
+                  data-ru="Наша методология консалтинга"
+                  data-ar="منهجية الاستشارات لدينا"
+                  data-zh="我们的咨询服务流程"
+                  data-es="Nuestra Metodología de Consultoría"
+                  data-it="La Nostra Metodologia di Consulenza"
+                  data-hi="हमारी परामर्श कार्यप्रणाली">
+                Danışmanlık Metodolojimiz
+              </h3>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="1. Site Survey & Energy Demand Analysis"
+                    data-ru="1. Обследование объекта и анализ потребности в энергии"
+                    data-ar="1. المعاينة الميدانية وتحليل متطلبات الطاقة"
+                    data-zh="1. 现场勘查与用能需求分析"
+                    data-es="1. Inspección de Campo y Análisis de Demanda Energética"
+                    data-it="1. Sopralluogo in Cantiere e Analisi del Fabbisogno Energetico"
+                    data-hi="1. साइट सर्वेक्षण और ऊर्जा मांग विश्लेषण">
+                  1. Saha Keşfi ve Enerji İhtiyaç Analizi
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Conducting physical inspections on existing or planned sites; logging gas flow and pressure requirements of all combustion equipment."
+                   data-ru="Физический осмотр площадки; определение требований к расходу и давлению газа для всего газоиспользующего оборудования."
+                   data-ar="إجراء فحص ميداني للموقع؛ وحصر متطلبات تدفق وضغط الغاز لجميع المعدات والأجهزة الحارقة."
+                   data-zh="对现有或规划场地进行实地勘测，详细记录所有用气设备的流量与压力需求参数。"
+                   data-es="Inspección física en sitio; registro de requisitos de caudal y presión de gas de todos los equipos de combustión."
+                   data-it="Ispezione fisica sul sito; mappatura dei requisiti di portata e pressione per tutte le apparecchiature a gas."
+                   data-hi="साइट पर भौतिक निरीक्षण; सभी दहन उपकरणों की गैस प्रवाह और दबाव आवश्यकताओं को सूचीबद्ध करना।">
+                  Mevcut veya planlanan tesis sahasında fiziki inceleme yapılır; yakıcı cihazların gaz debi ve basınç gereksinimleri listelenir.
+                </p>
+              </div>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="2. Engineering Design & Equipment Optimization"
+                    data-ru="2. Инженерное проектирование и оптимизация оборудования"
+                    data-ar="2. التصميم الهندسي وتحسين اختيار المعدات"
+                    data-zh="2. 工程设计与设备选型优化"
+                    data-es="2. Diseño de Ingeniería y Optimización de Equipos"
+                    data-it="2. Progettazione Ingegneristica e Ottimizzazione Apparecchiature"
+                    data-hi="2. इंजीनियरिंग डिजाइन और उपकरण अनुकूलन">
+                  2. Mühendislik Tasarımı & Ekipman Optimizasyonu
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Developing P&ID flow diagrams; drafting technical specifications for key equipment including regulators, filters, meters, and heat exchangers."
+                   data-ru="Разработка технологических схем P&ID; составление техспецификаций для регуляторов, фильтров, счетчиков, клапанов и теплообменников."
+                   data-ar="رسم مخططات التدفق P&ID؛ وإعداد المواصفات الفنية للمعدات الرئيسية كالمنظمات والفلاتر والعدادات والصمامات والمبادلات الحرارية."
+                   data-zh="绘制 P&ID 管道仪表流程图，为调压器、过滤器、流量计、阀门和换热器等核心设备编制技术规格书。"
+                   data-es="Elaboración de diagramas P&ID; redacción de especificaciones técnicas para reguladores, filtros, medidores, válvulas e intercambiadores."
+                   data-it="Elaborazione di schemi P&ID; stesura delle specifiche tecniche per regolatori, filtri, contatori, valvole e scambiatori."
+                   data-hi="P&ID प्रवाह आरेख तैयार करना; नियामकों, फिल्टरों, मीटरों, वाल्वों और हीट एक्सचेंजर्स के लिए तकनीकी विनिर्देश तैयार करना।">
+                  P&ID akış şemaları çizilir; regülatör, filtre, sayaç, vana ve eşanjör gibi ana bileşenler için teknik şartname oluşturulur.
+                </p>
+              </div>
+
+              <div class="process-step-box">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="3. Regulatory Filing & Compliance Audit"
+                    data-ru="3. Подача документации в госорганы и проверка соответствия"
+                    data-ar="3. تقديم الملفات للجهات الرسمية وتدقيق الامتثال"
+                    data-zh="3. 官方文件报审与合规审查"
+                    data-es="3. Tramitación Oficial y Auditoría de Cumplimiento"
+                    data-it="3. Pratiche Autorizzative e Audit di Conformità"
+                    data-hi="3. आधिकारिक फाइलिंग और अनुपालन ऑडिट">
+                  3. Resmi Kurum Dosyalaması ve Uygunluk Denetimi
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Preparing technical approval packages for gas distribution authorities; eliminating non-compliant and redundant cost items."
+                   data-ru="Подготовка проектов технического согласования для газораспределительных организаций; устранение несоответствий и лишних затрат."
+                   data-ar="إعداد حزم الموافقة الفنية لتقديمها لشركات التوزيع، واستبعاد بنود التكلفة غير المطابقة للمواصفات."
+                   data-zh="编制提交给燃气管网公司的报审工程图纸与技术文件，消除不合规与冗余的成本支出。"
+                   data-es="Preparación de proyectos de aprobación técnica para las distribuidoras; eliminación de sobrecostos e incumplimientos técnicos."
+                   data-it="Preparazione dei progetti per l'approvazione tecnica da parte dell'ente distributore; eliminazione dei costi superflui o non conformi."
+                   data-hi="वितरण कंपनियों के लिए तकनीकी अनुमोदन परियोजनाएं तैयार करना; गैर-अनुपालन और अनावश्यक लागतों को समाप्त करना।">
+                  Dağıtım şirketine sunulacak teknik onay projeleri hazırlanır; şartnameye aykırı maliyet kalemleri elenir.
+                </p>
+              </div>
+
+              <div class="process-step-box" style="border-left-color: transparent;">
+                <h5 class="fw-bold text-dark mb-5" style="font-size: 16px;"
+                    data-en="4. Commissioning Supervision & Acceptance"
+                    data-ru="4. Шефмонтаж при вводе в эксплуатацию и приемка"
+                    data-ar="4. الإشراف على التشغيل والقبول النهائي"
+                    data-zh="4. 调试通气监理与竣工验收"
+                    data-es="4. Supervisión de Puesta en Marcha y Recepción"
+                    data-it="4. Supervisione alla Messa in Servizio e Collaudo"
+                    data-hi="4. कमीशनिंग पर्यवेक्षण और स्वीकृति">
+                  4. Devreye Alma Süpervizörlüğü & Kabul
+                </h5>
+                <p class="text-muted mb-0" style="font-size: 14px;"
+                   data-en="Providing on-site engineering supervision during installation and testing to ensure seamless and safe gas turn-on."
+                   data-ru="Инженерный надзор на площадке во время монтажа и испытаний для обеспечения бесперебойного пуска газа."
+                   data-ar="توفير الإشراف الهندسي الميداني أثناء مراحل التركيب والاختبار لضمان إمداد المنشأة بالغاز بسلاسة وأمان."
+                   data-zh="在安装与测试阶段提供现场工程监理，确保调压系统顺利、安全地通过通气验收。"
+                   data-es="Supervisión de ingeniería in situ durante la instalación y pruebas para garantizar un suministro de gas seguro y sin problemas."
+                   data-it="Supervisione ingegneristica in cantiere durante l'installazione e i test per garantire un avvio sicuro e senza intoppi."
+                   data-hi="सुरक्षित और निर्बाध गैस आपूर्ति सुनिश्चित करने के लिए स्थापना और परीक्षण चरणों के दौरान ऑन-साइट इंजीनियरिंग पर्यवेक्षण प्रदान करना।">
+                  Tesis kurulumu ve test aşamalarında sahada mühendislik süpervizörlüğü yapılarak tesisin sorunsuz gaz alması sağlanır.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SAĞ KOLON -->
+          <div class="col-lg-4">
+            <div class="service-sidebar">
+
+              <!-- Hizmet Menüsü -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".2s">
+                <h4 class="fw-bold text-dark mb-20" style="font-size: 18px;"
+                    data-en="Our Services" data-ru="Наши услуги" data-ar="خدماتنا" data-zh="我们的服务" data-es="Nuestros Servicios" data-it="I Nostri Servizi" data-hi="हमारी सेवाएं">
+                  Hizmetlerimiz
+                </h4>
+                <ul class="service-nav-list">
+                  <li>
+                    <a href="kaynakli-imalat.html">
+                      <span data-en="<i class='lni lni-construction me-2'></i> Welded Manufacturing" data-ru="<i class='lni lni-construction me-2'></i> Сварочное производство" data-ar="<i class='lni lni-construction me-2'></i> التصنيع الملحوم" data-zh="<i class='lni lni-construction me-2'></i> 焊接制造" data-es="<i class='lni lni-construction me-2'></i> Fabricación Soldada" data-it="<i class='lni lni-construction me-2'></i> Carpenteria Saldata" data-hi="<i class='lni lni-construction me-2'></i> वेल्डेड निर्माण"><i class="lni lni-construction me-2"></i> Kaynaklı İmalat</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="istasyon-bakim-onarim.html">
+                      <span data-en="<i class='lni lni-cog me-2'></i> Station Maintenance" data-ru="<i class='lni lni-cog me-2'></i> Обслуживание станций" data-ar="<i class='lni lni-cog me-2'></i> صيانة المحطات" data-zh="<i class='lni lni-cog me-2'></i> 调压站维护" data-es="<i class='lni lni-cog me-2'></i> Mantenimiento de Estaciones" data-it="<i class='lni lni-cog me-2'></i> Manutenzione Stazioni" data-hi="<i class='lni lni-cog me-2'></i> स्टेशन रखरखाव"><i class="lni lni-cog me-2"></i> İstasyon Bakım Onarım</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="danismanlik.html" class="active">
+                      <span data-en="<i class='lni lni-briefcase me-2'></i> Consultancy Services" data-ru="<i class='lni lni-briefcase me-2'></i> Консалтинговые услуги" data-ar="<i class='lni lni-briefcase me-2'></i> الخدمات الاستشارية" data-zh="<i class='lni lni-briefcase me-2'></i> 咨询服务" data-es="<i class='lni lni-briefcase me-2'></i> Servicios de Consultoría" data-it="<i class='lni lni-briefcase me-2'></i> Servizi di Consulenza" data-hi="<i class='lni lni-briefcase me-2'></i> परामर्श सेवाएं"><i class="lni lni-briefcase me-2"></i> Danışmanlık Hizmetleri</span>
+                      <i class="lni lni-chevron-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Teklif & Danışmanlık Çağrısı Kutusu -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".3s" style="background: linear-gradient(145deg, #002e5b 0%, #162447 100%); color: #fff; border: none;">
+                <h4 class="fw-bold text-white mb-15" style="font-size: 20px;"
+                    data-en="Let's Plan Your Project Together"
+                    data-ru="Давайте спланируем ваш проект вместе"
+                    data-ar="دعنا نخطط لمشروعك معًا"
+                    data-zh="让我们携手规划您的工程项目"
+                    data-es="Planifiquemos su Proyecto Juntos"
+                    data-it="Pianifichiamo Insieme il Vostro Progetto"
+                    data-hi="आइए अपनी परियोजना की एक साथ योजना बनाएं">
+                  Projenizi Birlikte Planlayalım
+                </h4>
+                <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px;"
+                   data-en="Consult our engineering team to determine the most accurate solution and technical specifications for your natural gas station investments."
+                   data-ru="Проконсультируйтесь с нашими экспертами, чтобы выбрать оптимальное решение и составить техническое задание для инвестиций в газовые станции."
+                   data-ar="تواصل مع خبرائنا الهندسيين لتحديد الحل الأمثل وصياغة المواصفات الفنية لمشاريع محطات الغاز الطبيعي الخاصة بكم."
+                   data-zh="与我们的专家工程团队沟通，为您的天然气调压站投资制定最精准的技术方案与采购规格书。"
+                   data-es="Consulte a nuestro equipo de expertos para determinar la solución más adecuada y elaborar especificaciones técnicas para sus estaciones de gas."
+                   data-it="Consultate il nostro team di esperti per definire la soluzione ottimale e redigere le specifiche tecniche per le vostre stazioni gas."
+                   data-hi="अपने प्राकृतिक गैस स्टेशन निवेश के लिए सबसे सटीक समाधान और तकनीकी विनिर्देश निर्धारित करने के लिए हमारी विशेषज्ञ टीम से परामर्श लें।">
+                  Doğalgaz istasyonu yatırımlarınızda en doğru çözümü belirlemek ve teknik şartname oluşturmak için uzman kadromuzla görüşün.
+                </p>
+                <div class="d-flex align-items-center mb-20">
+                  <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(66, 173, 240, 0.2); display: flex; align-items: center; justify-content: center; color: #42adf0; font-size: 18px; margin-right: 12px;">
+                    <i class="lni lni-envelope"></i>
+                  </div>
+                  <div>
+                    <span style="font-size: 12px; color: #94a3b8; display: block;"
+                          data-en="E-Mail & Inquiry" data-ru="Эл. почта и запрос" data-ar="البريد الإلكتروني والاستفسار" data-zh="电子邮件与咨询" data-es="Correo y Consulta" data-it="E-mail e Consulenza" data-hi="ई-मेल और पूछताछ">
+                      E-Posta & Danışmanlık
+                    </span>
+                    <a href="mailto:info@nartgaz.com" style="color: #fff; font-weight: 700; text-decoration: none; font-size: 14.5px;">info@nartgaz.com</a>
+                  </div>
+                </div>
+                <a href="../index.html#contact" class="main-btn btn-hover" style="background: #42adf0; color: #fff; width: 100%; text-align: center; border-radius: 8px; font-weight: 700; border: none; padding: 12px; display: block;"
+                   data-en="Consultancy Request Form" data-ru="Форма запроса на консалтинг" data-ar="نموذج طلب الاستشارة" data-zh="咨询申请表单" data-es="Formulario de Solicitud de Consultoría" data-it="Modulo di Richiesta Consulenza" data-hi="परामर्श अनुरोध फॉर्म">
+                  Danışmanlık Talep Formu
+                </a>
+              </div>
+
+              <!-- İlgili Standartlar Widget -->
+              <div class="service-sidebar-widget wow fadeInUp" data-wow-delay=".4s">
+                <h4 class="fw-bold text-dark mb-15" style="font-size: 17px;"
+                    data-en="Referenced Standards" data-ru="Справочные стандарты" data-ar="المعايير المعتمدة" data-zh="参考规范与标准" data-es="Normas de Referencia" data-it="Standard di Riferimento" data-hi="संदर्भित मानक">
+                  Referans Alınan Standartlar
+                </h4>
+                <ul class="list-unstyled mb-0" style="font-size: 13.5px; color: #64748b; line-height: 2;">
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS EN 12186</strong> (<span data-en="Gas Stations Design" data-ru="Проектирование газовых станций" data-ar="تصميم محطات الغاز" data-zh="燃气调压站设计" data-es="Diseño de Estaciones de Gas" data-it="Progettazione Stazioni Gas" data-hi="गैस स्टेशन डिजाइन">Gaz İstasyonları Tasarımı</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>ASME B31.8</strong> (<span data-en="Gas Transmission & Distribution" data-ru="Транспортировка и распределение газа" data-ar="نقل وتوزيع الغاز" data-zh="输配气管线规范" data-es="Transmisión y Distribución de Gas" data-it="Trasporto e Distribuzione Gas" data-hi="गैस संचरण और वितरण">Gaz Dağıtım & İletim Hatları</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>EN 60079-10-1</strong> (<span data-en="ATEX Area Classification" data-ru="Классификация зон ATEX" data-ar="تصنيف مناطق ATEX" data-zh="ATEX 危险区域划分" data-es="Clasificación de Áreas ATEX" data-it="Classificazione Aree ATEX" data-hi="ATEX क्षेत्र वर्गीकरण">ATEX Alan Sınıflandırma</span>)</li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong data-en="Energy Market Regulations" data-ru="Технические регламенты" data-ar="اللوائح الفنية للطاقة" data-zh="能源市场技术法规" data-es="Regulaciones Técnicas del Mercado" data-it="Regolamentazioni Tecniche" data-hi="ऊर्जा बाजार तकनीकी नियम">EPDK Teknik Düzenlemeleri</strong></li>
+                  <li><i class="lni lni-checkmark-circle text-primary me-2"></i> <strong>TS 7363</strong> (<span data-en="Building Gas Piping Rules" data-ru="Правила газоснабжения зданий" data-ar="قواعد تمديدات الغاز للمباني" data-zh="建筑燃气管道规范" data-es="Normas de Tuberías de Gas en Edificios" data-it="Norme Impianti Gas Edifici" data-hi="भवन गैस पाइपिंग नियम">Doğalgaz Bina Tesisatı Kuralları</span>)</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dinamik Footer Alanı -->
+    <div id="nart-footer"></div>
+
+    <a href="#" class="scroll-top btn-hover"><i class="lni lni-chevron-up"></i></a>
+
+    <!-- ======== JS Dosyaları ======== -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- 🌟 Components Header & Footer ve Dil Eşitleme Yükleyici -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof WOW !== 'undefined') { new WOW().init(); }
+
+        // Header Yükle
+        fetch("../components/header.html")
+          .then(r => r.text())
+          .then(d => {
+            document.getElementById("nart-header").innerHTML = d
+              .replace(/href="(?!http|javascript|#)([^"]+)"/g, 'href="../$1"')
+              .replace(/src="(?!http)([^"]+)"/g, 'src="../$1"')
+              .replace(/data-preview="(?!http)([^"]+)"/g, 'data-preview="../$1"');
+
+            // Eğer daha önce seçilmiş bir dil varsa uygula
+            const aktifDil = localStorage.getItem('nart_selected_lang');
+            if (aktifDil && typeof nartDilDegistir === 'function') {
+              nartDilDegistir(aktifDil);
+            }
+          })
+          .catch(e => console.warn("Header:", e));
+
+        // Footer Yükle
+        fetch("../components/footer.html")
+          .then(r => r.text())
+          .then(d => {
+            document.getElementById("nart-footer").innerHTML = d
+              .replace(/href="(?!http|javascript|#|tel|mailto)([^"]+)"/g, 'href="../$1"')
+              .replace(/src="(?!http)([^"]+)"/g, 'src="../$1"');
+
+            // Footer yüklendikten sonra dili senkronize et
+            const aktifDil = localStorage.getItem('nart_selected_lang');
+            if (aktifDil && typeof nartDilDegistir === 'function') {
+              nartDilDegistir(aktifDil);
+            }
+          })
+          .catch(e => console.warn("Footer:", e));
+      });
+    </script>
+  </body>
+</html>
