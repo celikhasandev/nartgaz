@@ -18,8 +18,11 @@
 /*===========================
     01. COMMON CSS
 ===========================*/
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 body {
@@ -595,6 +598,7 @@ p {
   background-image: url("../img/hero/hero-bg.svg");
   background-position: top center;
   background-repeat: no-repeat;
+  overflow: hidden; /* Sağa taşan rozetleri ekran sınırında keser */
 }
 
 @media (max-width: 767px) {
@@ -806,6 +810,7 @@ p {
 .about-section {
   position: relative;
   z-index: 1;
+  overflow: hidden; /* Sağa taşan dekoratif şekillerin sayfayı esnetmesini önler */
 }
 
 @media (max-width: 767px) {
@@ -1994,6 +1999,14 @@ p {
     margin-top: 0 !important;
     top: 0 !important;
   }
+
+  /* Rozetlerin ekran dışına (-25px) fırlamasını önler, ekran kenarına 5px pay bırakır */
+  .nart-s-badge-1 { left: 5px !important; }
+  .nart-s-badge-2 { right: 5px !important; }
+
+  /* Arka plandaki dekoratif şekillerin dışarı taşmasını sıfırlar */
+  .about-section .about-img .shape.shape-1 { left: 0 !important; }
+  .about-section .about-img-2 .shape.shape-1 { right: 0 !important; }
 }
 
 /* ==========================================================================
