@@ -14,6 +14,11 @@ function nartBilesenleriYukle() {
       if (headerContainer) {
         headerContainer.innerHTML = headerHtml;
 
+        // Çift tıklama hatasını önleme: Megamenü başlıklarından Bootstrap çakışmasını kaldırıyoruz
+        headerContainer.querySelectorAll('.nav-item.dropdown.position-static > .dropdown-toggle').forEach(btn => {
+          btn.removeAttribute('data-bs-toggle');
+        });
+
         if (prefix) {
           headerContainer.querySelectorAll('img').forEach(img => {
             const src = img.getAttribute('src');
@@ -92,14 +97,14 @@ function nartBilesenleriYukle() {
         }
       }
 
-      // 📱 KİLİTLENMEYİ ENGELLEYEN RESPONSIVE MOBİL AKORDEON MOTORU
+      // 📱 TEK TIKLAMAYLA AÇILAN RESPONSIVE MOBİL AKORDEON MOTORU
       const nartNavRoot = document.getElementById('nav');
       if (nartNavRoot) {
         nartNavRoot.addEventListener('click', function(e) {
           if (window.innerWidth >= 992) return;
 
-          // 1. Ana Menü Başlıkları (Ürünlerimiz & Hizmetler) Mobilde Tıklanınca Aç/Kapa
-          const dropdownToggle = e.target.closest('.nav-item.dropdown > .dropdown-toggle');
+          // 1. Ana Menü Başlıkları (Ürünlerimiz & Hizmetler) Tek Tıkla Aç/Kapa
+          const dropdownToggle = e.target.closest('.nav-item.dropdown.position-static > .dropdown-toggle');
           if (dropdownToggle) {
             e.preventDefault();
             e.stopPropagation();
@@ -108,8 +113,7 @@ function nartBilesenleriYukle() {
             const targetMegamenu = parentDropdown.querySelector('.dropdown-menu');
 
             if (targetMegamenu) {
-              // Diğer açık ana dropdown varsa kapat
-              document.querySelectorAll('#nav .nav-item.dropdown').forEach(item => {
+              document.querySelectorAll('#nav .nav-item.dropdown.position-static').forEach(item => {
                 if (item !== parentDropdown) {
                   item.classList.remove('show');
                   const otherMenu = item.querySelector('.dropdown-menu');
@@ -123,7 +127,7 @@ function nartBilesenleriYukle() {
             return;
           }
 
-          // 2. Alt İstasyon ve Regülatör Akordeonları (RMS-B, RMS-C vb.)
+          // 2. Alt İstasyon ve Regülatör Akordeonları (RMS-B, RMS-C vb.) Tek Tıkla Aç/Kapa
           const toggleLink = e.target.closest('.has-sub-sub > a');
           if (toggleLink) {
             e.preventDefault();
