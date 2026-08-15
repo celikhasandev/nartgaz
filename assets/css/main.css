@@ -1,25 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Open+Sans&display=swap");
-.hero-section .hero-content .scroll-bottom, .feature-section .single-feature .icon, .box-style .icon, .footer .widget-wrapper .footer-widget .socials li a {
+
+.hero-section .hero-content .scroll-bottom,
+.feature-section .single-feature .icon,
+.box-style .icon,
+.footer .widget-wrapper .footer-widget .socials li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 /*===========================
-    01.COMMON css
+    01. COMMON CSS
 ===========================*/
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arimo;
+  font-family: Arimo, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #5B657E;
@@ -54,11 +58,6 @@ a:hover {
 a {
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-}
-
-a,
-a:focus,
-a:hover {
   text-decoration: none;
 }
 
@@ -83,9 +82,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arimo;
+  font-family: Arimo, sans-serif;
   font-weight: 700;
-  margin: 0px;
+  margin: 0;
   color: #162447;
 }
 
@@ -105,59 +104,6 @@ h6 a {
 
 h1 {
   font-size: 45px;
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .section-title h2 {
-    font-size: 40px;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .section-title h2 {
-    font-size: 35px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .section-title h2 {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 767px) {
-  .section-title h2 {
-    font-size: 28px;
-  }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .section-title h2 {
-    font-size: 32px;
-  }
-}
-
-.section-title span {
-  font-size: 25px;
-  color: #162447;
-  margin-bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (max-width: 767px) {
-  .section-title span {
-    font-size: 18px;
-  }
-}
-
-.section-title span img {
-  max-width: 100%;
-  margin-right: 20px;
 }
 
 h2 {
@@ -180,10 +126,51 @@ h6 {
   font-size: 16px;
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .section-title h2 { font-size: 40px; }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .section-title h2 { font-size: 35px; }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .section-title h2 { font-size: 40px; }
+}
+
+@media (max-width: 767px) {
+  .section-title h2 { font-size: 28px; }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .section-title h2 { font-size: 32px; }
+}
+
+.section-title span {
+  font-size: 25px;
+  color: #162447;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .section-title span { font-size: 18px; }
+}
+
+.section-title span img {
+  max-width: 100%;
+  margin-right: 20px;
+}
+
 ul,
 ol {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
@@ -191,7 +178,7 @@ p {
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
-  margin: 0px;
+  margin: 0;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -203,13 +190,8 @@ p {
   height: 100%;
 }
 
-.error {
-  color: orangered;
-}
-
-.success {
-  color: green;
-}
+.error { color: orangered; }
+.success { color: green; }
 
 @media (max-width: 767px) {
   .container {
@@ -286,11 +268,11 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 18px;
   color: #fff;
   border-radius: 5px;
@@ -302,7 +284,7 @@ p {
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-top:hover {
@@ -310,46 +292,14 @@ p {
   background: rgba(88, 100, 255, 0.8);
 }
 
-@keyframes animation1 {
-  0% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-  50% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  100% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-}
-
-@-webkit-keyframes animation1 {
-  0% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-  50% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  100% {
-    -webkit-transform: translateY(30px);
-    transform: translateY(30px);
-  }
-}
-
 /*===== All Preloader Style =====*/
 .preloader {
-  /* Body Overlay */
   position: fixed;
   top: 0;
   left: 0;
   display: table;
   height: 100%;
   width: 100%;
-  /* Change Background Color */
   background: #fff;
   z-index: 99999;
 }
@@ -411,12 +361,11 @@ p {
 
 .preloader .loader .ytp-spinner-circle {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   width: 200%;
   height: 100%;
   border-style: solid;
-  /* Spinner Color */
   border-color: #162447 #162447 #ddd;
   border-radius: 50%;
   border-width: 6px;
@@ -438,149 +387,53 @@ p {
   animation: ytp-right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
 
-/* Preloader Animations */
-@-webkit-keyframes ytp-spinner-linspin {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes ytp-spinner-linspin {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
+@-webkit-keyframes ytp-spinner-linspin { to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@keyframes ytp-spinner-linspin { to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 
 @-webkit-keyframes ytp-spinner-easespin {
-  12.5% {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
-  25% {
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
-  }
-  37.5% {
-    -webkit-transform: rotate(405deg);
-    transform: rotate(405deg);
-  }
-  50% {
-    -webkit-transform: rotate(540deg);
-    transform: rotate(540deg);
-  }
-  62.5% {
-    -webkit-transform: rotate(675deg);
-    transform: rotate(675deg);
-  }
-  75% {
-    -webkit-transform: rotate(810deg);
-    transform: rotate(810deg);
-  }
-  87.5% {
-    -webkit-transform: rotate(945deg);
-    transform: rotate(945deg);
-  }
-  to {
-    -webkit-transform: rotate(1080deg);
-    transform: rotate(1080deg);
-  }
+  12.5% { -webkit-transform: rotate(135deg); transform: rotate(135deg); }
+  25% { -webkit-transform: rotate(270deg); transform: rotate(270deg); }
+  37.5% { -webkit-transform: rotate(405deg); transform: rotate(405deg); }
+  50% { -webkit-transform: rotate(540deg); transform: rotate(540deg); }
+  62.5% { -webkit-transform: rotate(675deg); transform: rotate(675deg); }
+  75% { -webkit-transform: rotate(810deg); transform: rotate(810deg); }
+  87.5% { -webkit-transform: rotate(945deg); transform: rotate(945deg); }
+  to { -webkit-transform: rotate(1080deg); transform: rotate(1080deg); }
 }
 
 @keyframes ytp-spinner-easespin {
-  12.5% {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
-  25% {
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
-  }
-  37.5% {
-    -webkit-transform: rotate(405deg);
-    transform: rotate(405deg);
-  }
-  50% {
-    -webkit-transform: rotate(540deg);
-    transform: rotate(540deg);
-  }
-  62.5% {
-    -webkit-transform: rotate(675deg);
-    transform: rotate(675deg);
-  }
-  75% {
-    -webkit-transform: rotate(810deg);
-    transform: rotate(810deg);
-  }
-  87.5% {
-    -webkit-transform: rotate(945deg);
-    transform: rotate(945deg);
-  }
-  to {
-    -webkit-transform: rotate(1080deg);
-    transform: rotate(1080deg);
-  }
+  12.5% { -webkit-transform: rotate(135deg); transform: rotate(135deg); }
+  25% { -webkit-transform: rotate(270deg); transform: rotate(270deg); }
+  37.5% { -webkit-transform: rotate(405deg); transform: rotate(405deg); }
+  50% { -webkit-transform: rotate(540deg); transform: rotate(540deg); }
+  62.5% { -webkit-transform: rotate(675deg); transform: rotate(675deg); }
+  75% { -webkit-transform: rotate(810deg); transform: rotate(810deg); }
+  87.5% { -webkit-transform: rotate(945deg); transform: rotate(945deg); }
+  to { -webkit-transform: rotate(1080deg); transform: rotate(1080deg); }
 }
 
 @-webkit-keyframes ytp-spinner-left-spin {
-  0% {
-    -webkit-transform: rotate(130deg);
-    transform: rotate(130deg);
-  }
-  50% {
-    -webkit-transform: rotate(-5deg);
-    transform: rotate(-5deg);
-  }
-  to {
-    -webkit-transform: rotate(130deg);
-    transform: rotate(130deg);
-  }
+  0% { -webkit-transform: rotate(130deg); transform: rotate(130deg); }
+  50% { -webkit-transform: rotate(-5deg); transform: rotate(-5deg); }
+  to { -webkit-transform: rotate(130deg); transform: rotate(130deg); }
 }
 
 @keyframes ytp-spinner-left-spin {
-  0% {
-    -webkit-transform: rotate(130deg);
-    transform: rotate(130deg);
-  }
-  50% {
-    -webkit-transform: rotate(-5deg);
-    transform: rotate(-5deg);
-  }
-  to {
-    -webkit-transform: rotate(130deg);
-    transform: rotate(130deg);
-  }
+  0% { -webkit-transform: rotate(130deg); transform: rotate(130deg); }
+  50% { -webkit-transform: rotate(-5deg); transform: rotate(-5deg); }
+  to { -webkit-transform: rotate(130deg); transform: rotate(130deg); }
 }
 
 @-webkit-keyframes ytp-right-spin {
-  0% {
-    -webkit-transform: rotate(-130deg);
-    transform: rotate(-130deg);
-  }
-  50% {
-    -webkit-transform: rotate(5deg);
-    transform: rotate(5deg);
-  }
-  to {
-    -webkit-transform: rotate(-130deg);
-    transform: rotate(-130deg);
-  }
+  0% { -webkit-transform: rotate(-130deg); transform: rotate(-130deg); }
+  50% { -webkit-transform: rotate(5deg); transform: rotate(5deg); }
+  to { -webkit-transform: rotate(-130deg); transform: rotate(-130deg); }
 }
 
 @keyframes ytp-right-spin {
-  0% {
-    -webkit-transform: rotate(-130deg);
-    transform: rotate(-130deg);
-  }
-  50% {
-    -webkit-transform: rotate(5deg);
-    transform: rotate(5deg);
-  }
-  to {
-    -webkit-transform: rotate(-130deg);
-    transform: rotate(-130deg);
-  }
+  0% { -webkit-transform: rotate(-130deg); transform: rotate(-130deg); }
+  50% { -webkit-transform: rotate(5deg); transform: rotate(5deg); }
+  to { -webkit-transform: rotate(-130deg); transform: rotate(-130deg); }
 }
 
 /*===== NAVBAR =====*/
@@ -599,7 +452,7 @@ p {
   z-index: 99;
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   -webkit-box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   -webkit-transition: all 0.3s ease-out 0s;
@@ -611,55 +464,30 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .sticky .navbar {
-    padding: 15px 0;
-  }
+  .sticky .navbar { padding: 15px 0; }
 }
 
-.sticky .navbar .navbar-nav .nav-item a {
-  color: #162447;
-}
-
-.sticky .navbar .navbar-nav .nav-item a::before {
-  color: #162447;
-}
-
-.sticky .navbar .navbar-toggler .toggler-icon {
-  background: #162447;
-}
+.sticky .navbar .navbar-nav .nav-item a { color: #162447; }
+.sticky .navbar .navbar-nav .nav-item a::before { color: #162447; }
+.sticky .navbar .navbar-toggler .toggler-icon { background: #162447; }
 
 .navbar {
-  padding: 0;
+  padding: 20px 0;
   border-radius: 5px;
   position: relative;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  padding: 20px 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .navbar {
-    padding: 17px 0;
-  }
+  .navbar { padding: 17px 0; }
 }
 
-.navbar-brand {
-  padding: 0;
-}
+.navbar-brand { padding: 0; }
+.navbar-brand img { max-width: 180px; }
 
-.navbar-brand img {
-  max-width: 180px;
-}
-
-.navbar-toggler {
-  padding: 0;
-}
-
-.navbar-toggler:focus {
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
+.navbar-toggler { padding: 0; }
+.navbar-toggler:focus { outline: none; -webkit-box-shadow: none; box-shadow: none; }
 
 .navbar-toggler .toggler-icon {
   width: 30px;
@@ -678,9 +506,7 @@ p {
   top: 7px;
 }
 
-.navbar-toggler.active .toggler-icon:nth-of-type(2) {
-  opacity: 0;
-}
+.navbar-toggler.active .toggler-icon:nth-of-type(2) { opacity: 0; }
 
 .navbar-toggler.active .toggler-icon:nth-of-type(3) {
   -webkit-transform: rotate(135deg);
@@ -688,34 +514,47 @@ p {
   top: -7px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+/* 📱 Mobil Navbar Alanı & Dikey Kaydırma Entegrasyonu */
+@media (max-width: 991px) {
   .navbar-collapse {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background-color: #fff;
-    z-index: 9;
+    z-index: 999;
     -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-bottom: 30px;
   }
-}
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .navbar-nav {
     padding: 20px 30px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0;
+  }
+
+  .navbar-nav .nav-item a {
+    display: inline-block;
+    padding: 6px 0;
+    color: #162447;
+  }
+
+  .navbar-nav .nav-item a::before {
+    top: auto;
+    bottom: 0;
   }
 }
 
 .navbar-nav .nav-item {
   position: relative;
   margin-left: 40px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .navbar-nav .nav-item {
-    margin-left: 0px;
-  }
 }
 
 .navbar-nav .nav-item a {
@@ -743,26 +582,12 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .navbar-nav .nav-item a::before {
-    top: auto;
-    bottom: 0;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .navbar-nav .nav-item a {
-    display: inline-block;
-    padding: 6px 0px;
-    color: #162447;
-  }
-}
-
-.navbar-nav .nav-item a:hover::before, .navbar-nav .nav-item a.active::before {
+.navbar-nav .nav-item a:hover::before,
+.navbar-nav .nav-item a.active::before {
   width: 100%;
 }
 
-/* ====== hero-area ===== */
+/* ====== HERO-AREA ===== */
 .hero-section {
   position: relative;
   z-index: 1;
@@ -773,9 +598,7 @@ p {
 }
 
 @media (max-width: 767px) {
-  .hero-section {
-    padding-top: 130px;
-  }
+  .hero-section { padding-top: 130px; }
 }
 
 .hero-section .hero-content {
@@ -783,9 +606,7 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .hero-section .hero-content {
-    margin-bottom: 0px;
-  }
+  .hero-section .hero-content { margin-bottom: 0; }
 }
 
 .hero-section .hero-content h1 {
@@ -795,27 +616,19 @@ p {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .hero-section .hero-content h1 {
-    font-size: 52px;
-  }
+  .hero-section .hero-content h1 { font-size: 52px; }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .hero-section .hero-content h1 {
-    font-size: 42px;
-  }
+  .hero-section .hero-content h1 { font-size: 42px; }
 }
 
 @media (max-width: 767px) {
-  .hero-section .hero-content h1 {
-    font-size: 32px;
-  }
+  .hero-section .hero-content h1 { font-size: 32px; }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .hero-section .hero-content h1 {
-    font-size: 42px;
-  }
+  .hero-section .hero-content h1 { font-size: 42px; }
 }
 
 .hero-section .hero-content p {
@@ -826,15 +639,11 @@ p {
 }
 
 @media only screen and (min-width: 1400px) {
-  .hero-section .hero-content p {
-    padding-right: 120px;
-  }
+  .hero-section .hero-content p { padding-right: 120px; }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .hero-section .hero-content p {
-    padding-right: 70px;
-  }
+  .hero-section .hero-content p { padding-right: 70px; }
 }
 
 .hero-section .hero-content .main-btn {
@@ -852,8 +661,6 @@ p {
   height: 40px;
   border-radius: 50%;
   background: #fff;
-/*  border: 3px solid #162447;*/
-/*  color: #162447;*/
   border: 3px solid #162447;
   color: #162447;
   left: 15px;
@@ -870,9 +677,6 @@ p {
     padding-top: 30px;
     padding-bottom: 50px;
   }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .hero-section .hero-img img {
     width: 100%;
   }
@@ -889,36 +693,20 @@ p {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .hero-section .hero-shape .shape.shape-1 {
-    top: -420px;
-    right: -550px;
-  }
+  .hero-section .hero-shape .shape.shape-1 { top: -420px; right: -550px; }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .hero-section .hero-shape .shape.shape-1 {
-    top: -400px;
-    right: -550px;
-  }
+  .hero-section .hero-shape .shape.shape-1 { top: -400px; right: -550px; }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .hero-section .hero-shape .shape.shape-1 {
-    display: none;
-  }
+@media (max-width: 991px) {
+  .hero-section .hero-shape .shape.shape-1 { display: none; }
 }
 
+/* ====== FEATURE CSS ====== */
 @media (max-width: 767px) {
-  .hero-section .hero-shape .shape.shape-1 {
-    display: none;
-  }
-}
-
-/* ====== feature css ====== */
-@media (max-width: 767px) {
-  .feature-section.pt-120 {
-    padding-top: 80px;
-  }
+  .feature-section.pt-120 { padding-top: 80px; }
 }
 
 .feature-section .single-feature {
@@ -927,9 +715,7 @@ p {
 }
 
 @media only screen and (min-width: 1400px) {
-  .feature-section .single-feature {
-    padding: 30px 40px;
-  }
+  .feature-section .single-feature { padding: 30px 40px; }
 }
 
 .feature-section .single-feature .icon {
@@ -938,20 +724,13 @@ p {
   border-radius: 50%;
   background: rgba(88, 100, 255, 0.1);
   color: #162447;
-  margin: auto;
-  margin-bottom: 30px;
+  margin: auto auto 30px auto;
   font-size: 65px;
   line-height: 1;
 }
 
-.feature-section .single-feature .content h3 {
-  margin-bottom: 20px;
-}
-
-.feature-section .single-feature .content p {
-  font-size: 18px;
-  line-height: 28px;
-}
+.feature-section .single-feature .content h3 { margin-bottom: 20px; }
+.feature-section .single-feature .content p { font-size: 18px; line-height: 28px; }
 
 .box-style {
   border-radius: 39px;
@@ -965,33 +744,24 @@ p {
 }
 
 @media only screen and (min-width: 1400px) {
-  .box-style {
-    padding: 50px 40px 30px;
-  }
+  .box-style { padding: 50px 40px 30px; }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .box-style {
-    padding: 50px 20px 30px;
-  }
+  .box-style { padding: 50px 20px 30px; }
 }
 
 .box-style .icon {
   width: 85px;
   height: 85px;
-  margin: auto;
-  margin-bottom: 30px;
+  margin: auto auto 30px auto;
   font-size: 70px;
 }
 
-.box-style .content h3 {
-  margin-bottom: 25px;
-}
+.box-style .content h3 { margin-bottom: 25px; }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .box-style .content h3 {
-    font-size: 22px;
-  }
+  .box-style .content h3 { font-size: 22px; }
 }
 
 .box-style .content p {
@@ -1006,9 +776,7 @@ p {
   font-weight: 700;
 }
 
-.box-style .content ul li {
-  margin-bottom: 5px;
-}
+.box-style .content ul li { margin-bottom: 5px; }
 
 .box-style .content a.main-btn {
   padding: 10px 30px;
@@ -1017,83 +785,47 @@ p {
   color: #fff;
 }
 
-.box-style .content a.main-btn.border-btn {
-  color: #5B657E;
-}
+.box-style .content a.main-btn.border-btn { color: #5B657E; }
+.box-style .content a.main-btn.border-btn:hover { color: #162447; }
+.box-style .content a.main-btn.border-btn:hover::after { background: rgba(88, 100, 255, 0.2); }
 
-.box-style .content a.main-btn.border-btn:hover {
-  color: #162447;
-}
+.box-style.color-1 { border-color: #ff92a5; }
+.box-style.color-1 .icon { color: #ff92a5; }
+.box-style.color-1 .content a:hover { color: #ff92a5; }
 
-.box-style .content a.main-btn.border-btn:hover::after {
-  background: rgba(88, 100, 255, 0.2);
-}
+.box-style.color-2 { border-color: #162447; }
+.box-style.color-2 .icon { color: #162447; }
+.box-style.color-2 .content a:hover { color: #162447; }
+.box-style.color-2 .content .main-btn:hover { color: #fff; }
 
-.box-style.color-1 {
-  border-color: #ff92a5;
-}
+.box-style.color-3 { border-color: #b89cfe; }
+.box-style.color-3 .icon { color: #b89cfe; }
+.box-style.color-3 .content a:hover { color: #b89cfe; }
 
-.box-style.color-1 .icon {
-  color: #ff92a5;
-}
-
-.box-style.color-1 .content a:hover {
-  color: #ff92a5;
-}
-
-.box-style.color-2 {
-  border-color: #162447;
-}
-
-.box-style.color-2 .icon {
-  color: #162447;
-}
-
-.box-style.color-2 .content a:hover {
-  color: #162447;
-}
-
-.box-style.color-2 .content .main-btn:hover {
-  color: #fff;
-}
-
-.box-style.color-3 {
-  border-color: #b89cfe;
-}
-
-.box-style.color-3 .icon {
-  color: #b89cfe;
-}
-
-.box-style.color-3 .content a:hover {
-  color: #b89cfe;
-}
-
-/* ===== about css ====== */
+/* ===== ABOUT CSS ====== */
 .about-section {
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 767px) {
-  .about-section.pt-150 {
-    padding-top: 100px;
-  }
+  .about-section.pt-150 { padding-top: 100px; }
 }
 
-.about-section .about-img {
+.about-section .about-img,
+.about-section .about-img-2 {
   position: relative;
   z-index: 1;
   padding: 75px 0;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .about-section .about-img {
-    margin-bottom: 70px;
-  }
+@media (max-width: 991px) {
+  .about-section .about-img,
+  .about-section .about-img-2 { margin-bottom: 70px; }
 }
 
-.about-section .about-img .shape {
+.about-section .about-img .shape,
+.about-section .about-img-2 .shape {
   position: absolute;
   z-index: -1;
 }
@@ -1106,15 +838,11 @@ p {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .about-section .about-img .shape.shape-1 {
-    width: 80%;
-  }
+  .about-section .about-img .shape.shape-1 { width: 80%; }
 }
 
 @media (max-width: 767px) {
-  .about-section .about-img .shape.shape-1 {
-    width: 70%;
-  }
+  .about-section .about-img .shape.shape-1 { width: 70%; }
 }
 
 .about-section .about-img .shape.shape-2 {
@@ -1123,38 +851,15 @@ p {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .about-section .about-img .shape.shape-2 {
-    width: 75%;
-  }
+  .about-section .about-img .shape.shape-2 { width: 75%; }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .about-section .about-img .shape.shape-2 {
-    right: 120px;
-  }
+  .about-section .about-img .shape.shape-2 { right: 120px; }
 }
 
 @media (max-width: 767px) {
-  .about-section .about-img .shape.shape-2 {
-    bottom: 30px;
-  }
-}
-
-.about-section .about-img-2 {
-  position: relative;
-  z-index: 1;
-  padding: 75px 0;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .about-section .about-img-2 {
-    margin-bottom: 70px;
-  }
-}
-
-.about-section .about-img-2 .shape {
-  position: absolute;
-  z-index: -1;
+  .about-section .about-img .shape.shape-2 { bottom: 30px; }
 }
 
 .about-section .about-img-2 .shape.shape-1 {
@@ -1165,15 +870,11 @@ p {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .about-section .about-img-2 .shape.shape-1 {
-    width: 80%;
-  }
+  .about-section .about-img-2 .shape.shape-1 { width: 80%; }
 }
 
 @media (max-width: 767px) {
-  .about-section .about-img-2 .shape.shape-1 {
-    width: 70%;
-  }
+  .about-section .about-img-2 .shape.shape-1 { width: 70%; }
 }
 
 .about-section .about-img-2 .shape.shape-2 {
@@ -1182,21 +883,15 @@ p {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .about-section .about-img-2 .shape.shape-2 {
-    width: 75%;
-  }
+  .about-section .about-img-2 .shape.shape-2 { width: 75%; }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .about-section .about-img-2 .shape.shape-2 {
-    left: 120px;
-  }
+  .about-section .about-img-2 .shape.shape-2 { left: 120px; }
 }
 
 @media (max-width: 767px) {
-  .about-section .about-img-2 .shape.shape-2 {
-    bottom: 30px;
-  }
+  .about-section .about-img-2 .shape.shape-2 { bottom: 30px; }
 }
 
 .about-section .about-content ul li {
@@ -1221,7 +916,7 @@ p {
   box-shadow: 0px 14px 15px rgba(78, 110, 241, 0.26);
 }
 
-/* ====== feature-extended css ====== */
+/* ====== FEATURE-EXTENDED CSS ====== */
 .feature-extended-section .feature-extended-wrapper {
   padding: 70px 0;
   background: rgba(88, 100, 255, 0.1);
@@ -1232,15 +927,11 @@ p {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .feature-extended-section .single-feature-extended {
-    padding: 30px 10px;
-  }
+  .feature-extended-section .single-feature-extended { padding: 30px 10px; }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .feature-extended-section .single-feature-extended {
-    padding: 30px 0px;
-  }
+  .feature-extended-section .single-feature-extended { padding: 30px 0; }
 }
 
 .feature-extended-section .single-feature-extended .icon {
@@ -1250,27 +941,20 @@ p {
   color: #162447;
 }
 
-.feature-extended-section .single-feature-extended .content h3 {
-  margin-bottom: 20px;
-}
-
+.feature-extended-section .single-feature-extended .content h3 { margin-bottom: 20px; }
 .feature-extended-section .single-feature-extended .content p {
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
 }
 
-/* ======= subscribe css ======= */
+/* ======= SUBSCRIBE CSS ======= */
 @media (max-width: 767px) {
-  .subscribe-section .section-title h2 {
-    font-size: 24px;
-  }
+  .subscribe-section .section-title h2 { font-size: 24px; }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .subscribe-section .section-title h2 {
-    font-size: 32px;
-  }
+  .subscribe-section .section-title h2 { font-size: 32px; }
 }
 
 .subscribe-section .subscribe-wrapper {
@@ -1280,17 +964,11 @@ p {
 }
 
 @media (max-width: 767px) {
-  .subscribe-section .subscribe-wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  .subscribe-section .subscribe-wrapper { padding-left: 20px; padding-right: 20px; }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .subscribe-section .subscribe-wrapper {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+  .subscribe-section .subscribe-wrapper { padding-left: 30px; padding-right: 30px; }
 }
 
 .subscribe-section .subscribe-wrapper .subscribe-form {
@@ -1358,14 +1036,14 @@ p {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .subscribe-section .subscribe-wrapper .subscribe-form button {
     position: absolute;
-    margin-top: 0px;
+    margin-top: 0;
     color: #fff;
     background: #162447;
     padding: 17.5px 25px;
   }
 }
 
-/* ======= footer css ======= */
+/* ======= FOOTER CSS ======= */
 .footer {
   background-image: url("../img/footer/footer-bg.svg");
   background-size: cover;
@@ -1375,9 +1053,7 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .footer {
-    padding-top: 250px;
-  }
+  .footer { padding-top: 250px; }
 }
 
 @media (max-width: 767px) {
@@ -1387,20 +1063,14 @@ p {
   }
 }
 
-.footer .widget-wrapper .footer-widget {
-  margin-bottom: 40px;
-}
+.footer .widget-wrapper .footer-widget { margin-bottom: 40px; }
 
 @media only screen and (min-width: 1400px) {
-  .footer .widget-wrapper .footer-widget .desc {
-    padding-right: 100px;
-  }
+  .footer .widget-wrapper .footer-widget .desc { padding-right: 100px; }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .footer .widget-wrapper .footer-widget .desc {
-    padding-right: 50px;
-  }
+  .footer .widget-wrapper .footer-widget .desc { padding-right: 50px; }
 }
 
 .footer .widget-wrapper .footer-widget .socials {
@@ -1408,17 +1078,12 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.footer .widget-wrapper .footer-widget .socials li {
-  margin-right: 20px;
-}
-
-.footer .widget-wrapper .footer-widget .socials li:last-child {
-  margin-right: 0;
-}
+.footer .widget-wrapper .footer-widget .socials li { margin-right: 20px; }
+.footer .widget-wrapper .footer-widget .socials li:last-child { margin-right: 0; }
 
 .footer .widget-wrapper .footer-widget .socials li a {
   width: 40px;
@@ -1443,1000 +1108,326 @@ p {
   line-height: 34px;
 }
 
-.footer .widget-wrapper .footer-widget ul.links li a {
-  color: #fff;
-}
-
-.footer .widget-wrapper .footer-widget ul.links li a:hover {
-  padding-left: 8px;
-}
-
-.mt-5 {
-  margin-top: 5px;
-}
-
-.mt-10 {
-  margin-top: 10px;
-}
-
-.mt-15 {
-  margin-top: 15px;
-}
-
-.mt-20 {
-  margin-top: 20px;
-}
-
-.mt-25 {
-  margin-top: 25px;
-}
-
-.mt-30 {
-  margin-top: 30px;
-}
-
-.mt-35 {
-  margin-top: 35px;
-}
-
-.mt-40 {
-  margin-top: 40px;
-}
-
-.mt-45 {
-  margin-top: 45px;
-}
-
-.mt-50 {
-  margin-top: 50px;
-}
-
-.mt-55 {
-  margin-top: 55px;
-}
-
-.mt-60 {
-  margin-top: 60px;
-}
-
-.mt-65 {
-  margin-top: 65px;
-}
-
-.mt-70 {
-  margin-top: 70px;
-}
-
-.mt-75 {
-  margin-top: 75px;
-}
-
-.mt-80 {
-  margin-top: 80px;
-}
-
-.mt-85 {
-  margin-top: 85px;
-}
-
-.mt-90 {
-  margin-top: 90px;
-}
-
-.mt-95 {
-  margin-top: 95px;
-}
-
-.mt-100 {
-  margin-top: 100px;
-}
-
-.mt-105 {
-  margin-top: 105px;
-}
-
-.mt-110 {
-  margin-top: 110px;
-}
-
-.mt-115 {
-  margin-top: 115px;
-}
-
-.mt-120 {
-  margin-top: 120px;
-}
-
-.mt-125 {
-  margin-top: 125px;
-}
-
-.mt-130 {
-  margin-top: 130px;
-}
-
-.mt-135 {
-  margin-top: 135px;
-}
-
-.mt-140 {
-  margin-top: 140px;
-}
-
-.mt-145 {
-  margin-top: 145px;
-}
-
-.mt-150 {
-  margin-top: 150px;
-}
-
-.mt-155 {
-  margin-top: 155px;
-}
-
-.mt-160 {
-  margin-top: 160px;
-}
-
-.mt-165 {
-  margin-top: 165px;
-}
-
-.mt-170 {
-  margin-top: 170px;
-}
-
-.mt-175 {
-  margin-top: 175px;
-}
-
-.mt-180 {
-  margin-top: 180px;
-}
-
-.mt-185 {
-  margin-top: 185px;
-}
-
-.mt-190 {
-  margin-top: 190px;
-}
-
-.mt-195 {
-  margin-top: 195px;
-}
-
-.mt-200 {
-  margin-top: 200px;
-}
-
-.mt-205 {
-  margin-top: 205px;
-}
-
-.mt-210 {
-  margin-top: 210px;
-}
-
-.mt-215 {
-  margin-top: 215px;
-}
-
-.mt-220 {
-  margin-top: 220px;
-}
-
-.mt-225 {
-  margin-top: 225px;
-}
-
-.mb-5 {
-  margin-bottom: 5px;
-}
-
-.mb-10 {
-  margin-bottom: 10px;
-}
-
-.mb-15 {
-  margin-bottom: 15px;
-}
-
-.mb-20 {
-  margin-bottom: 20px;
-}
-
-.mb-25 {
-  margin-bottom: 25px;
-}
-
-.mb-30 {
-  margin-bottom: 30px;
-}
-
-.mb-35 {
-  margin-bottom: 35px;
-}
-
-.mb-40 {
-  margin-bottom: 40px;
-}
-
-.mb-45 {
-  margin-bottom: 45px;
-}
-
-.mb-50 {
-  margin-bottom: 50px;
-}
-
-.mb-55 {
-  margin-bottom: 55px;
-}
-
-.mb-60 {
-  margin-bottom: 60px;
-}
-
-.mb-65 {
-  margin-bottom: 65px;
-}
-
-.mb-70 {
-  margin-bottom: 70px;
-}
-
-.mb-75 {
-  margin-bottom: 75px;
-}
-
-.mb-80 {
-  margin-bottom: 80px;
-}
-
-.mb-85 {
-  margin-bottom: 85px;
-}
-
-.mb-90 {
-  margin-bottom: 90px;
-}
-
-.mb-95 {
-  margin-bottom: 95px;
-}
-
-.mb-100 {
-  margin-bottom: 100px;
-}
-
-.mb-105 {
-  margin-bottom: 105px;
-}
-
-.mb-110 {
-  margin-bottom: 110px;
-}
-
-.mb-115 {
-  margin-bottom: 115px;
-}
-
-.mb-120 {
-  margin-bottom: 120px;
-}
-
-.mb-125 {
-  margin-bottom: 125px;
-}
-
-.mb-130 {
-  margin-bottom: 130px;
-}
-
-.mb-135 {
-  margin-bottom: 135px;
-}
-
-.mb-140 {
-  margin-bottom: 140px;
-}
-
-.mb-145 {
-  margin-bottom: 145px;
-}
-
-.mb-150 {
-  margin-bottom: 150px;
-}
-
-.mb-155 {
-  margin-bottom: 155px;
-}
-
-.mb-160 {
-  margin-bottom: 160px;
-}
-
-.mb-165 {
-  margin-bottom: 165px;
-}
-
-.mb-170 {
-  margin-bottom: 170px;
-}
-
-.mb-175 {
-  margin-bottom: 175px;
-}
-
-.mb-180 {
-  margin-bottom: 180px;
-}
-
-.mb-185 {
-  margin-bottom: 185px;
-}
-
-.mb-190 {
-  margin-bottom: 190px;
-}
-
-.mb-195 {
-  margin-bottom: 195px;
-}
-
-.mb-200 {
-  margin-bottom: 200px;
-}
-
-.mb-205 {
-  margin-bottom: 205px;
-}
-
-.mb-210 {
-  margin-bottom: 210px;
-}
-
-.mb-215 {
-  margin-bottom: 215px;
-}
-
-.mb-220 {
-  margin-bottom: 220px;
-}
-
-.mb-225 {
-  margin-bottom: 225px;
-}
-
-.pt-5 {
-  padding-top: 5px;
-}
-
-.pt-10 {
-  padding-top: 10px;
-}
-
-.pt-15 {
-  padding-top: 15px;
-}
-
-.pt-20 {
-  padding-top: 20px;
-}
-
-.pt-25 {
-  padding-top: 25px;
-}
-
-.pt-30 {
-  padding-top: 30px;
-}
-
-.pt-35 {
-  padding-top: 35px;
-}
-
-.pt-40 {
-  padding-top: 40px;
-}
-
-.pt-45 {
-  padding-top: 45px;
-}
-
-.pt-50 {
-  padding-top: 50px;
-}
-
-.pt-55 {
-  padding-top: 55px;
-}
-
-.pt-60 {
-  padding-top: 60px;
-}
-
-.pt-65 {
-  padding-top: 65px;
-}
-
-.pt-70 {
-  padding-top: 70px;
-}
-
-.pt-75 {
-  padding-top: 75px;
-}
-
-.pt-80 {
-  padding-top: 80px;
-}
-
-.pt-85 {
-  padding-top: 85px;
-}
-
-.pt-90 {
-  padding-top: 90px;
-}
-
-.pt-95 {
-  padding-top: 95px;
-}
-
-.pt-100 {
-  padding-top: 100px;
-}
-
-.pt-105 {
-  padding-top: 105px;
-}
-
-.pt-110 {
-  padding-top: 110px;
-}
-
-.pt-115 {
-  padding-top: 115px;
-}
-
-.pt-120 {
-  padding-top: 120px;
-}
-
-.pt-125 {
-  padding-top: 125px;
-}
-
-.pt-130 {
-  padding-top: 130px;
-}
-
-.pt-135 {
-  padding-top: 135px;
-}
-
-.pt-140 {
-  padding-top: 140px;
-}
-
-.pt-145 {
-  padding-top: 145px;
-}
-
-.pt-150 {
-  padding-top: 150px;
-}
-
-.pt-155 {
-  padding-top: 155px;
-}
-
-.pt-160 {
-  padding-top: 160px;
-}
-
-.pt-165 {
-  padding-top: 165px;
-}
-
-.pt-170 {
-  padding-top: 170px;
-}
-
-.pt-175 {
-  padding-top: 175px;
-}
-
-.pt-180 {
-  padding-top: 180px;
-}
-
-.pt-185 {
-  padding-top: 185px;
-}
-
-.pt-190 {
-  padding-top: 190px;
-}
-
-.pt-195 {
-  padding-top: 195px;
-}
-
-.pt-200 {
-  padding-top: 200px;
-}
-
-.pt-205 {
-  padding-top: 205px;
-}
-
-.pt-210 {
-  padding-top: 210px;
-}
-
-.pt-215 {
-  padding-top: 215px;
-}
-
-.pt-220 {
-  padding-top: 220px;
-}
-
-.pt-225 {
-  padding-top: 225px;
-}
-
-.pb-5 {
-  padding-bottom: 5px;
-}
-
-.pb-10 {
-  padding-bottom: 10px;
-}
-
-.pb-15 {
-  padding-bottom: 15px;
-}
-
-.pb-20 {
-  padding-bottom: 20px;
-}
-
-.pb-25 {
-  padding-bottom: 25px;
-}
-
-.pb-30 {
-  padding-bottom: 30px;
-}
-
-.pb-35 {
-  padding-bottom: 35px;
-}
-
-.pb-40 {
-  padding-bottom: 40px;
-}
-
-.pb-45 {
-  padding-bottom: 45px;
-}
-
-.pb-50 {
-  padding-bottom: 50px;
-}
-
-.pb-55 {
-  padding-bottom: 55px;
-}
-
-.pb-60 {
-  padding-bottom: 60px;
-}
-
-.pb-65 {
-  padding-bottom: 65px;
-}
-
-.pb-70 {
-  padding-bottom: 70px;
-}
-
-.pb-75 {
-  padding-bottom: 75px;
-}
-
-.pb-80 {
-  padding-bottom: 80px;
-}
-
-.pb-85 {
-  padding-bottom: 85px;
-}
-
-.pb-90 {
-  padding-bottom: 90px;
-}
-
-.pb-95 {
-  padding-bottom: 95px;
-}
-
-.pb-100 {
-  padding-bottom: 100px;
-}
-
-.pb-105 {
-  padding-bottom: 105px;
-}
-
-.pb-110 {
-  padding-bottom: 110px;
-}
-
-.pb-115 {
-  padding-bottom: 115px;
-}
-
-.pb-120 {
-  padding-bottom: 120px;
-}
-
-.pb-125 {
-  padding-bottom: 125px;
-}
-
-.pb-130 {
-  padding-bottom: 130px;
-}
-
-.pb-135 {
-  padding-bottom: 135px;
-}
-
-.pb-140 {
-  padding-bottom: 140px;
-}
-
-.pb-145 {
-  padding-bottom: 145px;
-}
-
-.pb-150 {
-  padding-bottom: 150px;
-}
-
-.pb-155 {
-  padding-bottom: 155px;
-}
-
-.pb-160 {
-  padding-bottom: 160px;
-}
-
-.pb-165 {
-  padding-bottom: 165px;
-}
-
-.pb-170 {
-  padding-bottom: 170px;
-}
-
-.pb-175 {
-  padding-bottom: 175px;
-}
-
-.pb-180 {
-  padding-bottom: 180px;
-}
-
-.pb-185 {
-  padding-bottom: 185px;
-}
-
-.pb-190 {
-  padding-bottom: 190px;
-}
-
-.pb-195 {
-  padding-bottom: 195px;
-}
-
-.pb-200 {
-  padding-bottom: 200px;
-}
-
-.pb-205 {
-  padding-bottom: 205px;
-}
-
-.pb-210 {
-  padding-bottom: 210px;
-}
-
-.pb-215 {
-  padding-bottom: 215px;
-}
-
-.pb-220 {
-  padding-bottom: 220px;
-}
-
-.pb-225 {
-  padding-bottom: 225px;
-}
-
-/* Normalde yazı gizli kalsın */
+.footer .widget-wrapper .footer-widget ul.links li a { color: #fff; }
+.footer .widget-wrapper .footer-widget ul.links li a:hover { padding-left: 8px; }
+
+/* Spacing Helpers */
+.mt-5 { margin-top: 5px; } .mt-10 { margin-top: 10px; } .mt-15 { margin-top: 15px; } .mt-20 { margin-top: 20px; }
+.mt-25 { margin-top: 25px; } .mt-30 { margin-top: 30px; } .mt-35 { margin-top: 35px; } .mt-40 { margin-top: 40px; }
+.mt-45 { margin-top: 45px; } .mt-50 { margin-top: 50px; } .mt-55 { margin-top: 55px; } .mt-60 { margin-top: 60px; }
+.mt-65 { margin-top: 65px; } .mt-70 { margin-top: 70px; } .mt-75 { margin-top: 75px; } .mt-80 { margin-top: 80px; }
+.mt-85 { margin-top: 85px; } .mt-90 { margin-top: 90px; } .mt-95 { margin-top: 95px; } .mt-100 { margin-top: 100px; }
+.mt-105 { margin-top: 105px; } .mt-110 { margin-top: 110px; } .mt-115 { margin-top: 115px; } .mt-120 { margin-top: 120px; }
+.mt-125 { margin-top: 125px; } .mt-130 { margin-top: 130px; } .mt-135 { margin-top: 135px; } .mt-140 { margin-top: 140px; }
+.mt-145 { margin-top: 145px; } .mt-150 { margin-top: 150px; } .mt-155 { margin-top: 155px; } .mt-160 { margin-top: 160px; }
+.mt-165 { margin-top: 165px; } .mt-170 { margin-top: 170px; } .mt-175 { margin-top: 175px; } .mt-180 { margin-top: 180px; }
+.mt-185 { margin-top: 185px; } .mt-190 { margin-top: 190px; } .mt-195 { margin-top: 195px; } .mt-200 { margin-top: 200px; }
+.mt-205 { margin-top: 205px; } .mt-210 { margin-top: 210px; } .mt-215 { margin-top: 215px; } .mt-220 { margin-top: 220px; }
+.mt-225 { margin-top: 225px; }
+
+.mb-5 { margin-bottom: 5px; } .mb-10 { margin-bottom: 10px; } .mb-15 { margin-bottom: 15px; } .mb-20 { margin-bottom: 20px; }
+.mb-25 { margin-bottom: 25px; } .mb-30 { margin-bottom: 30px; } .mb-35 { margin-bottom: 35px; } .mb-40 { margin-bottom: 40px; }
+.mb-45 { margin-bottom: 45px; } .mb-50 { margin-bottom: 50px; } .mb-55 { margin-bottom: 55px; } .mb-60 { margin-bottom: 60px; }
+.mb-65 { margin-bottom: 65px; } .mb-70 { margin-bottom: 70px; } .mb-75 { margin-bottom: 75px; } .mb-80 { margin-bottom: 80px; }
+.mb-85 { margin-bottom: 85px; } .mb-90 { margin-bottom: 90px; } .mb-95 { margin-bottom: 95px; } .mb-100 { margin-bottom: 100px; }
+.mb-105 { margin-bottom: 105px; } .mb-110 { margin-bottom: 110px; } .mb-115 { margin-bottom: 115px; } .mb-120 { margin-bottom: 120px; }
+.mb-125 { margin-bottom: 125px; } .mb-130 { margin-bottom: 130px; } .mb-135 { margin-bottom: 135px; } .mb-140 { margin-bottom: 140px; }
+.mb-145 { margin-bottom: 145px; } .mb-150 { margin-bottom: 150px; } .mb-155 { margin-bottom: 155px; } .mb-160 { margin-bottom: 160px; }
+.mb-165 { margin-bottom: 165px; } .mb-170 { margin-bottom: 170px; } .mb-175 { margin-bottom: 175px; } .mb-180 { margin-bottom: 180px; }
+.mb-185 { margin-bottom: 185px; } .mb-190 { margin-bottom: 190px; } .mb-195 { margin-bottom: 195px; } .mb-200 { margin-bottom: 200px; }
+.mb-205 { margin-bottom: 205px; } .mb-210 { margin-bottom: 210px; } .mb-215 { margin-bottom: 215px; } .mb-220 { margin-bottom: 220px; }
+.mb-225 { margin-bottom: 225px; }
+
+.pt-5 { padding-top: 5px; } .pt-10 { padding-top: 10px; } .pt-15 { padding-top: 15px; } .pt-20 { padding-top: 20px; }
+.pt-25 { padding-top: 25px; } .pt-30 { padding-top: 30px; } .pt-35 { padding-top: 35px; } .pt-40 { padding-top: 40px; }
+.pt-45 { padding-top: 45px; } .pt-50 { padding-top: 50px; } .pt-55 { padding-top: 55px; } .pt-60 { padding-top: 60px; }
+.pt-65 { padding-top: 65px; } .pt-70 { padding-top: 70px; } .pt-75 { padding-top: 75px; } .pt-80 { padding-top: 80px; }
+.pt-85 { padding-top: 85px; } .pt-90 { padding-top: 90px; } .pt-95 { padding-top: 95px; } .pt-100 { padding-top: 100px; }
+.pt-105 { padding-top: 105px; } .pt-110 { padding-top: 110px; } .pt-115 { padding-top: 115px; } .pt-120 { padding-top: 120px; }
+.pt-125 { padding-top: 125px; } .pt-130 { padding-top: 130px; } .pt-135 { padding-top: 135px; } .pt-140 { padding-top: 140px; }
+.pt-145 { padding-top: 145px; } .pt-150 { padding-top: 150px; } .pt-155 { padding-top: 155px; } .pt-160 { padding-top: 160px; }
+.pt-165 { padding-top: 165px; } .pt-170 { padding-top: 170px; } .pt-175 { padding-top: 175px; } .pt-180 { padding-top: 180px; }
+.pt-185 { padding-top: 185px; } .pt-190 { padding-top: 190px; } .pt-195 { padding-top: 195px; } .pt-200 { padding-top: 200px; }
+.pt-205 { padding-top: 205px; } .pt-210 { padding-top: 210px; } .pt-215 { padding-top: 215px; } .pt-220 { padding-top: 220px; }
+.pt-225 { padding-top: 225px; }
+
+.pb-5 { padding-bottom: 5px; } .pb-10 { padding-bottom: 10px; } .pb-15 { padding-bottom: 15px; } .pb-20 { padding-bottom: 20px; }
+.pb-25 { padding-bottom: 25px; } .pb-30 { padding-bottom: 30px; } .pb-35 { padding-bottom: 35px; } .pb-40 { padding-bottom: 40px; }
+.pb-45 { padding-bottom: 45px; } .pb-50 { padding-bottom: 50px; } .pb-55 { padding-bottom: 55px; } .pb-60 { padding-bottom: 60px; }
+.pb-65 { padding-bottom: 65px; } .pb-70 { padding-bottom: 70px; } .pb-75 { padding-bottom: 75px; } .pb-80 { padding-bottom: 80px; }
+.pb-85 { padding-bottom: 85px; } .pb-90 { padding-bottom: 90px; } .pb-95 { padding-bottom: 95px; } .pb-100 { padding-bottom: 100px; }
+.pb-105 { padding-bottom: 105px; } .pb-110 { padding-bottom: 110px; } .pb-115 { padding-bottom: 115px; } .pb-120 { padding-bottom: 120px; }
+.pb-125 { padding-bottom: 125px; } .pb-130 { padding-bottom: 130px; } .pb-135 { padding-bottom: 135px; } .pb-140 { padding-bottom: 140px; }
+.pb-145 { padding-bottom: 145px; } .pb-150 { padding-bottom: 150px; } .pb-155 { padding-bottom: 155px; } .pb-160 { padding-bottom: 160px; }
+.pb-165 { padding-bottom: 165px; } .pb-170 { padding-bottom: 170px; } .pb-175 { padding-bottom: 175px; } .pb-180 { padding-bottom: 180px; }
+.pb-185 { padding-bottom: 185px; } .pb-190 { padding-bottom: 190px; } .pb-195 { padding-bottom: 195px; } .pb-200 { padding-bottom: 200px; }
+.pb-205 { padding-bottom: 205px; } .pb-210 { padding-bottom: 210px; } .pb-215 { padding-bottom: 215px; } .pb-220 { padding-bottom: 220px; }
+.pb-225 { padding-bottom: 225px; }
+
+/* Sticky Header Yazı Efekti */
 .header-yazi {
-    display: none;
-    opacity: 0;
+  display: none;
+  opacity: 0;
 }
 
-/* Sayfa aşağı kaydığında (Header'a .sticky gelince) yazı belirsin */
 .header.sticky .header-yazi {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
-/* Beyaz ikon her zaman kalsın, yazı yanına eklensin
- */
-
+/* =========================================================================
+   NART GAZ - MEGAMENU STİLLERİ (DESKTOP & MOBİL)
+   ========================================================================= */
 @media (min-width: 992px) {
-    /* 1. Mouse üstündeyken paneli göster ve açılış animasyonu ekle */
-    .nav-item.dropdown.position-static:hover .dropdown-menu {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: fixed !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        z-index: 9999 !important;
-        background-color: #fff !important;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-        border: none !important;
-        padding-bottom: 20px !important;
+  .nav-item.dropdown.position-static:hover .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background-color: #fff !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    border: none !important;
+    padding-bottom: 20px !important;
+    transition: all 0.3s ease !important;
+  }
 
-        /* smooth açılış için geçiş süresi */
-        transition: all 0.3s ease !important;
-    }
+  .nav-item.dropdown.position-static .dropdown-menu {
+    display: block !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: visibility 0s 0.2s, opacity 0.2s linear !important;
+  }
 
-    /* 2. Mouse çekilince paneli anında gizlemek yerine hafifçe geciktir */
-    .nav-item.dropdown.position-static .dropdown-menu {
-        /* display kuralını 'block'ta tutup visibility ile gizliyoruz,
-           çünkü 'display: none' geçişleri engeller. */
-        display: block !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
+  header:not(.sticky) .navbar-area .dropdown-menu {
+    top: 90px !important;
+  }
 
-        /* 'transition: none !important;' yerine küçük bir gecikme ekliyoruz.
-           Bu süre (0.2s), farenizi buton ile panel arasındaki boşluktan
-           geçirirken panelin hemen kapanmamasını sağlar. */
-        transition: visibility 0s 0.2s, opacity 0.2s linear !important;
-    }
+  header.sticky .navbar-area .dropdown-menu {
+    top: 70px !important;
+  }
 
-    /* 3. Sayfa EN YUKARIDAYKEN (Şeffaf menü) hizalama */
-    header:not(.sticky) .navbar-area .dropdown-menu {
-        top: 90px !important;
-    }
+  .megamenu .dropdown-item {
+    display: block !important;
+    color: #333 !important;
+    padding: 8px 0 !important;
+  }
 
-    /* 4. Sayfa AŞAĞI KAYINCA (Sticky menü) hizalama */
-    header.sticky .navbar-area .dropdown-menu {
-        top: 70px !important;
-    }
+  .header .navbar .megamenu {
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(16, 36, 71, 0.08) !important;
+    box-shadow: 0 25px 60px rgba(16, 36, 71, 0.15) !important;
+    padding: 0 !important;
+    border-radius: 0 0 20px 20px !important;
+    animation: nartMenuFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-    /* Listelerin görünürlüğünü her iki modda da garantiye al */
-    .megamenu .dropdown-item {
-        display: block !important;
-        color: #333 !important;
-        padding: 8px 0 !important;
-    }
-}
+  @keyframes nartMenuFade {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
+  .megamenu h6 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #162447 !important;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+  }
 
-
-/* Çerez Banner ve Modal Stil Kuralları (Görsel 27, 28) */
-
-/* Banner Varsayılan Olarak Gizli */
-#çerez-uyarisi-banner {
+  .has-sub-sub { position: relative; }
+  .sub-sub-menu {
+    position: absolute;
+    left: 95%; top: 0;
+    background: #fff;
+    border: 1px solid rgba(16, 36, 71, 0.08);
+    box-shadow: 15px 15px 35px rgba(16, 36, 71, 0.12);
+    border-radius: 10px;
+    min-width: 240px;
+    list-style: none;
+    padding: 10px !important;
+    margin: 0;
     display: none;
-    z-index: 10000;
+    z-index: 100;
+    animation: nartSubSubFade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes nartSubSubFade { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+  .has-sub-sub:hover .sub-sub-menu { display: block; left: 100%; }
+
+  .megamenu .dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #5b657e !important;
+    font-weight: 600;
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .megamenu .dropdown-item:hover {
+    background: rgba(66, 173, 240, 0.08) !important;
+    color: #162447 !important;
+    transform: translateX(4px);
+  }
+
+  .sub-sub-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px !important;
+    color: #5b657e !important;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .sub-sub-menu li a::before {
+    content: "➔";
+    font-size: 10px;
+    color: #42adf0;
+    opacity: 0.6;
+  }
+  .sub-sub-menu li a:hover {
+    background: #162447;
+    color: #fff !important;
+    padding-left: 18px !important;
+  }
 }
 
-/* Modal'ın Ortada ve Bootstrap 5 Uyumlu Görünmesini Sağla */
+@media (max-width: 991px) {
+  .megamenu {
+    background: #f8f9fa !important;
+    padding: 15px !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+  .megamenu .col-lg-3 { margin-bottom: 20px; }
+  .sub-sub-menu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+    border-left: 2px dashed rgba(66, 173, 240, 0.3);
+    display: none;
+  }
+  .sub-sub-menu.open-sub { display: block; }
+  .has-sub-sub > a::after {
+    content: "\ea58";
+    font-family: 'LineIcons' !important;
+    font-size: 10px;
+    float: right;
+    transition: transform 0.3s ease;
+  }
+  .has-sub-sub.active-toggle > a::after { transform: rotate(180deg); }
+  .sub-sub-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    color: #64748b !important;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .sub-sub-menu li a::before {
+    content: "•";
+    color: #42adf0;
+    font-weight: bold;
+  }
+}
+
+/* =========================================================================
+   ÇEREZ BANNER & MODAL STİLLERİ
+   ========================================================================= */
+#çerez-uyarisi-banner {
+  display: none;
+  z-index: 10000;
+}
+
 #çerezAyarlariModal {
-    z-index: 10001;
+  z-index: 10001;
 }
 
 #çerezAyarlariModal .modal-dialog {
-    max-width: 800px;
+  max-width: 800px;
 }
 
 #çerezAyarlariModal .modal-content {
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
 }
 
-/* Kart Stilleri (Görsel 28) */
 #çerezAyarlariModal .card {
-    border-radius: 8px;
-    background-color: #f9f9f9;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 #çerezAyarlariModal .card-body p.text-muted {
-    font-size: 0.85rem !important;
+  font-size: 0.85rem !important;
 }
 
-/* Bootstrap Switch/Check Stilleri (Büyük Ölçek) */
 #çerezAyarlariModal .form-switch .form-check-input {
-    width: 2.5em;
-    height: 1.25em;
-    margin-top: 0;
-    margin-right: 0.5em;
-    cursor: pointer;
+  width: 2.5em;
+  height: 1.25em;
+  margin-top: 0;
+  margin-right: 0.5em;
+  cursor: pointer;
 }
 
 #çerezAyarlariModal .form-switch .form-check-input:checked {
-    background-color: #42adf0;
-    border-color: #42adf0;
+  background-color: #42adf0;
+  border-color: #42adf0;
 }
 
 #çerezAyarlariModal .form-check-input[disabled] {
-    opacity: 0.6;
-    cursor: default;
+  opacity: 0.6;
+  cursor: default;
 }
 
-/* Buton Stilleri */
-#çerez-uyarisi-banner .btn-primary, #çerezAyarlariModal .btn-primary {
-    background-color: #42adf0;
-    border-color: #42adf0;
+#çerez-uyarisi-banner .btn-primary,
+#çerezAyarlariModal .btn-primary {
+  background-color: #42adf0;
+  border-color: #42adf0;
 }
 
-#çerez-uyarisi-banner .btn-primary:hover, #çerezAyarlariModal .btn-primary:hover {
-    background-color: #3695d1;
-    border-color: #3695d1;
+#çerez-uyarisi-banner .btn-primary:hover,
+#çerezAyarlariModal .btn-primary:hover {
+  background-color: #3695d1;
+  border-color: #3695d1;
 }
 
 #çerezAyarlariModal .btn-close {
-    padding: 0.5rem;
-    margin: -0.5rem -0.5rem -0.5rem auto;
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
 }
 
-
 /* =========================================================================
-   NART GAZ - GLOBAL ULTRA RESPONSIVE MEGAMENU & SUB-SUB-MENU STİLLERİ
+   HERO SLIDER ANİMASYONLARI & VIEWPORT
    ========================================================================= */
+#nartHeroSlider .carousel-item {
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
 
-/* Masaüstü Hover ve Yan Panel Yönetimi (Min 992px) */
-      @media (min-width: 992px) {
-        .header .navbar .megamenu {
-          background: rgba(255, 255, 255, 0.96) !important;
-          backdrop-filter: blur(15px);
-          -webkit-backdrop-filter: blur(15px);
-          border: 1px solid rgba(16, 36, 71, 0.08) !important;
-          box-shadow: 0 25px 60px rgba(16, 36, 71, 0.15) !important;
-          padding: 0 !important;
-          border-radius: 0 0 20px 20px !important;
-          animation: nartMenuFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+.nart-tech-viewport {
+  position: relative;
+  background: #090d16;
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 25px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(66, 173, 240, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        @keyframes nartMenuFade {
-          from { opacity: 0; transform: translateY(12px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .megamenu h6 {
-          font-size: 13px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          color: #162447 !important;
-          border-bottom: 2px solid #f1f5f9;
-          padding-bottom: 10px;
-        }
-
-        .has-sub-sub { position: relative; }
-        .sub-sub-menu {
-          position: absolute;
-          left: 95%; top: 0;
-          background: #fff;
-          border: 1px solid rgba(16, 36, 71, 0.08);
-          box-shadow: 15px 15px 35px rgba(16, 36, 71, 0.12);
-          border-radius: 10px;
-          min-width: 240px;
-          list-style: none;
-          padding: 10px !important; /* Sol kenardan iç boşluk artırıldı */
-          margin: 0;
-          display: none;
-          z-index: 100;
-          animation: nartSubSubFade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @keyframes nartSubSubFade { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
-
-        .has-sub-sub:hover .sub-sub-menu { display: block; left: 100%; }
-
-        .megamenu .dropdown-item {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          font-size: 13px;
-          color: #5b657e !important;
-          font-weight: 600;
-          padding: 8px 14px !important;
-          border-radius: 8px;
-          transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .megamenu .dropdown-item:hover {
-          background: rgba(66, 173, 240, 0.08) !important;
-          color: #162447 !important;
-          transform: translateX(4px);
-        }
-
-        /* Alt kategorinin altı için metin ve ikon hizalaması */
-        .sub-sub-menu li a {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          padding: 8px 14px !important;
-          color: #5b657e !important; font-size: 12px; font-weight: 600;
-          border-radius: 6px; text-decoration: none; transition: all 0.2s ease;
-        }
-        .sub-sub-menu li a::before {
-          content: "➔";
-          font-size: 10px;
-          color: #42adf0;
-          opacity: 0.6;
-        }
-        .sub-sub-menu li a:hover { background: #162447; color: #fff !important; padding-left: 18px !important; }
-      }
-
-      /* Mobil Akordeon Düzenlemeleri (Max 991px) */
-      @media (max-width: 991px) {
-        .megamenu { background: #f8f9fa !important; padding: 15px !important; box-shadow: none !important; }
-        .megamenu .col-lg-3 { margin-bottom: 20px; }
-        .sub-sub-menu { list-style: none; padding-left: 20px; margin-top: 5px; border-left: 2px dashed rgba(66, 173, 240, 0.3); display: none; }
-        .sub-sub-menu.open-sub { display: block; }
-        .has-sub-sub > a::after {
-          content: "\ea58"; font-family: 'LineIcons' !important; font-size: 10px; float: right; transition: transform 0.3s ease;
-        }
-        .has-sub-sub.active-toggle > a::after { transform: rotate(180deg); }
-        .sub-sub-menu li a { display: flex; align-items: center; gap: 6px; padding: 8px 0; color: #64748b !important; font-size: 13px; text-decoration: none; }
-        .sub-sub-menu li a::before { content: "•"; color: #42adf0; font-weight: bold; }
-      }
-
-
-      /* =========================================================================
-      NART GAZ - HERO SLIDER PREMIUM METİN GEÇİŞ ANİMASYONLARI BAŞLANGIÇ
-    ========================================================================= */
-      #nartHeroSlider .carousel-item {
-        /* Yarım saniyede (0.5s) ne çok hızlı ne çok yavaş, premium bir akış sağlar */
-        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
-      }
-    /* =========================================================================
-      NART GAZ - HERO SLIDER PREMIUM METİN GEÇİŞ ANİMASYONLARI SON
-    ========================================================================= */
-
-
-    /* =========================================================================
-   NART GAZ - ULTRA-PREMIUM SİBER ENDÜSTRİYEL HUD VIEWPORT STİLLERİ
-   ========================================================================= */
-    .nart-tech-viewport {
-      position: relative;
-      background: #090d16;
-      border-radius: 16px;
-      padding: 12px;
-      margin-top: 25px; /* 🔑 Üst sınıra çarpmaması için 25px esneme payı bırakıldı */
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5),
-                  0 0 40px rgba(66, 173, 240, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-/* İç Kısımdaki Kesikli Teknik Çizgi */
 .nart-tech-viewport::before {
   content: "";
   position: absolute;
@@ -2448,7 +1439,6 @@ p {
   transition: all 0.4s ease;
 }
 
-/* Fütüristik Köşe Braketleri (Sol Üst ve Sağ Alt) */
 .nart-viewport-bracket {
   position: absolute;
   width: 25px; height: 25px;
@@ -2460,7 +1450,6 @@ p {
 .nart-viewport-bracket.tl { top: 0; left: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 16px; }
 .nart-viewport-bracket.br { bottom: 0; right: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 16px; }
 
-/* Resim Kapsayıcı Katman */
 .nart-viewport-screen {
   position: relative;
   border-radius: 10px;
@@ -2468,7 +1457,6 @@ p {
   z-index: 1;
 }
 
-/* Resmin Üzerine Binen Akıllı Mat Mavi Filtre */
 .nart-viewport-screen::after {
   content: "";
   position: absolute;
@@ -2479,7 +1467,6 @@ p {
   transition: all 0.5s ease;
 }
 
-/* Ana Fotoğraf Ayarları */
 .nart-viewport-screen img {
   width: 100%;
   height: 440px;
@@ -2489,7 +1476,6 @@ p {
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Ekranın Üstündeki Dijital Bilgi Etiketleri (HUD) */
 .nart-hud-label {
   position: absolute;
   background: rgba(9, 13, 22, 0.85);
@@ -2508,7 +1494,6 @@ p {
 .nart-hud-label.top-left { top: 20px; left: 20px; }
 .nart-hud-label.bottom-right { bottom: 20px; right: 20px; color: #2ecc71; border-color: rgba(46, 204, 113, 0.3); }
 
-/* Canlı Sinyal Yanıp Sönme Efekti (Pulsing Dot) */
 .nart-hud-label i {
   display: inline-block;
   width: 6px; height: 6px;
@@ -2523,37 +1508,17 @@ p {
   100% { transform: scale(0.9); opacity: 0.4; }
 }
 
-/* =========================================================================
-   İNTERAKTİF HOVER ETKİSİ: Fare Üzerine Geldiğinde Patlama Anı
-   ========================================================================= */
 .nart-tech-viewport:hover {
   transform: translateY(-5px) scale(1.01);
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.65), 0 0 50px rgba(66, 173, 240, 0.15);
 }
-/* Hover anında içteki kesikli çizgiler parlar */
-.nart-tech-viewport:hover::before {
-  border-color: rgba(66, 173, 240, 0.6);
-}
-/* Köşelerdeki braketler içeri doğru kapanarak odaklanma hissi yaratır ve üstten taşmayı önler */
+.nart-tech-viewport:hover::before { border-color: rgba(66, 173, 240, 0.6); }
 .nart-tech-viewport:hover .nart-viewport-bracket.tl { transform: translate(6px, 6px); border-color: #fff; }
 .nart-tech-viewport:hover .nart-viewport-bracket.br { transform: translate(-6px, -6px); border-color: #fff; }
+.nart-tech-viewport:hover .nart-viewport-screen::after { opacity: 0; }
+.nart-tech-viewport:hover .nart-viewport-screen img { transform: scale(1); }
 
-/* Resmin üzerindeki karanlık filtre kalkar ve fotoğraf tüm gerçekliğiyle netleşir */
-.nart-tech-viewport:hover .nart-viewport-screen::after {
-  opacity: 0; /* ⚡ Mavi filtre katmanını hover anında %100 tamamen görünmez yapar */
-}
-
-
-/* Fotoğraf hafifçe geri çekilerek sinematik bir alan derinliği sunar */
-.nart-tech-viewport:hover .nart-viewport-screen img {
-  transform: scale(1);
-}
-
-/* =========================================================================
-   NART GAZ - SIRALI (SEQUENTIAL) TIME-DELAYED HERO ROZET STİLLERİ
-   ========================================================================= */
-
-/* Konumlandırıcı Dış Katmanlar (Sürekli yumuşak süzülme hareketini sırtlanır) */
+/* Sequential Hero Badges */
 .nart-badge-container {
   position: absolute;
   z-index: 10;
@@ -2562,11 +1527,9 @@ p {
 .nart-s-badge-1 { top: 15%; left: -25px; }
 .nart-s-badge-2 { bottom: 15%; right: -25px; }
 
-/* Slayt AKTİF (.active) olduğunda dış katmanlar bağımsız ritimlerle süzülmeye başlar */
 .carousel-item.active .nart-s-badge-1 { animation: nartSliderFloat 4s ease-in-out infinite; }
 .carousel-item.active .nart-s-badge-2 { animation: nartSliderFloat 4s ease-in-out infinite 2s; }
 
-/* Esas Cam Rozet Gövdesi (Slayt pasifken tamamen gizlidir) */
 .nart-slider-badge {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
@@ -2578,7 +1541,7 @@ p {
   align-items: center;
   gap: 12px;
   box-shadow: 0 15px 35px rgba(16, 36, 71, 0.2);
-  opacity: 0; /* Başlangıçta görünmez */
+  opacity: 0;
   pointer-events: auto;
 }
 
@@ -2596,21 +1559,14 @@ p {
 .nart-slider-badge span { display: block; font-weight: 700; color: #162447; font-size: 15px; line-height: 1.2; }
 .nart-slider-badge p { font-size: 11px; color: #5B657E; margin: 0; line-height: 1.2; }
 
-/* =========================================================================
-   ⏱️ KRONOMETRE VE SIRA MOTORU (TIME-DELAYED REVEAL)
-   ========================================================================= */
-
-/* Slayt gelir gelmez (0.4 saniye sonra) Sol Üst Rozet fırlar */
 .carousel-item.active .nart-s-badge-1 .nart-slider-badge {
   animation: nartPopInLeft 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
 }
 
-/* 🌟 TAM İSTEDİĞİNİZ GİBİ: İlk rozetten tam 0.8s sonra (Toplamda 1.2. saniyede) Sağ Alt Rozet fırlar */
 .carousel-item.active .nart-s-badge-2 .nart-slider-badge {
   animation: nartPopInRight 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both;
 }
 
-/* Giriş Animasyon Dosyaları */
 @keyframes nartPopInLeft {
   from { opacity: 0; transform: translateX(-40px) scale(0.7); }
   to { opacity: 1; transform: translateX(0) scale(1); }
@@ -2624,20 +1580,16 @@ p {
   50% { transform: translateY(-10px); }
 }
 
-
-/* =========================================================================
-   NART GAZ - LÜKS KURUMSAL LACİVERT GOOGLE MAPS VIEWPORT STİLLERİ
-   ========================================================================= */
+/* Maps Viewport */
 .nart-map-viewport {
   position: relative;
   background: #090d16;
   border-radius: 16px;
-  padding: 12px; /* İç çerçeve boşluğu */
+  padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Harita Köşe Braketleri */
 .nart-map-bracket {
   position: absolute;
   width: 20px; height: 20px;
@@ -2648,7 +1600,6 @@ p {
 .nart-map-bracket.tl { top: 0; left: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 16px; }
 .nart-map-bracket.br { bottom: 0; right: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 16px; }
 
-/* Harita Sol Üst HUD Bilgi Etiketi */
 .nart-map-hud {
   position: absolute;
   top: 25px; left: 25px;
@@ -2666,272 +1617,207 @@ p {
   letter-spacing: 1px;
 }
 
-/* 🌟 SİHİRLİ DOKUNUŞ: Haritanın tüm çiğ renklerini lüks lacivert/mavi blueprint tonlarına çevirir */
-/* Haritayı gerçek renkleriyle, kırmızı piniyle ve net gösterecek şekilde güncelledik */
 .nart-google-map {
   width: 100%;
-  height: 450px; /* Detayların rahat okunması için yüksekliği biraz artırdık */
+  height: 450px;
   border: none;
   border-radius: 8px;
   display: block;
-  /* Tüm renk filtreleri kaldırıldı, böylece uydu görüntüsü ve kırmızı pin orijinal haliyle görünecek */
 }
 
-
-/* =========================================================================
-   NART GAZ - MULTILINGUAL DİL SEÇİCİ ESTETİK AYARLARI
-   ========================================================================= */
+/* Multilingual Switcher */
 .nart-lang-btn {
   text-decoration: none !important;
   transition: color 0.2s ease-in-out !important;
 }
-.nart-lang-btn:hover {
-  color: #42adf0 !important; /* Üzerine gelince çerez mavisi parlaması */
-}
-/* Sayfa aşağı kaydırıldığında (Sticky menüde) TR-EN butonlarının renk adaptasyonu */
-.sticky .nart-lang-switcher .nart-lang-btn {
-  color: #162447 !important;
-  opacity: 0.6;
-}
-.sticky .nart-lang-switcher .nart-lang-btn.active {
-  color: #42adf0 !important; /* Aktif dil sticky modda açık mavi olur */
-  opacity: 1 !important;
-}
-.sticky .nart-lang-switcher span {
-  color: rgba(0, 0, 0, 0.15) !important;
-}
-/* Telefon/Mobil menü açıldığında yazıların hizalanması */
+.nart-lang-btn:hover { color: #42adf0 !important; }
+.sticky .nart-lang-switcher .nart-lang-btn { color: #162447 !important; opacity: 0.6; }
+.sticky .nart-lang-switcher .nart-lang-btn.active { color: #42adf0 !important; opacity: 1 !important; }
+.sticky .nart-lang-switcher span { color: rgba(0, 0, 0, 0.15) !important; }
+
 @media (max-width: 991px) {
-  .nart-lang-switcher {
-    padding-left: 0px !important;
-    margin-top: 5px;
-  }
-  .nart-lang-switcher .nart-lang-btn {
-    color: #162447 !important;
-    opacity: 0.6;
-  }
-  .nart-lang-switcher .nart-lang-btn.active {
-    color: #42adf0 !important;
-    opacity: 1 !important;
-  }
-  .nart-lang-switcher span {
-    color: rgba(0, 0, 0, 0.15) !important;
-  }
+  .nart-lang-switcher { padding-left: 0 !important; margin-top: 5px; }
+  .nart-lang-switcher .nart-lang-btn { color: #162447 !important; opacity: 0.6; }
+  .nart-lang-switcher .nart-lang-btn.active { color: #42adf0 !important; opacity: 1 !important; }
+  .nart-lang-switcher span { color: rgba(0, 0, 0, 0.15) !important; }
 }
 
-/* =========================================================================
-   NART GAZ - DİL SEÇİCİ SARI ÇİZGİ POZİSYON DÜZELTMESİ
-   ========================================================================= */
 .navbar-nav .nav-item .nart-lang-switcher .nart-lang-btn::before {
-  bottom: -4px !important; /* Çizgiyi yazının üstünden alıp tam altına indirir */
-  height: 3px !important;   /* Menünün genel zarafetine uyması için hafifçe incelttik */
+  bottom: -4px !important;
+  height: 3px !important;
 }
 
-/* =========================================================================
-   NART GAZ - HERO SLIDER İŞÇI KATMANI VE DOĞAL AYAK GÖLGESİ
-   ========================================================================= */
+/* Hero Workers */
 .nart-hero-workers {
   position: absolute;
   bottom: -25px;
   right: 30%;
-  max-height: 470px; /* 🌟 Eski '280px' değeri '400px' yapılarak işçiler heybetli hale getirildi */
+  max-height: 470px;
   width: auto;
   z-index: 3;
   pointer-events: none;
   animation: nartWorkersReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
-
-  /* 🌟 SİHİRLİ DOKUNUŞ: Sadece işçilerin hatlarını algılayıp ayak dibine yumuşak gölge basar */
   filter: drop-shadow(0px 15px 10px rgba(0, 0, 0, 0.5));
 }
 
-/* Giriş animasyonu (Aynen korundu) */
 @keyframes nartWorkersReveal {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 📱 MOBİL GÜVENLİK KALKANI */
 @media (max-width: 991px) {
-  .nart-hero-workers {
-    display: none !important;
-  }
+  .nart-hero-workers { display: none !important; }
 }
 
-/* =========================================================================
-   NART GAZ - HERO SLIDER ZIPLAMA ÇÖZÜMÜ (İŞÇİ DOSTU - İZOLE SÜRÜM)
-   ========================================================================= */
 @media (min-width: 992px) {
-  /* İşçilerin olduğu iç kutulara hiç dokunmadan, sadece slaytın dış kabuğuna taban boyutu veriyoruz */
-  .hero-section .carousel-item {
-    min-height: 620px; /* Slaytların aşağı zıplamasını engelleyen koruma kalkanı */
-  }
-
-  /* 4. slayttaki o kısa resmi, kendi kutusunun düzenini bozmadan korur */
+  .hero-section .carousel-item { min-height: 620px; }
   .hero-section .carousel-item:last-child .hero-img img {
     max-height: 480px;
     object-fit: contain;
   }
 }
 
-/* Resimlerin SaaSpal şablonundaki gibi havada süzülüp lüks durmasını sağlar */
 .nart-hero-replacement-img {
-  border-radius: 16px; /* Köşeleri yumuşatır */
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); /* Derinlik hissi veren lüks gölge */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* İnce şık bir çerçeve */
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* =========================================================================
-   NART GAZ - GENEL ÜRÜN DETAY SAYFALARI ORTAK STİL SİSTEMİ
+   ÜRÜN DETAY SAYFALARI
    ========================================================================= */
 .product-detail-page {
-    padding: 70px 0;
-    background-color: #ffffff;
-    color: #0f172a;
+  padding: 70px 0;
+  background-color: #ffffff;
+  color: #0f172a;
 }
 
 .product-container {
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* 1. Başlık Düzeni */
 .product-main-header {
-    text-align: center;
-    margin-bottom: 45px;
+  text-align: center;
+  margin-bottom: 45px;
 }
 .product-category-badge {
-    background-color: rgba(2, 132, 199, 0.08);
-    color: #0284c7;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
+  background-color: rgba(2, 132, 199, 0.08);
+  color: #0284c7;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-/* Başlık Hiyerarşisi Düzenlemesi */
 .product-main-header h2 {
-    font-size: 26px;
-    color: #0f172a; /* Çok patlamayan, kurumsal koyu gri/lacivert tonu */
-    margin: 12px 0 10px 0;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+  font-size: 26px;
+  color: #0f172a;
+  margin: 12px 0 10px 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-/* Sayfa içindeki diğer alt başlıkların (Teknik Detaylar vb.)
-   birbiriyle çakışmaması için onları da bir tık optimize edelim: */
 .product-section-title {
-    font-size: 22px;
-    color: #020617;
-    margin-bottom: 25px;
-    font-weight: 600;
+  font-size: 24px;
+  color: #020617;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
 .product-lead-text {
-    font-size: 17px;
-    color: #475569;
-    max-width: 750px;
-    margin: 0 auto;
-    line-height: 1.6;
+  font-size: 17px;
+  color: #475569;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* 2. Resim Düzeni */
 .product-image-container {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 50px;
-    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
 }
 .product-featured-img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Genel Bölüm Blokları */
 .product-info-row {
-    margin-bottom: 60px;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 45px;
-}
-.product-section-title {
-    font-size: 26px;
-    color: #020617;
-    margin-bottom: 25px;
-    font-weight: 600;
+  margin-bottom: 60px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 45px;
 }
 
-/* Esnek Grid Sistemleri */
 .product-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .product-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-/* 3. Teknik Özellikler Listesi */
 .product-description { font-size: 15px; color: #334155; line-height: 1.7; }
 .product-spec-list ul { list-style: none; padding: 0; margin: 0; }
 .product-spec-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #f1f5f9;
-    color: #334155;
-    font-size: 14.5px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 14.5px;
 }
 .product-spec-list li strong { color: #020617; width: 160px; display: inline-block; }
 
-/* 4. Özellik Kartları (Kullanım Alanları) */
 .product-feature-card {
-    background: #f8fafc;
-    padding: 25px 20px;
-    border-radius: 10px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.25s ease;
+  background: #f8fafc;
+  padding: 25px 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
 }
 .product-feature-card:hover {
-    transform: translateY(-4px);
-    border-color: #0284c7;
-    background: #ffffff;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+  transform: translateY(-4px);
+  border-color: #0284c7;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
 }
 .product-card-icon { font-size: 28px; margin-bottom: 12px; }
 .product-feature-card h3 { font-size: 17px; margin-bottom: 8px; color: #020617; font-weight: 600; }
 .product-feature-card p { font-size: 13.5px; color: #475569; line-height: 1.5; margin: 0; }
 
-/* 5. Standartlar Düzeni */
 .product-standards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .product-std-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    background: #ffffff;
-    padding: 18px;
-    border-radius: 8px;
-    border-left: 4px solid #0284c7;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 8px;
+  border-left: 4px solid #0284c7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.01);
 }
 .product-std-code {
-    background: #0f172a;
-    color: #ffffff;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    white-space: nowrap;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
 }
 .product-std-item p { margin: 0; font-size: 13.5px; color: #334155; line-height: 1.5; }
 
-/* 6. Basınç Sınıfı Tablo Düzeni */
 .product-row-desc { color: #475569; margin-bottom: 20px; font-size: 15px; }
 .product-table-responsive {
-    overflow-x: auto;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
 }
 .product-data-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 14.5px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14.5px;
 }
 .product-data-table th, .product-data-table td { padding: 14px 18px; }
 .product-data-table th { background: #0f172a; color: #ffffff; font-weight: 600; }
@@ -2940,93 +1826,77 @@ p {
 .product-data-table tbody tr:nth-child(even) { background: #f8fafc; }
 
 .product-table-tag {
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 11.5px;
-    font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
 }
 .tag-orange { background: rgba(249, 115, 22, 0.08); color: #ea580c; }
 .badge-blue { background: rgba(2, 132, 199, 0.08); color: #0284c7; }
 .tag-dark { background: #e2e8f0; color: #334155; }
 
-/* Mobil ve Tablet Uyumluluk Kriterleri (Responsive) */
 @media (max-width: 991px) {
-    .product-grid-4 { grid-template-columns: 1fr 1fr; }
-    .product-standards-grid { grid-template-columns: 1fr; }
+  .product-grid-4 { grid-template-columns: 1fr 1fr; }
+  .product-standards-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 767px) {
-    .product-grid-2 { grid-template-columns: 1fr; gap: 20px; }
-    .product-grid-4 { grid-template-columns: 1fr; }
-    .product-main-header h1 { font-size: 28px; }
+  .product-grid-2 { grid-template-columns: 1fr; gap: 20px; }
+  .product-grid-4 { grid-template-columns: 1fr; }
+  .product-main-header h1 { font-size: 28px; }
 }
 
-
 /* ==========================================================================
-   NART GAZ - PREMİUM & TEMA UYUMLU ÖZELLİK KARTLARI (CSS)
-   --------------------------------------------------------------------------
-   Açıklama: Temanın kendi yerel yazı tiplerinin (font-family) doğal olarak
-                 devreye girmesi için harici font zorlamaları tamamen kaldırıldı.
+   NART GAZ - ÖZELLİK KARTLARI (ÖZEL MOBİL HOVER FIX)
    ========================================================================== */
-
-/* ==========================================================================
-   NART GAZ - TEMA UYUMLU PREMİUM ÖZELLİK KARTLARI (CSS)
-   --------------------------------------------------------------------------
-   Not: Tema yazı tipinin (font) bozulmaması için font-family ve font-weight
-        zorlamaları tamamen kaldırılmıştır. Sadece tasarım ve hover yönetilir.
-   ========================================================================== */
-
 .nart-features-section {
-    background-color: #ffffff !important;
-    padding: 90px 0;
+  background-color: #ffffff !important;
+  padding: 90px 0;
 }
 
-/* Ana Kart Mimarisi */
 .nart-feature-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    border-radius: 20px;
-    padding: 45px 35px;
-    text-align: center;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  padding: 45px 35px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 .nart-feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(66, 173, 240, 0.15);
-    box-shadow: 0 25px 50px rgba(17, 23, 43, 0.06);
+  transform: translateY(-8px);
+  border-color: rgba(66, 173, 240, 0.15);
+  box-shadow: 0 25px 50px rgba(17, 23, 43, 0.06);
 }
 
-/* ⚡ Akıllı Lazer Çizgi */
 .nart-feature-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #42adf0, #2575fc);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #42adf0, #2575fc);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .nart-feature-card:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-/* 📐 Teknik Numara Filigranları (Silik Arka Plan Numaraları) */
 .nart-feature-card::before {
-    position: absolute;
-    right: 25px;
-    top: 10px;
-    font-size: 80px;
-    font-weight: 900;
-    color: rgba(66, 173, 240, 0.03);
-    transition: all 0.5s ease;
-    line-height: 1;
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(66, 173, 240, 0.03);
+  transition: all 0.5s ease;
+  line-height: 1;
 }
 
 .card-01::before { content: "01"; }
@@ -3034,155 +1904,152 @@ p {
 .card-03::before { content: "03"; }
 
 .nart-feature-card:hover::before {
-    transform: translateY(10px);
-    color: rgba(66, 173, 240, 0.07);
+  transform: translateY(10px);
+  color: rgba(66, 173, 240, 0.07);
 }
 
-/* İkon Havuzu */
 .nart-icon-wrapper {
-    width: 85px;
-    height: 85px;
-    background-color: #f4f7ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 30px auto;
-    transition: all 0.4s ease;
-    position: relative;
-    z-index: 2;
+  width: 85px;
+  height: 85px;
+  background-color: #f4f7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px auto;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .nart-icon-wrapper i {
-    font-size: 34px;
-    color: #11172b;
-    transition: all 0.4s ease;
-    display: inline-block;
+  font-size: 34px;
+  color: #11172b;
+  transition: all 0.4s ease;
+  display: inline-block;
 }
 
 .nart-feature-card:hover .nart-icon-wrapper {
-    background-color: #11172b;
+  background-color: #11172b;
 }
 
 .nart-feature-card:hover .nart-icon-wrapper i {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
-/* İkon Animasyonları */
 .nart-feature-card:hover .tilt-on-hover {
-    transform: rotate(-15deg) scale(1.05);
+  transform: rotate(-15deg) scale(1.05);
 }
 
 @keyframes spinGear {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .nart-feature-card:hover .spin-on-hover {
-    animation: spinGear 3.5s linear infinite;
+  animation: spinGear 3.5s linear infinite;
 }
 
 @keyframes pulseCheck {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 .nart-feature-card:hover .pulse-on-hover {
-    animation: pulseCheck 1.2s ease-in-out infinite;
+  animation: pulseCheck 1.2s ease-in-out infinite;
 }
 
-/* 📋 TEMA FONTUNA ASLA DOKUNMAYAN RENK YÖNETİMİ */
-/* Başlığın kendi orijinal font ailesi ve kalınlığı korunur, sadece hover rengi yönetilir */
 .nart-feature-card h3 {
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
-    transition: color 0.3s ease;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
 }
 
 .nart-feature-card:hover h3 {
-    color: #42adf0 !important;
+  color: #42adf0 !important;
 }
 
 .nart-feature-card p {
-    margin-bottom: 0;
-    position: relative;
-    z-index: 2;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* 📱 Mobilde Kart Dokunmatik Takılmasını ve İkon Kesilmesini Engelleyen Kalkan */
+@media (max-width: 991px) {
+  .nart-feature-card {
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .nart-feature-card:hover,
+  .nart-feature-card:active,
+  .nart-feature-card:focus {
+    transform: none !important;
+  }
+
+  .nart-icon-wrapper,
+  .nart-feature-card:hover .nart-icon-wrapper {
+    transform: none !important;
+    margin-top: 0 !important;
+    top: 0 !important;
+  }
 }
 
 /* ==========================================================================
-   NART GAZ - FORM İÇİ MİNİMALİST KURUMSAL BİLGİ ROZETLERİ
+   İLETİŞİM FORMU MİNİ BİLGİ ROZETLERİ
    ========================================================================== */
 .nart-contact-mini-details {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
 }
 
 .mini-info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.05); /* Koyu zeminde şık duran hafif beyazlık */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 20px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .mini-info-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #42adf0; /* Sitedeki açık mavi tonu */
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #42adf0;
 }
 
-/* İkonların şablondaki LineIcons renkleriyle uyumu */
 .mini-info-item i {
-    font-size: 22px;
-    color: #42adf0;
+  font-size: 22px;
+  color: #42adf0;
 }
 
-/* Üst bilgilendirme başlığı (Tesis / E-Posta yazısı) */
 .mini-info-item span {
-    display: block;
-    font-size: 10px !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.5) !important;
-    margin-bottom: 2px !important;
+  display: block;
+  font-size: 10px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin-bottom: 2px !important;
 }
 
-/* Bilgilerin düzgünce listelenmesi */
 .mini-info-item p {
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
 }
 
 .mini-info-item a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .mini-info-item a:hover {
-    color: #42adf0;
+  color: #42adf0;
 }
-
-/* 📱 Mobil Menü Kaydırma ve Taşma Düzeltmesi */
-  @media (max-width: 991px) {
-    .navbar-collapse {
-      max-height: calc(100vh - 100px) !important; /* Ekran boyunu aşmasını engeller */
-      overflow-y: auto !important;                /* Menünün kendi içinde kaymasını sağlar */
-      -webkit-overflow-scrolling: touch;          /* iOS Safari için akıcı kaydırma */
-      overscroll-behavior: contain;              /* Kaydırmanın arkadaki sayfaya geçmesini önler */
-      padding-bottom: 30px;
-    }
-
-    .megamenu {
-      max-height: none !important;
-      overflow: visible !important;
-      position: static !important;
-    }
-  }
