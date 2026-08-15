@@ -86,7 +86,7 @@ function nartBilesenleriYukle() {
         if (megaMenuContainer) {
           megaMenuContainer.addEventListener('mouseleave', function() {
             megaIcon.style.display = 'none';
-            megaImg.src = prefix + 'assets/img/hero/nartgaz-1.png';
+            megaImg.src = prefix + 'assets/img/hero/nartgaz-1.webp';
             megaImg.style.display = 'block';
 
             const currentLang = localStorage.getItem('nart_secilen_dil') || 'tr';
