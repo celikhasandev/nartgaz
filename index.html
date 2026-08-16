@@ -25,26 +25,24 @@
       /* İletişim Formu Açılır Menü (Select) Alanını Diğer Kutularla Birebir Eşitleme */
       .subscribe-form select {
         width: 100%;
-        height: 55px;                   /* Input'lar ile tam aynı yükseklik */
-        padding: 0 45px 0 20px;         /* Yazı ve ikon aralığı */
-        font-family: inherit;           /* Sitenin genel fontunu devralır */
+        height: 55px;
+        padding: 0 45px 0 20px;
+        font-family: inherit;
         font-size: 15px;
         color: #5b657e;
         background-color: #ffffff;
         border: 1px solid #eee;
-        border-radius: 10px;            /* Diğer kutularla aynı köşe yuvarlaklığı */
+        border-radius: 10px;
         margin-bottom: 12px;
         box-sizing: border-box;
         outline: none;
         cursor: pointer;
         display: block;
 
-        /* Tarayıcının varsayılan ince/kaba okunu kaldırır */
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
 
-        /* Modern ve zarif mavi aşağı ok ikonu */
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2342adf0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: right 18px center;
@@ -119,7 +117,7 @@
                   <div class="nart-badge-container nart-s-badge-1">
                     <div class="nart-slider-badge">
                       <i class="lni lni-timer"></i>
-                      <div><span>500/750/1000 m³/h</span><p data-en="Capacity Options" data-ru="Варианты мощности" data-ar="خيارات السعة" data-zh="容量选项" data-es="Opciones de Capacidad" data-it="Opzioni di Capacità" data-hi="क्षमता विकल्प">Kapasite Seçenekleri</p></div>
+                      <div><span>500 - 2500 m³/h</span><p data-en="Capacity Options" data-ru="Варианты мощности" data-ar="خيارات السعة" data-zh="容量选项" data-es="Opciones de Capacidad" data-it="Opzioni di Capacità" data-hi="क्षमता विकल्प">Kapasite Seçenekleri</p></div>
                     </div>
                   </div>
 
@@ -578,7 +576,7 @@
                        data-hi-placeholder="विषय (उदा. उद्धरण, तकनीकी जानकारी)"
                        required style="margin-bottom: 12px; border-radius: 10px;" />
 
-                <!-- 🌟 İlgilenilen Ürün Açılır Menüsü (Doğrudan main.js uyumlu) -->
+                <!-- 🌟 İlgilenilen Ürün Açılır Menüsü (8 Dilde Tam Senkronize) -->
                 <div style="margin-bottom: 12px;">
                   <select name="selected_product" id="form-product" required>
                     <option value="" disabled selected
@@ -594,11 +592,15 @@
                     <!-- İstasyonlar -->
                     <optgroup label="İstasyonlar (RMS / RS)" data-group-tr="İstasyonlar (RMS / RS)" data-group-en="Stations (RMS / RS)" data-group-ru="Станции (ГРП / РС)" data-group-ar="المحطات (RMS / RS)" data-group-zh="调压站 (RMS / RS)" data-group-es="Estaciones (RMS / RS)" data-group-it="Stazioni (RMS / RS)" data-group-hi="स्टेशन (RMS / RS)">
                       <option value="RMS-A İstasyonu" data-tr="RMS-A Şehir Giriş İstasyonu" data-en="RMS-A City Gate Station" data-ru="ГРС типа RMS-A" data-ar="محطة مدخل المدينة RMS-A" data-zh="RMS-A 城市门站" data-es="Estación de Entrada de Ciudad RMS-A" data-it="Stazione City Gate RMS-A" data-hi="RMS-A सिटी गेट स्टेशन">RMS-A Şehir Giriş İstasyonu</option>
+                      <option value="4000 m3/h RMS-B İstasyonu" data-tr="4000 m³/h RMS-B İstasyonu" data-en="4000 m³/h RMS-B Station" data-ru="Станция RMS-B 4000 м³/ч" data-ar="محطة RMS-B سعة 4000 م³/ساعة" data-zh="4000 m³/h RMS-B 调压站" data-es="Estación RMS-B de 4000 m³/h" data-it="Stazione RMS-B da 4000 m³/h" data-hi="4000 m³/h RMS-B स्टेशन">4000 m³/h RMS-B İstasyonu</option>
                       <option value="5000 m3/h RMS-B İstasyonu" data-tr="5000 m³/h RMS-B İstasyonu" data-en="5000 m³/h RMS-B Station" data-ru="Станция RMS-B 5000 м³/ч" data-ar="محطة RMS-B سعة 5000 م³/ساعة" data-zh="5000 m³/h RMS-B 调压站" data-es="Estación RMS-B de 5000 m³/h" data-it="Stazione RMS-B da 5000 m³/h" data-hi="5000 m³/h RMS-B स्टेशन">5000 m³/h RMS-B İstasyonu</option>
                       <option value="500 m3/h RMS-C İstasyonu" data-tr="500 m³/h RMS-C İstasyonu" data-en="500 m³/h RMS-C Station" data-ru="Станция RMS-C 500 м³/ч" data-ar="محطة RMS-C سعة 500 م³/ساعة" data-zh="500 m³/h RMS-C 调压站" data-es="Estación RMS-C de 500 m³/h" data-it="Stazione RMS-C da 500 m³/h" data-hi="500 m³/h RMS-C स्टेशन">500 m³/h RMS-C İstasyonu</option>
                       <option value="750 m3/h RMS-C İstasyonu" data-tr="750 m³/h RMS-C İstasyonu" data-en="750 m³/h RMS-C Station" data-ru="Станция RMS-C 750 м³/ч" data-ar="محطة RMS-C سعة 750 م³/ساعة" data-zh="750 m³/h RMS-C 调压站" data-es="Estación RMS-C de 750 m³/h" data-it="Stazione RMS-C da 750 m³/h" data-hi="750 m³/h RMS-C स्टेशन">750 m³/h RMS-C İstasyonu</option>
                       <option value="1000 m3/h RMS-C İstasyonu" data-tr="1000 m³/h RMS-C İstasyonu" data-en="1000 m³/h RMS-C Station" data-ru="Станция RMS-C 1000 м³/ч" data-ar="محطة RMS-C سعة 1000 م³/ساعة" data-zh="1000 m³/h RMS-C 调压站" data-es="Estación RMS-C de 1000 m³/h" data-it="Stazione RMS-C da 1000 m³/h" data-hi="1000 m³/h RMS-C स्टेशन">1000 m³/h RMS-C İstasyonu</option>
-                      <option value="400 m3/h RS-C İstasyonu" data-tr="400 m³/h RS-C İstasyonu" data-en="400 m³/h RS-C Station" data-ru="Станция RS-C 400 м³/ч" data-ar="محطة RS-C سعة 400 م³/ساعة" data-zh="400 m³/h RS-C 调压站" data-es="Estación RS-C de 400 m³/h" data-it="Stazione RS-C da 400 m³/h" data-hi="400 m³/h RS-C स्टेशन">400 m³/h RS-C İstasyonu</option>
+                      <option value="1600 m3/h RMS-C İstasyonu" data-tr="1600 m³/h RMS-C İstasyonu" data-en="1600 m³/h RMS-C Station" data-ru="Станция RMS-C 1600 м³/ч" data-ar="محطة RMS-C سعة 1600 م³/ساعة" data-zh="1600 m³/h RMS-C 调压站" data-es="Estación RMS-C de 1600 m³/h" data-it="Stazione RMS-C da 1600 m³/h" data-hi="1600 m³/h RMS-C स्टेशन">1600 m³/h RMS-C İstasyonu</option>
+                      <option value="2500 m3/h RMS-C İstasyonu" data-tr="2500 m³/h RMS-C İstasyonu" data-en="2500 m³/h RMS-C Station" data-ru="Станция RMS-C 2500 м³/ч" data-ar="محطة RMS-C سعة 2500 م³/ساعة" data-zh="2500 m³/h RMS-C 调压站" data-es="Estación RMS-C de 2500 m³/h" data-it="Stazione RMS-C da 2500 m³/h" data-hi="2500 m³/h RMS-C स्टेशन">2500 m³/h RMS-C İstasyonu</option>
+                      <option value="5000 m3/h RS-B Bölge İstasyonu" data-tr="5000 m³/h RS-B Bölge İstasyonu" data-en="5000 m³/h RS-B District Station" data-ru="Районная станция RS-B 5000 м³/ч" data-ar="محطة المنطقة RS-B سعة 5000 م³/ساعة" data-zh="5000 m³/h RS-B 区域调压站" data-es="Estación de Distrito RS-B de 5000 m³/h" data-it="Stazione Distrettuale RS-B da 5000 m³/h" data-hi="5000 m³/h RS-B जिला स्टेशन">5000 m³/h RS-B Bölge İstasyonu</option>
+                      <option value="400 m3/h RS-C (RS-C SI 1200) İstasyonu" data-tr="400 m³/h RS-C (RS-C SI 1200) İstasyonu" data-en="400 m³/h RS-C (RS-C SI 1200) Station" data-ru="Станция RS-C 400 м³/ч (RS-C SI 1200)" data-ar="محطة RS-C سعة 400 م³/ساعة (RS-C SI 1200)" data-zh="400 m³/h RS-C (RS-C SI 1200) 调压站" data-es="Estación RS-C de 400 m³/h (RS-C SI 1200)" data-it="Stazione RS-C da 400 m³/h (RS-C SI 1200)" data-hi="400 m³/h RS-C (RS-C SI 1200) स्टेशन">400 m³/h RS-C (RS-C SI 1200) İstasyonu</option>
                     </optgroup>
 
                     <!-- Çelik Filtreler -->
@@ -629,7 +631,7 @@
 
                     <!-- Vanalar -->
                     <optgroup label="Vanalar" data-group-tr="Vanalar" data-group-en="Valves" data-group-ru="Клапаны" data-group-ar="الصمامات" data-group-zh="阀门" data-group-es="Válvulas" data-group-it="Valvole" data-group-hi="वाल्व">
-                      <option value="Flanşlı Küresel Vana (API-6D)" data-tr="Flanşlı Küresel Vana (API-6D)" data-en="Flanged Ball Valve (API-6D)" data-ru="Фланцевый шаровой кран (API-6D)" data-ar="صمام كروي ذو حواف (API-6D)" data-zh="法兰球阀 (API-6D)" data-es="Válvula de Bola Bridad (API-6D)" data-it="Valvola a Sfera Flangiata (API-6D)" data-hi="निकला हुआ किनारा बॉल वाल्व (API-6D)">Flanşlı Küresel Vana (API-6D)</option>
+                      <option value="Flanşlı Küresel Vana (API-6D)" data-tr="Flanşlı Küresel Vana (API-6D)" data-en="Flanged Ball Valve (API-6D)" data-ru="Фланцевый шаровой кран (API-6D)" data-ar="صمام كروي ذو حواف (API-6D)" data-zh="法兰球阀 (API-6D)" data-es="Válvula de Bola Bridada (API-6D)" data-it="Valvola a Sfera Flangiata (API-6D)" data-hi="निकला हुआ किनारा बॉल वाल्व (API-6D)">Flanşlı Küresel Vana (API-6D)</option>
                       <option value="Kaynaklı Küresel Vana (API-6D)" data-tr="Kaynaklı Küresel Vana (API-6D)" data-en="Welded Ball Valve (API-6D)" data-ru="Сварной шаровой кран (API-6D)" data-ar="صمام كروي ملحوم (API-6D)" data-zh="焊接球阀 (API-6D)" data-es="Válvula de Bola Soldada (API-6D)" data-it="Valvola a Sfera Saldata (API-6D)" data-hi="वेल्डेड बॉल वाल्व (API-6D)">Kaynaklı Küresel Vana (API-6D)</option>
                     </optgroup>
 
@@ -717,43 +719,38 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- 🌐 Kategori (Optgroup) ve Seçenek Senkronizasyon Motoru -->
+    <!-- 🌐 Kategori (Optgroup) ve Seçenek (Option) 8 Dilli Senkronizasyon Motoru -->
     <script>
       function updateDropdownLabels() {
         const select = document.getElementById('form-product');
         if (!select) return;
 
-        // Sayfadaki ilk seçeneğin metninden aktif dili tespit et
-        const firstOption = select.querySelector('option');
-        let activeLang = 'tr';
-        const langs = ['tr', 'en', 'ru', 'ar', 'zh', 'es', 'it', 'hi'];
+        const activeLang = localStorage.getItem('nart_secilen_dil') || 'tr';
 
-        if (firstOption) {
-          const currentText = firstOption.textContent.trim();
-          for (let l of langs) {
-            if (firstOption.getAttribute('data-' + l) === currentText) {
-              activeLang = l;
-              break;
-            }
+        // 1. Tüm <option> metinlerini aktif dile güncelle
+        select.querySelectorAll('option').forEach(opt => {
+          const targetText = opt.getAttribute('data-' + activeLang) || opt.getAttribute('data-tr');
+          if (targetText && opt.textContent !== targetText) {
+            opt.textContent = targetText;
           }
-        }
+        });
 
-        // Optgroup kategori başlıklarını güncelle
+        // 2. Tüm <optgroup> başlıklarını aktif dile güncelle
         select.querySelectorAll('optgroup').forEach(og => {
-          const target = og.getAttribute('data-group-' + activeLang);
-          if (target && og.label !== target) {
-            og.label = target;
+          const targetGroup = og.getAttribute('data-group-' + activeLang) || og.getAttribute('data-group-tr');
+          if (targetGroup && og.label !== targetGroup) {
+            og.label = targetGroup;
           }
         });
       }
 
-      // Dil değişim butonlarına tıklanıldığında ve periyodik olarak çalıştır
+      // Dil değişim butonlarına tıklanıldığında ve sayfa açılışında anında tetikle
       document.addEventListener('click', () => {
-        setTimeout(updateDropdownLabels, 50);
-        setTimeout(updateDropdownLabels, 250);
+        setTimeout(updateDropdownLabels, 30);
+        setTimeout(updateDropdownLabels, 200);
       });
-      setInterval(updateDropdownLabels, 400);
       document.addEventListener('DOMContentLoaded', updateDropdownLabels);
+      setInterval(updateDropdownLabels, 500);
     </script>
 
     <!-- 🌟 EmailJS SDK ve Gönderim Motoru -->
