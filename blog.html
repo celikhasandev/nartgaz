@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js" lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>Blog | Nart Gaz</title>
+<meta name="description" content="Nart Gaz blog - endüstriyel gaz sistemleri, RMS istasyonları ve sektörel gelişmeler hakkında güncel içerikler." />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/lineicons.css" />
+<link rel="stylesheet" href="assets/css/animate.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<style>
+  .nart-blog-hero-text{text-align:center;}
+  .nart-blog-hero-text p{color:rgba(255,255,255,0.75);}
+  .nart-blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;padding-bottom:120px;}
+  .nart-blog-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.08);transition:transform .25s ease, box-shadow .25s ease;display:flex;flex-direction:column;}
+  .nart-blog-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(0,0,0,0.12);}
+  .nart-blog-card-img{width:100%;height:200px;object-fit:cover;background:#eef2f6;}
+  .nart-blog-card-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1;}
+  .nart-blog-card-date{font-size:13px;color:#8a93a6;margin-bottom:8px;}
+  .nart-blog-card-title{font-size:19px;font-weight:700;margin-bottom:10px;color:#1c2536;}
+  .nart-blog-card-summary{font-size:14.5px;color:#5b657e;line-height:1.6;flex:1;margin-bottom:18px;}
+  .nart-blog-card-link{font-weight:600;color:#42adf0;text-decoration:none;font-size:14.5px;}
+  .nart-blog-card-link:hover{text-decoration:underline;}
+  .nart-blog-empty{text-align:center;color:#8a93a6;padding:60px 0 120px;font-size:16px;}
+</style>
+</head>
+<body>
+
+<div id="nart-header"></div>
+
+<section class="hero-section" style="padding:170px 0 70px;">
+  <div class="container">
+    <div class="hero-content nart-blog-hero-text mb-0">
+      <h1 class="mb-20">Nart Gaz Blog</h1>
+      <p style="max-width:640px;margin:0 auto;padding:0;">Endüstriyel gaz sistemleri, RMS istasyonları, bakım-onarım ve sektörel gelişmeler hakkında güncel içerikler.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div id="nart-blog-list" class="nart-blog-grid"></div>
+  <div id="nart-blog-empty" class="nart-blog-empty" style="display:none;">Henüz yayınlanmış bir blog yazısı bulunmuyor.</div>
+</section>
+
+<div id="nart-footer"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+fetch('blog-posts.json?t=' + Date.now())
+  .then(function(res){ return res.json(); })
+  .then(function(posts){
+    var list = document.getElementById('nart-blog-list');
+    var empty = document.getElementById('nart-blog-empty');
+    if (!posts || posts.length === 0) {
+      empty.style.display = 'block';
+      return;
+    }
+    posts.sort(function(a, b){ return new Date(b.date) - new Date(a.date); });
+    posts.forEach(function(post){
+      var card = document.createElement('a');
+      card.className = 'nart-blog-card';
+      card.href = post.slug + '.html';
+      card.style.textDecoration = 'none';
+      var img = post.image ? '<img class="nart-blog-card-img" src="' + post.image + '" alt="' + post.title + '">' : '';
+      card.innerHTML =
+        img +
+        '<div class="nart-blog-card-body">' +
+          '<div class="nart-blog-card-date">' + (post.dateDisplay || post.date) + '</div>' +
+          '<div class="nart-blog-card-title">' + post.title + '</div>' +
+          '<div class="nart-blog-card-summary">' + (post.summary || '') + '</div>' +
+          '<span class="nart-blog-card-link">Devamını Oku &rarr;</span>' +
+        '</div>';
+      list.appendChild(card);
+    });
+  })
+  .catch(function(err){
+    document.getElementById('nart-blog-empty').style.display = 'block';
+    document.getElementById('nart-blog-empty').textContent = 'Blog yazıları yüklenirken bir sorun oluştu.';
+    console.error(err);
+  });
+</script>
+
+</body>
+</html>
