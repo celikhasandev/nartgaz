@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="tr">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-530EK5FXC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-530EK5FXC1');
+</script>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <title>Blog | Nart Gaz</title>
@@ -117,17 +125,31 @@ function renderPage(page){
     var img = post.image
       ? '<img class="nart-blog-card-img" src="' + post.image + '" alt="' + post.title + '" loading="lazy">'
       : '<div class="nart-blog-card-img-placeholder">📰</div>';
+    var titleAttrs = '', summaryAttrs = '';
+    if (post.i18n) {
+      Object.keys(post.i18n).forEach(function(lang){
+        var t = post.i18n[lang];
+        if (t.title) titleAttrs += ' data-' + lang + '="' + t.title.replace(/"/g, '&quot;') + '"';
+        if (t.summary) summaryAttrs += ' data-' + lang + '="' + t.summary.replace(/"/g, '&quot;') + '"';
+      });
+    }
     card.innerHTML =
       img +
       '<div class="nart-blog-card-body">' +
         '<div class="nart-blog-card-date">' + (post.dateDisplay || post.date) + '</div>' +
-        '<div class="nart-blog-card-title">' + post.title + '</div>' +
-        '<div class="nart-blog-card-summary">' + (post.summary || '') + '</div>' +
+        '<div class="nart-blog-card-title"' + titleAttrs + '>' + post.title + '</div>' +
+        '<div class="nart-blog-card-summary"' + summaryAttrs + '>' + (post.summary || '') + '</div>' +
       '</div>';
     list.appendChild(card);
   });
 
   renderPagination();
+
+  // Kartlar sayfa yüklendikten SONRA eklendiği için, site genelindeki dil motorunu
+  // (main.js) burada manuel tetikliyoruz ki mevcut dil seçimi karta da uygulansın.
+  if (typeof nartDiliUygula === 'function') {
+    nartDiliUygula(localStorage.getItem('nart_secilen_dil') || 'tr');
+  }
   window.scrollTo({ top: document.querySelector('.nart-blog-section').offsetTop - 30, behavior: 'smooth' });
 }
 
