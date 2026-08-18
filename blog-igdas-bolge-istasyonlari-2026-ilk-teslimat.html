@@ -50,6 +50,23 @@
   .nart-share-label{font-size:13.5px;font-weight:700;color:#5b657e;}
   .nart-share-btn{width:38px;height:38px;border-radius:50%;background:#f4f6f9;border:none;display:inline-flex;align-items:center;justify-content:center;color:#1c2536;text-decoration:none;font-size:16px;cursor:pointer;transition:background .2s,color .2s;}
   .nart-share-btn:hover{background:#42adf0;color:#fff;}
+  .nart-post-figure img, .nart-post-inline-img, .nart-post-cover, .nart-gallery-item img{cursor:zoom-in;}
+  .nart-lightbox{
+    position:fixed;inset:0;background:rgba(10,14,26,0.94);display:flex;align-items:center;justify-content:center;
+    opacity:0;visibility:hidden;transition:opacity .2s ease;z-index:9999;
+  }
+  .nart-lightbox.open{opacity:1;visibility:visible;}
+  .nart-lightbox-img{max-width:88vw;max-height:86vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5);cursor:default;}
+  .nart-lightbox-close{position:absolute;top:22px;right:28px;background:none;border:none;color:#fff;font-size:34px;line-height:1;cursor:pointer;opacity:.85;}
+  .nart-lightbox-close:hover{opacity:1;}
+  .nart-lightbox-prev, .nart-lightbox-next{
+    position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;
+    width:48px;height:48px;border-radius:50%;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  }
+  .nart-lightbox-prev:hover, .nart-lightbox-next:hover{background:rgba(255,255,255,0.25);}
+  .nart-lightbox-prev{left:18px;}
+  .nart-lightbox-next{right:18px;}
+  @media (max-width:600px){ .nart-lightbox-prev, .nart-lightbox-next{width:40px;height:40px;font-size:20px;} }
 </style>
 </head>
 <body>
@@ -68,19 +85,53 @@
   <article class="nart-post-body">
 <h2 class="nart-post-h2">2026 İLK TESLİMAT</h2>
 <p><strong>İGDAŞ</strong> Müşteri İstasyonlarımızın son kontrolleri yapılarak kabul işlemleri tamamlanmıştır. <strong>İGDAŞ</strong> kalite kontrol ekibinin kıymetli mühendislerini fabrikamızda ağırlamış olmaktan memnuniyet duyduk.. Birlikte başarılı projeleri gerçekleştirmek dileğiyle..</p>
-<div class="nart-post-embed nart-embed-fixed"><iframe loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7457548197377269760?collapsed=1" height="830" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></div>
-<div class="nart-post-embed nart-embed-fixed"><iframe loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7452430933623812098?collapsed=1" height="830" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></div>
 <h3 class="nart-post-h3">5000 m³/h RMS-B Tipi Basınç Düşürme ve Ölçüm İstasyonu Teknik Detayları:</h3>
 <p>RMS-B tipi istasyonlarımız, endüstriyel tüketicilerin anlık gaz ihtiyaçlarını sıfır hata ile karşılamak üzere tasarlanmıştır. Çift hatlı (1 Asıl + 1 Yedek) mimarisi sayesinde kesintisiz gaz akışı garanti altına alınır.</p>
 <ul class="nart-post-list"><li><strong>Kapasite Aralığı:</strong> 100 m³/h - 20.000 m³/h (Özel tasarım opsiyonlu)</li><li><strong>İstasyon Mimarisi:</strong> 1 Asıl + 1 Yedek (Twin Line System)</li><li><strong>Filtreleme Hassasiyeti:</strong> G1 / G4 Kartuş Filtre ile 5 mikrona kadar tam filtrasyon</li><li><strong>Sayaç Teknolojisi:</strong> Türbinmetre, Rotary, Ultrasonik metre sayaç entegrasyonu</li><li><strong>Emniyet Sistemi:</strong> SSV (Slam-Shut Valve) aşırı/düşük/ yüksek basınç koruma kapatması</li></ul>
 <p>Detaylı bilgi için <a href="https://nartgaz.com/products/rms-b-5000.html" target="_blank" rel="noopener">tıklayın</a>.</p>
-<div class="nart-post-gallery"><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-1-1787012105270.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-2-1787012107270.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-3-1787012109373.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-4-1787012111074.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-5-1787012113197.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-6-1787012114813.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-7-1787012116541.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-8-1787012118473.jpg" alt=""></div></div>
+<div class="nart-post-gallery"><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-1-1787020136134.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-2-1787020138238.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-3-1787020139893.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-4-1787020142557.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-5-1787020144181.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-6-1787020145821.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-7-1787020147431.jpg" alt=""></div><div class="nart-gallery-item"><img src="assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-8-1787020149007.jpg" alt=""></div></div>
+<div class="nart-post-embed nart-embed-fixed"><iframe loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7457548197377269760?collapsed=1" height="830" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></div>
+<div class="nart-post-embed nart-embed-fixed"><iframe loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7452430933623812098?collapsed=1" height="830" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></div>
   </article>
 <div class="nart-share"><span class="nart-share-label">Paylaş:</span><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fnartgaz.com%2Fblog-igdas-bolge-istasyonlari-2026-ilk-teslimat.html" target="_blank" rel="noopener" class="nart-share-btn" title="LinkedIn'de paylaş"><i class="lni lni-linkedin-original"></i></a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnartgaz.com%2Fblog-igdas-bolge-istasyonlari-2026-ilk-teslimat.html" target="_blank" rel="noopener" class="nart-share-btn" title="Facebook'ta paylaş"><i class="lni lni-facebook-filled"></i></a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fnartgaz.com%2Fblog-igdas-bolge-istasyonlari-2026-ilk-teslimat.html&text=%C4%B0GDA%C5%9E%20B%C3%96LGE%20%C4%B0STASYONLARI%20-%202026%20%C4%B0LK%20TESL%C4%B0MAT" target="_blank" rel="noopener" class="nart-share-btn" title="X'te paylaş"><i class="lni lni-twitter-filled"></i></a><a href="https://wa.me/?text=%C4%B0GDA%C5%9E%20B%C3%96LGE%20%C4%B0STASYONLARI%20-%202026%20%C4%B0LK%20TESL%C4%B0MAT%20https%3A%2F%2Fnartgaz.com%2Fblog-igdas-bolge-istasyonlari-2026-ilk-teslimat.html" target="_blank" rel="noopener" class="nart-share-btn" title="WhatsApp'ta paylaş"><i class="lni lni-whatsapp"></i></a><button type="button" class="nart-share-btn" title="Instagram'da doğrudan paylaşım linki desteklenmiyor, bağlantıyı kopyala" onclick="navigator.clipboard.writeText('https://nartgaz.com/blog-igdas-bolge-istasyonlari-2026-ilk-teslimat.html');this.innerText='✓';setTimeout(()=>{this.innerHTML='<i class=&quot;lni lni-instagram-filled&quot;></i>'},1800);"><i class="lni lni-instagram-filled"></i></button></div>
 </div>
 <div id="nart-footer"></div>
+<div class="nart-lightbox" id="nartLightbox">
+  <button type="button" class="nart-lightbox-close" aria-label="Kapat">&times;</button>
+  <button type="button" class="nart-lightbox-prev" aria-label="Önceki">&#8249;</button>
+  <img class="nart-lightbox-img" id="nartLightboxImg" src="" alt="">
+  <button type="button" class="nart-lightbox-next" aria-label="Sonraki">&#8250;</button>
+</div>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/wow.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var overlay = document.getElementById("nartLightbox");
+  var imgEl = document.getElementById("nartLightboxImg");
+  var group = [], idx = 0;
+  function show(i){ idx = (i + group.length) % group.length; imgEl.src = group[idx]; }
+  function openBox(list, i){ group = list; show(i); overlay.classList.add("open"); }
+  function closeBox(){ overlay.classList.remove("open"); }
+  overlay.querySelector(".nart-lightbox-close").addEventListener("click", closeBox);
+  overlay.querySelector(".nart-lightbox-prev").addEventListener("click", function(e){ e.stopPropagation(); show(idx - 1); });
+  overlay.querySelector(".nart-lightbox-next").addEventListener("click", function(e){ e.stopPropagation(); show(idx + 1); });
+  overlay.addEventListener("click", function(e){ if (e.target === overlay) closeBox(); });
+  document.addEventListener("keydown", function(e){
+    if (!overlay.classList.contains("open")) return;
+    if (e.key === "Escape") closeBox();
+    if (e.key === "ArrowLeft") show(idx - 1);
+    if (e.key === "ArrowRight") show(idx + 1);
+  });
+  document.querySelectorAll(".nart-post-gallery").forEach(function(gallery){
+    var imgs = Array.prototype.slice.call(gallery.querySelectorAll("img"));
+    var srcs = imgs.map(function(im){ return im.src; });
+    imgs.forEach(function(im, i){ im.addEventListener("click", function(){ openBox(srcs, i); }); });
+  });
+  document.querySelectorAll(".nart-post-figure img, .nart-post-inline-img, .nart-post-cover").forEach(function(im){
+    im.addEventListener("click", function(){ openBox([im.src], 0); });
+  });
+})();
+</script>
 </body>
 </html>
