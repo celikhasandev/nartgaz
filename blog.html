@@ -14,17 +14,47 @@
 <style>
   .nart-blog-hero-text{text-align:center;}
   .nart-blog-hero-text p{color:rgba(255,255,255,0.75);}
-  .nart-blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;padding-bottom:120px;}
-  .nart-blog-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.08);transition:transform .25s ease, box-shadow .25s ease;display:flex;flex-direction:column;}
-  .nart-blog-card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(0,0,0,0.12);}
-  .nart-blog-card-img{width:100%;height:200px;object-fit:cover;background:#eef2f6;}
-  .nart-blog-card-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1;}
-  .nart-blog-card-date{font-size:13px;color:#8a93a6;margin-bottom:8px;}
-  .nart-blog-card-title{font-size:19px;font-weight:700;margin-bottom:10px;color:#1c2536;}
-  .nart-blog-card-summary{font-size:14.5px;color:#5b657e;line-height:1.6;flex:1;margin-bottom:18px;}
-  .nart-blog-card-link{font-weight:600;color:#42adf0;text-decoration:none;font-size:14.5px;}
-  .nart-blog-card-link:hover{text-decoration:underline;}
-  .nart-blog-empty{text-align:center;color:#8a93a6;padding:60px 0 120px;font-size:16px;}
+
+  .nart-blog-section{padding-top:56px;padding-bottom:100px;}
+
+  .nart-blog-list{display:flex;flex-direction:column;gap:20px;max-width:880px;margin:0 auto;}
+  .nart-blog-card{
+    background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(20,30,60,0.07);
+    transition:transform .22s ease, box-shadow .22s ease;display:flex;align-items:stretch;
+    text-decoration:none;
+  }
+  .nart-blog-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,30,60,0.12);}
+  .nart-blog-card-img{
+    width:160px;min-width:160px;height:160px;object-fit:cover;background:#eef2f6;
+  }
+  .nart-blog-card-img-placeholder{
+    width:160px;min-width:160px;height:160px;background:linear-gradient(135deg,#eef2f6,#dbe3ee);
+    display:flex;align-items:center;justify-content:center;color:#b7c0cf;font-size:28px;
+  }
+  .nart-blog-card-body{padding:18px 22px;display:flex;flex-direction:column;justify-content:center;flex:1;min-width:0;}
+  .nart-blog-card-date{font-size:12.5px;color:#8a93a6;margin-bottom:6px;}
+  .nart-blog-card-title{font-size:18px;font-weight:700;margin-bottom:6px;color:#1c2536;line-height:1.35;}
+  .nart-blog-card-summary{
+    font-size:14px;color:#5b657e;line-height:1.55;margin-bottom:0;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+
+  @media (max-width:560px){
+    .nart-blog-card{flex-direction:column;}
+    .nart-blog-card-img, .nart-blog-card-img-placeholder{width:100%;height:170px;}
+  }
+
+  .nart-blog-empty{text-align:center;color:#8a93a6;padding:60px 0 40px;font-size:16px;}
+
+  .nart-blog-pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:44px;flex-wrap:wrap;}
+  .nart-page-btn{
+    min-width:38px;height:38px;padding:0 12px;border-radius:9px;border:1px solid #e3e8ee;background:#fff;
+    color:#3a445a;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  }
+  .nart-page-btn:hover{border-color:#42adf0;color:#42adf0;}
+  .nart-page-btn.active{background:#42adf0;border-color:#42adf0;color:#fff;}
+  .nart-page-btn:disabled{opacity:.4;cursor:not-allowed;}
+  .nart-page-btn:disabled:hover{border-color:#e3e8ee;color:#3a445a;}
 </style>
 </head>
 <body>
@@ -40,9 +70,10 @@
   </div>
 </section>
 
-<section class="container">
-  <div id="nart-blog-list" class="nart-blog-grid"></div>
+<section class="container nart-blog-section">
+  <div id="nart-blog-list" class="nart-blog-list"></div>
   <div id="nart-blog-empty" class="nart-blog-empty" style="display:none;">Henüz yayınlanmış bir blog yazısı bulunmuyor.</div>
+  <div id="nart-blog-pagination" class="nart-blog-pagination"></div>
 </section>
 
 <div id="nart-footer"></div>
@@ -51,38 +82,85 @@
 <script src="assets/js/wow.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
+var PAGE_SIZE = 10;
+var allPosts = [];
+var currentPage = 1;
+
 fetch('blog-posts.json?t=' + Date.now())
   .then(function(res){ return res.json(); })
   .then(function(posts){
-    var list = document.getElementById('nart-blog-list');
-    var empty = document.getElementById('nart-blog-empty');
     if (!posts || posts.length === 0) {
-      empty.style.display = 'block';
+      document.getElementById('nart-blog-empty').style.display = 'block';
       return;
     }
     posts.sort(function(a, b){ return new Date(b.date) - new Date(a.date); });
-    posts.forEach(function(post){
-      var card = document.createElement('a');
-      card.className = 'nart-blog-card';
-      card.href = post.slug + '.html';
-      card.style.textDecoration = 'none';
-      var img = post.image ? '<img class="nart-blog-card-img" src="' + post.image + '" alt="' + post.title + '">' : '';
-      card.innerHTML =
-        img +
-        '<div class="nart-blog-card-body">' +
-          '<div class="nart-blog-card-date">' + (post.dateDisplay || post.date) + '</div>' +
-          '<div class="nart-blog-card-title">' + post.title + '</div>' +
-          '<div class="nart-blog-card-summary">' + (post.summary || '') + '</div>' +
-          '<span class="nart-blog-card-link">Devamını Oku &rarr;</span>' +
-        '</div>';
-      list.appendChild(card);
-    });
+    allPosts = posts;
+    renderPage(1);
   })
   .catch(function(err){
     document.getElementById('nart-blog-empty').style.display = 'block';
     document.getElementById('nart-blog-empty').textContent = 'Blog yazıları yüklenirken bir sorun oluştu.';
     console.error(err);
   });
+
+function renderPage(page){
+  currentPage = page;
+  var list = document.getElementById('nart-blog-list');
+  list.innerHTML = '';
+  var start = (page - 1) * PAGE_SIZE;
+  var pagePosts = allPosts.slice(start, start + PAGE_SIZE);
+
+  pagePosts.forEach(function(post){
+    var card = document.createElement('a');
+    card.className = 'nart-blog-card';
+    card.href = post.slug + '.html';
+    var img = post.image
+      ? '<img class="nart-blog-card-img" src="' + post.image + '" alt="' + post.title + '" loading="lazy">'
+      : '<div class="nart-blog-card-img-placeholder">📰</div>';
+    card.innerHTML =
+      img +
+      '<div class="nart-blog-card-body">' +
+        '<div class="nart-blog-card-date">' + (post.dateDisplay || post.date) + '</div>' +
+        '<div class="nart-blog-card-title">' + post.title + '</div>' +
+        '<div class="nart-blog-card-summary">' + (post.summary || '') + '</div>' +
+      '</div>';
+    list.appendChild(card);
+  });
+
+  renderPagination();
+  window.scrollTo({ top: document.querySelector('.nart-blog-section').offsetTop - 30, behavior: 'smooth' });
+}
+
+function renderPagination(){
+  var wrap = document.getElementById('nart-blog-pagination');
+  var totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+  wrap.innerHTML = '';
+  if (totalPages <= 1) return;
+
+  var prev = document.createElement('button');
+  prev.className = 'nart-page-btn';
+  prev.textContent = '‹';
+  prev.disabled = currentPage === 1;
+  prev.onclick = function(){ if (currentPage > 1) renderPage(currentPage - 1); };
+  wrap.appendChild(prev);
+
+  for (var i = 1; i <= totalPages; i++) {
+    (function(pageNum){
+      var btn = document.createElement('button');
+      btn.className = 'nart-page-btn' + (pageNum === currentPage ? ' active' : '');
+      btn.textContent = pageNum;
+      btn.onclick = function(){ renderPage(pageNum); };
+      wrap.appendChild(btn);
+    })(i);
+  }
+
+  var next = document.createElement('button');
+  next.className = 'nart-page-btn';
+  next.textContent = '›';
+  next.disabled = currentPage === totalPages;
+  next.onclick = function(){ if (currentPage < totalPages) renderPage(currentPage + 1); };
+  wrap.appendChild(next);
+}
 </script>
 
 </body>
