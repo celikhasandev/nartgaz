@@ -8,7 +8,7 @@
     "image": "assets/img/blog/baskentgaz-rms-c-2500-m-h-musteri-istasyonu-teslimatimiz-tamamlanmisti-thumb.jpg"
   },
   {
-    "title": "İGDAŞ BÖLGE İSTASYONLARI - 2026 İLK TESLİMAT",
+    "title": "İGDAŞ BÖLGE İSTASYONLARI - 2026 YILININ İLK TESLİMATI",
     "slug": "blog-igdas-bolge-istasyonlari-2026-ilk-teslimat",
     "summary": "İGDAŞ RMS-B Tipi Basınç Düşürme ve Ölçüm İstasyonu",
     "date": "2026-05-06",
@@ -16,19 +16,19 @@
     "image": "assets/img/blog/igdas-bolge-istasyonlari-2026-ilk-teslimat-thumb.jpg",
     "i18n": {
       "en": {
-        "title": "İGDAŞ REGIONAL STATIONS - 2026 FIRST DELIVERY",
-        "summary": "İGDAŞ RMS-B Type Pressure Regulating and Metering Station"
+        "title": "İGDAŞ REGIONAL STATIONS - FIRST DELIVERY OF 2026",
+        "summary": "İGDAŞ RMS-B Type Pressure Reducing and Metering Station"
       },
       "ru": {
-        "title": "РЕГИОНАЛЬНЫЕ СТАНЦИИ İGDAŞ — ПЕРВАЯ ПОСТАВКА 2026 ГОДА",
-        "summary": "Газорегуляторный и измерительный пункт типа RMS-B İGDAŞ"
+        "title": "РЕГИОНАЛЬНЫЕ СТАНЦИИ İGDAŞ - ПЕРВАЯ ПОСТАВКА 2026 ГОДА",
+        "summary": "Газорегулирующий и измерительный пункт İGDAŞ типа RMS-B"
       },
       "ar": {
-        "title": "محطات İGDAŞ الإقليمية - التسليم الأول لعام 2026",
-        "summary": "محطة تخفيض الضغط والقياس من النوع RMS-B لشركة İGDAŞ"
+        "title": "محطات إيغداش الإقليمية - أول تسليم لعام 2026",
+        "summary": "محطة İGDAŞ لتقليل الضغط والقياس من النوع RMS-B"
       },
       "zh": {
-        "title": "İGDAŞ 区域站 - 2026 年首次交付",
+        "title": "İGDAŞ 区域调压站 - 2026年首次交付",
         "summary": "İGDAŞ RMS-B 型调压计量站"
       },
       "es": {
@@ -36,12 +36,12 @@
         "summary": "Estación de Regulación de Presión y Medición Tipo RMS-B de İGDAŞ"
       },
       "it": {
-        "title": "STAZIONI REGIONALI İGDAŞ - PRIMA CONSEGNA 2026",
+        "title": "STAZIONI DI ZONA İGDAŞ - PRIMA CONSEGNA DEL 2026",
         "summary": "Stazione di Riduzione Pressione e Misurazione Tipo RMS-B İGDAŞ"
       },
       "hi": {
-        "title": "İGDAŞ क्षेत्रीय स्टेशन - 2026 पहली डिलीवरी",
-        "summary": "İGDAŞ RMS-B प्रकार दबाव विनियमन और मापन स्टेशन"
+        "title": "İGDAŞ क्षेत्रीय स्टेशन - 2026 की पहली डिलीवरी",
+        "summary": "İGDAŞ RMS-B प्रकार दबाव कमी और मापन स्टेशन"
       }
     }
   }
