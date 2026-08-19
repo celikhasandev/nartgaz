@@ -43,7 +43,37 @@
     "summary": "BAŞKENTGAZ RMS-C 2500 m³/h müşteri istasyonu teslimatımız tamamlanmıştır.",
     "date": "2026-08-01",
     "dateDisplay": "1 Ağustos 2026",
-    "image": "assets/img/blog/baskentgaz-rms-c-2500-m-h-musteri-istasyonu-teslimatimiz-tamamlanmisti-thumb.jpg"
+    "image": "assets/img/blog/baskentgaz-rms-c-2500-m-h-musteri-istasyonu-teslimatimiz-tamamlanmisti-thumb.jpg",
+    "i18n": {
+      "en": {
+        "title": "Delivery of our BAŞKENTGAZ RMS-C 2500 m³/h customer station has been completed.",
+        "summary": "Delivery of our BAŞKENTGAZ RMS-C 2500 m³/h customer station has been completed."
+      },
+      "ru": {
+        "title": "Завершена поставка клиентской станции BAŞKENTGAZ RMS-C 2500 м³/ч.",
+        "summary": "Завершена поставка клиентской станции BAŞKENTGAZ RMS-C 2500 м³/ч."
+      },
+      "ar": {
+        "title": "اكتمل تسليم محطة العملاء BAŞKENTGAZ RMS-C 2500 م³/ساعة.",
+        "summary": "اكتمل تسليم محطة العملاء BAŞKENTGAZ RMS-C 2500 م³/ساعة."
+      },
+      "zh": {
+        "title": "BAŞKENTGAZ RMS-C 2500 m³/h 客户调压计量站交付顺利完成",
+        "summary": "BAŞKENTGAZ RMS-C 2500 m³/h 客户调压计量站交付顺利完成"
+      },
+      "es": {
+        "title": "Entrega completada de nuestra estación de cliente BAŞKENTGAZ RMS-C 2500 m³/h.",
+        "summary": "Entrega completada de nuestra estación de cliente BAŞKENTGAZ RMS-C 2500 m³/h."
+      },
+      "it": {
+        "title": "Consegna completata della nostra stazione cliente BAŞKENTGAZ RMS-C 2500 m³/h.",
+        "summary": "Consegna completata della nostra stazione cliente BAŞKENTGAZ RMS-C 2500 m³/h."
+      },
+      "hi": {
+        "title": "हमारे BAŞKENTGAZ RMS-C 2500 m³/h ग्राहक स्टेशन की डिलीवरी पूरी हो गई है।",
+        "summary": "हमारे BAŞKENTGAZ RMS-C 2500 m³/h ग्राहक स्टेशन की डिलीवरी पूरी हो गई है।"
+      }
+    }
   },
   {
     "title": "İGDAŞ BÖLGE İSTASYONLARI - 2026 YILININ İLK TESLİMATI",
