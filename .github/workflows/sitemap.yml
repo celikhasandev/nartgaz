@@ -29,12 +29,12 @@ jobs:
 
       - name: Değişiklik varsa commit'le ve push'la
         run: |
-          if git diff --quiet -- sitemap.xml; then
+          git add sitemap.xml
+          if git diff --cached --quiet; then
             echo "sitemap.xml zaten güncel, commit gerekmiyor."
           else
             git config user.name "nart-sitemap-bot"
             git config user.email "actions@github.com"
-            git add sitemap.xml
             git commit -m "chore: sitemap.xml otomatik güncellendi [skip ci]"
             git push
           fi
