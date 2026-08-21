@@ -100,7 +100,14 @@ var currentPage = 1;
 fetch('blog-posts.json?t=' + Date.now())
   .then(function(res){ return res.json(); })
   .then(function(posts){
-    if (!posts || posts.length === 0) {
+    if (!posts) posts = [];
+    // İleri tarihli (henüz yayın zamanı gelmemiş) yazıları listeden gizle.
+    // Tarih geldiğinde ziyaretçinin tarayıcısı bunu otomatik algılayıp gösterir,
+    // hiçbir işlem/deploy gerekmez.
+    var todayStr = new Date().toISOString().slice(0, 10);
+    posts = posts.filter(function(p){ return !p.date || p.date <= todayStr; });
+
+    if (posts.length === 0) {
       document.getElementById('nart-blog-empty').style.display = 'block';
       return;
     }

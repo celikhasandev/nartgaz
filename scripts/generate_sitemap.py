@@ -73,6 +73,7 @@ def load_blog_dates():
     path = os.path.join(REPO_ROOT, "blog-posts.json")
     if not os.path.exists(path):
         return dates
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     try:
         with open(path, encoding="utf-8") as f:
             posts = json.load(f)
@@ -80,7 +81,7 @@ def load_blog_dates():
             slug = p.get("slug")
             date = p.get("date")
             if slug and date:
-                dates["blog/" + slug + ".html"] = date[:10]
+                dates["blog/" + slug + ".html"] = {"date": date[:10], "scheduled": date[:10] > today}
     except Exception:
         pass
     return dates
@@ -92,8 +93,14 @@ def build_sitemap():
 
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     for rel_path in find_html_files():
+        blog_info = blog_dates.get(rel_path)
+        if blog_info and blog_info["scheduled"]:
+            # İleri tarihli (henüz yayın zamanı gelmemiş) yazı: arama motorlarına
+            # şimdiden gösterme, tarih gelince bir sonraki çalıştırmada otomatik eklenir.
+            continue
+
         loc = DOMAIN + "/" + ("" if rel_path == "index.html" else rel_path)
-        lastmod = blog_dates.get(rel_path) or git_lastmod(rel_path) or today
+        lastmod = (blog_info["date"] if blog_info else None) or git_lastmod(rel_path) or today
         changefreq, priority = page_meta(rel_path)
 
         url_el = ET.SubElement(urlset, "url")

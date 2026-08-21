@@ -4,8 +4,9 @@ on:
   push:
     branches: [ main ]
   schedule:
-    # Push olmasa bile tarihlerin (changefreq/lastmod) tazeliği için haftada bir
-    - cron: '0 3 * * 1'
+    # Push olmasa bile zamanlanmış (ileri tarihli) yazıların vakti geldiğinde
+    # sitemap'e otomatik eklenmesi için her gün çalışır.
+    - cron: '0 1 * * *'
   workflow_dispatch: {}   # Actions sekmesinden elle de tetiklenebilir
 
 permissions:
