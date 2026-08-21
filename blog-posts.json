@@ -1,5 +1,43 @@
 [
   {
+    "title": "BAŞKENTGAZ RMS-C 2500 m³/h Müşteri İstasyonu Teslimatımız Tamamlanmıştır.",
+    "slug": "baskentgaz-rms-c-2500-m-h-musteri-istasyonu-teslimatimiz-tamamlanmisti",
+    "summary": "Nartgaz Güvencesiyle, RMS-C 2500 m³/h Müşteri İstasyonu Teslimatımız BAŞKENTGAZ'a Gerçekleşmiştir.",
+    "date": "2026-08-01",
+    "dateDisplay": "1 Ağustos 2026",
+    "image": "assets/img/blog/baskentgaz-rms-c-2500-m-h-musteri-istasyonu-teslimatimiz-tamamlanmisti-thumb.jpg",
+    "i18n": {
+      "en": {
+        "title": "Our Delivery of BAŞKENTGAZ RMS-C 2500 m³/h Customer Station Has Been Completed.",
+        "summary": "With Nartgaz Assurance, Delivery of Our RMS-C 2500 m³/h Customer Station to BAŞKENTGAZ Has Been Realized."
+      },
+      "ru": {
+        "title": "Поставка клиентской станции RMS-C 2500 м³/ч для BAŞKENTGAZ завершена.",
+        "summary": "С гарантией Nartgaz состоялась поставка клиентской станции RMS-C 2500 м³/ч для компании BAŞKENTGAZ."
+      },
+      "ar": {
+        "title": "تم تسليم محطة العملاء RMS-C 2500 m³/h لشركة BAŞKENTGAZ بنجاح.",
+        "summary": "بضمان Nartgaz، تم تسليم محطة العملاء RMS-C 2500 m³/h إلى شركة BAŞKENTGAZ."
+      },
+      "zh": {
+        "title": "BAŞKENTGAZ RMS-C 2500 m³/h 客户站交付顺利完成。",
+        "summary": "在 Nartgaz 的品质保证下，RMS-C 2500 m³/h 客户站已成功交付至 BAŞKENTGAZ。"
+      },
+      "es": {
+        "title": "Nuestra Entrega de la Estación de Cliente RMS-C 2500 m³/h a BAŞKENTGAZ ha Sido Completada.",
+        "summary": "Con la Garantía de Nartgaz, se ha Realizado la Entrega de Nuestra Estación de Cliente RMS-C 2500 m³/h a BAŞKENTGAZ."
+      },
+      "it": {
+        "title": "Completata la Consegna della Stazione Clienti RMS-C 2500 m³/h per BAŞKENTGAZ.",
+        "summary": "Con la Garanzia Nartgaz, è Stata Effettuata la Consegna della Nostra Stazione Clienti RMS-C 2500 m³/h a BAŞKENTGAZ."
+      },
+      "hi": {
+        "title": "BAŞKENTGAZ के लिए हमारी RMS-C 2500 m³/h कस्टमर स्टेशन की डिलीवरी पूरी हो गई है।",
+        "summary": "Nartgaz के आश्वासन के साथ, BAŞKENTGAZ को हमारी RMS-C 2500 m³/h कस्टमर स्टेशन की डिलीवरी संपन्न हुई।"
+      }
+    }
+  },
+  {
     "title": "İGDAŞ BÖLGE İSTASYONLARI - 2026 YILININ İLK TESLİMATI",
     "slug": "igdas-bolge-istasyonlari-2026-yilinin-ilk-teslimati",
     "summary": "Nartgaz Güvencesiyle, RMS-B Tipi Basınç Düşürme ve Ölçüm İstasyonu Teslimatımız İGDAŞ'a Gerçekleşmiştir.",
