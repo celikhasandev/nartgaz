@@ -2,7 +2,7 @@
 // 1. BÖLÜM: DİNAMİK BİLEŞEN YÜKLEYİCİ & AKILLI YOL DÜZELTME MOTORU
 // ====================================================================================
 function nartBilesenleriYukle() {
-  const prefix = window.location.pathname.includes('/products/') ? '../' : '';
+  const prefix = (window.location.pathname.includes('/products/') || window.location.pathname.includes('/blog/')) ? '../' : '';
 
   return fetch(prefix + 'components/header.html')
     .then(response => {
@@ -197,7 +197,7 @@ function nartBilesenleriYukle() {
 // 2. BÖLÜM: BELLEK DOSTU TEMA & SCROLL MOTORU (THROTTLED & OPTIMIZED)
 // ====================================================================================
 function initOrijinalTemaMekanizmasi() {
-  const prefix = window.location.pathname.includes('/products/') ? '../' : '';
+  const prefix = (window.location.pathname.includes('/products/') || window.location.pathname.includes('/blog/')) ? '../' : '';
 
   setTimeout(() => {
     const preloader = document.querySelector(".preloader");
@@ -440,7 +440,7 @@ function nartDiliUygula(dil) {
 
   const rmsGorsel = document.getElementById('nart-rms-gorsel');
   if (rmsGorsel) {
-    const prefix = window.location.pathname.includes('/products/') ? '../' : '';
+    const prefix = (window.location.pathname.includes('/products/') || window.location.pathname.includes('/blog/')) ? '../' : '';
     rmsGorsel.setAttribute('src', prefix + 'assets/img/rms/rms-' + dil.toLowerCase() + '.svg');
   }
 }

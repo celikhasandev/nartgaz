@@ -124,7 +124,7 @@ function renderPage(page){
   pagePosts.forEach(function(post){
     var card = document.createElement('a');
     card.className = 'nart-blog-card';
-    card.href = post.slug + '.html';
+    card.href = 'blog/' + post.slug + '.html';
     var img = post.image
       ? '<img class="nart-blog-card-img" src="' + post.image + '" alt="' + post.title + '" loading="lazy">'
       : '<div class="nart-blog-card-img-placeholder">📰</div>';

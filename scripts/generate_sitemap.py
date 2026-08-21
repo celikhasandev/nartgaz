@@ -36,7 +36,7 @@ def page_meta(rel_path):
         return "weekly", "1.0"
     if rel_path == "blog.html":
         return "daily", "0.8"
-    if rel_path.startswith("blog-") and rel_path.endswith(".html"):
+    if rel_path.startswith("blog/") and rel_path.endswith(".html"):
         return "monthly", "0.7"
     if rel_path.startswith("products/"):
         return "monthly", "0.7"
@@ -80,7 +80,7 @@ def load_blog_dates():
             slug = p.get("slug")
             date = p.get("date")
             if slug and date:
-                dates[slug + ".html"] = date[:10]
+                dates["blog/" + slug + ".html"] = date[:10]
     except Exception:
         pass
     return dates
