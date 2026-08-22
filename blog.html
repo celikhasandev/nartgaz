@@ -13,7 +13,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Blog | Nart Gaz</title>
 <meta name="description" content="Nart Gaz blog - endüstriyel gaz sistemleri, RMS istasyonları ve sektörel gelişmeler hakkında güncel içerikler." />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png?v=2" />
+<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png?v=2" />
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="assets/css/lineicons.css" />
 <link rel="stylesheet" href="assets/css/animate.css" />
@@ -76,14 +77,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="hero-content nart-blog-hero-text mb-0">
       <h1 class="mb-20">Nart Gaz Blog</h1>
-      <p style="max-width:640px;margin:0 auto;padding:0;">Endüstriyel gaz sistemleri, RMS istasyonları, bakım-onarım ve sektörel gelişmeler hakkında güncel içerikler.</p>
+      <p style="max-width:640px;margin:0 auto;padding:0;"
+        data-en="Up-to-date content on industrial gas systems, RMS stations, maintenance and industry developments."
+        data-ru="Актуальные материалы о промышленных газовых системах, станциях РРД, техническом обслуживании и отраслевых новостях."
+        data-ar="محتوى محدث حول أنظمة الغاز الصناعية، محطات تنظيم الضغط، الصيانة والتطورات في القطاع."
+        data-zh="关于工业燃气系统、调压站、维护保养及行业动态的最新内容。"
+        data-es="Contenido actualizado sobre sistemas industriales de gas, estaciones RMS, mantenimiento y novedades del sector."
+        data-it="Contenuti aggiornati su sistemi industriali del gas, stazioni RMS, manutenzione e novità del settore."
+        data-hi="औद्योगिक गैस प्रणालियों, आरएमएस स्टेशनों, रखरखाव और उद्योग में हुए विकास से जुड़ी नवीनतम जानकारी।"
+      >Endüstriyel gaz sistemleri, RMS istasyonları, bakım-onarım ve sektörel gelişmeler hakkında güncel içerikler.</p>
     </div>
   </div>
 </section>
 
 <section class="container nart-blog-section">
   <div id="nart-blog-list" class="nart-blog-list"></div>
-  <div id="nart-blog-empty" class="nart-blog-empty" style="display:none;">Henüz yayınlanmış bir blog yazısı bulunmuyor.</div>
+  <div id="nart-blog-empty" class="nart-blog-empty" style="display:none;"
+    data-en="No blog posts have been published yet."
+    data-ru="Пока нет опубликованных статей блога."
+    data-ar="لا توجد تدوينات منشورة بعد."
+    data-zh="目前还没有发布博客文章。"
+    data-es="Todavía no se ha publicado ninguna entrada de blog."
+    data-it="Non è stato ancora pubblicato alcun articolo del blog."
+    data-hi="अभी तक कोई ब्लॉग पोस्ट प्रकाशित नहीं हुई है।"
+  >Henüz yayınlanmış bir blog yazısı bulunmuyor.</div>
   <div id="nart-blog-pagination" class="nart-blog-pagination"></div>
 </section>
 
@@ -116,8 +133,19 @@ fetch('blog-posts.json?t=' + Date.now())
     renderPage(1);
   })
   .catch(function(err){
-    document.getElementById('nart-blog-empty').style.display = 'block';
-    document.getElementById('nart-blog-empty').textContent = 'Blog yazıları yüklenirken bir sorun oluştu.';
+    var emptyEl = document.getElementById('nart-blog-empty');
+    emptyEl.style.display = 'block';
+    emptyEl.setAttribute('data-en', 'There was a problem loading the blog posts.');
+    emptyEl.setAttribute('data-ru', 'Произошла ошибка при загрузке статей блога.');
+    emptyEl.setAttribute('data-ar', 'حدثت مشكلة أثناء تحميل مقالات المدونة.');
+    emptyEl.setAttribute('data-zh', '加载博客文章时出现问题。');
+    emptyEl.setAttribute('data-es', 'Se produjo un problema al cargar las entradas del blog.');
+    emptyEl.setAttribute('data-it', 'Si è verificato un problema durante il caricamento degli articoli del blog.');
+    emptyEl.setAttribute('data-hi', 'ब्लॉग पोस्ट लोड करते समय एक समस्या हुई।');
+    emptyEl.textContent = 'Blog yazıları yüklenirken bir sorun oluştu.';
+    if (typeof nartDiliUygula === 'function') {
+      nartDiliUygula(localStorage.getItem('nart_secilen_dil') || 'tr');
+    }
     console.error(err);
   });
 
