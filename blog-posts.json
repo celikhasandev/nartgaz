@@ -1,5 +1,43 @@
 [
   {
+    "title": "DİYARGAZ RMS-C 1600 m3/h MÜŞTERİ İSTASYONU TESLİMATI TAMAMLANMIŞTIR.",
+    "slug": "diyargaz-rms-c-1600-m3-h-musteri-istasyonu-teslimati-tamamlanmistir",
+    "summary": "Nartgaz Güvencesiyle, RMS-C 1600 m3/h Müşteri İstasyonu Teslimatımız DİYARGAZ'a Gerçekleşmiştir.",
+    "date": "2026-08-14",
+    "dateDisplay": "14 Ağustos 2026",
+    "image": "assets/img/blog/diyargaz-rms-c-1600-m3-h-musteri-istasyonu-teslimati-tamamlanmistir-thumb.jpg",
+    "i18n": {
+      "en": {
+        "title": "DELIVERY OF DIYARGAZ RMS-C 1600 m3/h CUSTOMER STATION COMPLETED.",
+        "summary": "With the Assurance of Nartgaz, Delivery of Our RMS-C 1600 m3/h Customer Station to DİYARGAZ Has Been Completed."
+      },
+      "ru": {
+        "title": "ЗАВЕРШЕНА ПОСТАВКА КЛИЕНТСКОЙ СТАНЦИИ DIYARGAZ RMS-C 1600 м3/ч.",
+        "summary": "С гарантией Nartgaz состоялась поставка нашей клиентской станции RMS-C 1600 м3/ч компании DİYARGAZ."
+      },
+      "ar": {
+        "title": "تم اكتمال تسليم محطة العملاء DIYARGAZ RMS-C 1600 م3/ساعة.",
+        "summary": "بضمانة نارتجاز، تم تسليم محطة العملاء RMS-C سعة 1600 م3/ساعة إلى ديارغاز."
+      },
+      "zh": {
+        "title": "DİYARGAZ RMS-C 1600 m3/h 客户站交付完成。",
+        "summary": "在 Nartgaz 的品质保证下，RMS-C 1600 m3/h 客户站已成功交付至 DİYARGAZ。"
+      },
+      "es": {
+        "title": "SE HA COMPLETADO LA ENTREGA DE LA ESTACIÓN DE CLIENTE DIYARGAZ RMS-C 1600 m3/h.",
+        "summary": "Con la Garantía de Nartgaz, se ha Realizado la Entrega de Nuestra Estación de Cliente RMS-C 1600 m3/h a DİYARGAZ."
+      },
+      "it": {
+        "title": "COMPLETATA LA CONSEGNA DELLA STAZIONE CLIENTE DIYARGAZ RMS-C 1600 m3/h.",
+        "summary": "Con la Garanzia di Nartgaz, è stata Effettuata la Consegna della Nostra Stazione Cliente RMS-C 1600 m3/h a DİYARGAZ."
+      },
+      "hi": {
+        "title": "DIYARGAZ RMS-C 1600 m3/h कस्टमर स्टेशन की डिलीवरी पूरी हो गई है।",
+        "summary": "नार्टगैस (Nartgaz) के भरोसे के साथ, हमारे RMS-C 1600 m3/h कस्टमर स्टेशन की डिलीवरी DİYARGAZ को सफलतापूर्वक कर दी गई है।"
+      }
+    }
+  },
+  {
     "title": "BAŞKENTGAZ RMS-C 2500 m³/h Müşteri İstasyonu Teslimatımız Tamamlanmıştır.",
     "slug": "baskentgaz-rms-c-2500-m-h-musteri-istasyonu-teslimatimiz-tamamlanmisti",
     "summary": "Nartgaz Güvencesiyle, RMS-C 2500 m³/h Müşteri İstasyonu Teslimatımız BAŞKENTGAZ'a Gerçekleşmiştir.",
